@@ -1,4 +1,4 @@
-£¨1£©Ê¹ÓÃgit¹ÜÀígithubÔ¶³Ì²Ö¿âµÄ²½Öè£º
+Ê¹ÓÃgit¹ÜÀígithubÔ¶³Ì²Ö¿âµÄ²½Öè£º
 
 
 //¶ÔÓÚĞÂ¼üÒ»¸öÈ«ĞÂµÄÏîÄ¿¶øÑÔ£º
@@ -47,6 +47,12 @@ git commit -m 'xxxxxxxx'
 
 git log
 
+
+
+
+
+
+
 <2>°æ±¾»ØÍË
 
 ÔÙ´ÎÔÚIDEÖĞĞŞ¸Äindex.html²¢±£´æ
@@ -76,6 +82,12 @@ git reset --hard °æ±¾ºÅ ------ÀûÓÃ°æ±¾ºÅ»ØÍËµ½×îĞÂ°æ±¾»òÈÎÒâ°æ±¾£¬×îÉÙ¸´ÖÆ7Î»°æ±
 
 	¡¾¿ÉÑ¡¡¿cat index.html ------²é¿´index.htmlÎÄ¼ş£¨»áÔÚ¿ØÖÆÌ¨´òÓ¡index.htmlÖĞËùÓĞÄÚÈİ£©
 
+
+
+
+
+
+
 <3>³·ÏúĞŞ¸Ä
 
 ÔÙÔÙ´ÎÔÚIDEÖĞĞŞ¸Äindex.html²¢±£´æ
@@ -92,6 +104,11 @@ git checkout -- index.html ------ ´ËÊ±index.html ÒÑ¾­·ÅÈëÔİ´æÇøÁË£¬½Ó×ÅÓÖ×÷ÁËĞŞ¸
 
 git reset HEAD index.html ------½«Ôİ´æÇøÖĞµÄindex.html»Ö¸´µ½¹¤×÷Çø£¬´ËÊ±¹¤×÷ÇøµÄindex.html»á±»Ôİ´æÇøÖĞµÄindex.htmlÌæ»»
 
+
+
+
+
+
 <4>É¾³ıÎÄ¼ş
 
 touch test.html ------ĞÂ¼ütest.htmlÎÄ¼ş
@@ -107,6 +124,11 @@ rm test.html -------É¾³ıÎÄ¼ş
 git status
 
 git checkout -- test.html ------³·ÏúÉ¾³ıµÄÎÄ¼ş
+
+
+
+
+
 
 <5> Ô¶³Ì²Ö¿â£ºÈçºÎÌí¼ÓÔ¶³Ì¿â
 
@@ -128,7 +150,12 @@ git pull --rebase origin master
 
 git push -u origin master ------½«master·ÖÖ§ÄÚÈİÍÆËÍµ½Ô¶¶Ëgithub²Ö¿â
 
-<5> Ô¶³Ì²Ö¿â£ºÈçºÎ´ÓÔ¶³Ì¿â¿ËÂ¡
+
+
+
+
+
+<6> Ô¶³Ì²Ö¿â£ºÈçºÎ´ÓÔ¶³Ì¿â¿ËÂ¡
 
 ÔÚgithubÉÏ´´½¨Ò»¸öĞÂµÄ²Ö¿â>Create a new repository>ĞÂ²Ö¿âÃûÎªtest-clone-git>¸´ÖÆ¸Ã²Ö¿âµØÖ·:https://github.com/WebHero0544/test-clone-git.git
 
@@ -142,6 +169,207 @@ git clone https://github.com/WebHero0544/test-clone-git.git
 
 
 
+
+
+<7>ÔõÃ´½«±¾µØgit²Ö¿âÌá½»µ½Ô¶¶Ëgithub²Ö¿â£º
+
+mkdir learn-git
+
+cd learn-git
+
+git init
+
+ÔÚgithubÉÏĞÂ½¨Ò»¸öÃûÎªlearn-gitµÄ²Ö¿â£¬²¢Õ³ÌùµØÖ·£ºhttps://github.com/WebHero0544/learn-git.git
+
+git remote add origin https://github.com/WebHero0544/learn-git.git
+
+git push -u origin master   ------¸Ã´¦Èç¹û±¨´í£¬ËµÃ÷Ô¶¶Ëgithub²Ö¿âÒÑ¾­ÓĞÎÄ¼şÁË£¨Ò»°ã»áÊÇ£©README.mdÎÄ¼ş£¬ĞèÖ´ĞĞÈçÏÂÃüÁî
+
+git pull --rebase origin master  ------±¾µØ²Ö¿âÓëÔ¶¶Ëgithub²Ö¿â½øĞĞÎÄ¼şºÏ²¢ºó£¬ÔÙÖ´ĞĞ
+
+git push -u origin master 
+
+
+
+
+
+
+
+
+<8>´´½¨ÓëºÏ²¢·ÖÖ§
+
+git checkout -b dev ------´´½¨dev·ÖÖ§£¬²¢ÇĞ»»µ½¸Ã·ÖÖ§
+
+git branch ------²é¿´·ÖÖ§
+
+git checkout master ------ÇĞ»»µ½master·ÖÖ§
+
+git merge dev -----½«dev·ÖÖ§ºÏ²¢µ½master·ÖÖ§
+
+git status ------ºÏ²¢ºóµÄmaster,´¦ÓÚÎ´Ìá½»×´Ì¬
+
+git add .
+
+git commit -m 'ºÏ²¢ÁËdevµÄmaster·ÖÖ§'
+
+git branch -d dev ------É¾³ıdev·ÖÖ§
+
+
+
+
+<8>´´½¨ÓëºÏ²¢·ÖÖ§ : ÈçºÎ½â¾ö³åÍ»
+
+Ê×ÏÈ´´ÔìÒ»¸ö³åÍ»£º
+
+ÔÚindex.html¿ÕÎÄ¼şÖĞÌí¼ÓÒ»ÏÂÄÚÈİ:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>branch,branch,branch,branch,branch</p>
+</body>
+</html>
+
+ÔÚmaster·ÖÖ§ÏÂÖ´ĞĞ£º
+
+git add .
+
+git commit -m 'Ìí¼Óindex.htmlÄÚÈİ'
+
+git push ------Ìá½»
+
+git checkout -b dev1 -------´´½¨dev1·ÖÖ§£¬²¢ÇĞ»»µ½¸Ã·ÖÖ§
+
+ÔÚindex.html¿ÕÎÄ¼şÖĞÌí¼ÓÒ»ÏÂÄÚÈİ:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>branch,branch,branch,branch,branch</p>
+	<p>dev1,dev1,dev1,dev1,dev1</p>
+</body>
+</html>
+
+git add .
+
+git commit -m 'ÔÚdev1ÉÏÏòindex.htmlÌí¼ÓÄÚÈİ'
+
+È»ºóÇĞ»»ÖÁmaster·ÖÖ§£º
+
+git checkout master
+
+ÔÚindex.html¿ÕÎÄ¼şÖĞÌí¼ÓÒ»ÏÂÄÚÈİ:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>branch,branch,branch,branch,branch</p>
+	<p>master,master,master,master,master</p>
+</body>
+</html>
+
+git add .
+
+git commit -m 'ÔÚmasterÉÏÏòindex.htmlÌí¼ÓÄÚÈİ'
+
+È»ºóºÏ²¢¾Í»áÓĞ³åÍ»£º
+
+git merge dev1
+
+GitÓÃ<<<<<<<£¬=======£¬>>>>>>>±ê¼Ç³ö²»Í¬·ÖÖ§µÄÄÚÈİ£¬ÆäÖĞ<<<HEADÊÇÖ¸Ö÷·ÖÖ§ĞŞ¸ÄµÄÄÚÈİ£¬>>>>>dev1 ÊÇÖ¸dev1ÉÏĞŞ¸ÄµÄÄÚÈİ£¬ĞŞ¸ÄÊ±½«±ê¼ÇÈ¥µô
+
+Í¨³£ºÏ²¢·ÖÖ§Ê±£¬gitÒ»°ãÊ¹ÓÃ¡±Fast forward¡±Ä£Ê½£¬ÔÚÕâÖÖÄ£Ê½ÏÂ£¬É¾³ı·ÖÖ§ºó£¬»á¶ªµô·ÖÖ§ĞÅÏ¢£¬ÏÖÔÚÎÒÃÇÀ´Ê¹ÓÃ´ø²ÎÊı ¨Cno-ffÀ´½ûÓÃ¡±Fast forward¡±Ä£Ê½£¬ ÈçÏÂ£º
+
+·ÖÖ§²ßÂÔ£ºÊ×ÏÈmasterÖ÷·ÖÖ§Ó¦¸ÃÊÇ·Ç³£ÎÈ¶¨µÄ£¬Ò²¾ÍÊÇÓÃÀ´·¢²¼ĞÂ°æ±¾£¬Ò»°ãÇé¿öÏÂ²»ÔÊĞíÔÚÉÏÃæ¸É»î£¬¸É»îÒ»°ãÇé¿öÏÂÔÚĞÂ½¨µÄdev·ÖÖ§ÉÏ¸É»î£¬¸ÉÍêºó£¬±ÈÈçÉÏÒª·¢²¼£¬»òÕßËµdev·ÖÖ§´úÂëÎÈ¶¨ºó¿ÉÒÔºÏ²¢µ½Ö÷·ÖÖ§masterÉÏÀ´¡£
+
+http://www.cnblogs.com/tugenhua0707/p/4050072.htmlÉÏÃæµÄÑ§Ï°¶¼ÊÇÀ´×ÔÓÚ¸ÃÆªÎÄÕÂ£º»¹Ê£ ¶àÈËĞ­×÷ ºÍ bug·ÖÖ§ Î´Ñ§
+
+
+
+
+
+
+
+
+¼ÌĞø
+
+
+
+
+
+
+
+
+
+<9>bug·ÖÖ§
+
+ ÔÚ¿ª·¢ÖĞ£¬»á¾­³£Åöµ½bugÎÊÌâ£¬ÄÇÃ´ÓĞÁËbug¾ÍĞèÒªĞŞ¸´£¬ÔÚGitÖĞ£¬·ÖÖ§ÊÇºÜÇ¿´óµÄ£¬Ã¿¸öbug¶¼¿ÉÒÔÍ¨¹ıÒ»¸öÁÙÊ±·ÖÖ§À´ĞŞ¸´£¬ĞŞ¸´Íê³Éºó£¬ºÏ²¢·ÖÖ§£¬È»ºó½«ÁÙÊ±µÄ·ÖÖ§É¾³ıµô¡£
+
+±ÈÈçÎÒÔÚ¿ª·¢ÖĞ½Óµ½Ò»¸ö404 bugÊ±ºò£¬ÎÒÃÇ¿ÉÒÔ´´½¨Ò»¸öissue-404·ÖÖ§À´ĞŞ¸´Ëü£¬µ«ÊÇ£¬µ±Ç°µÄdev·ÖÖ§ÉÏµÄ¹¤×÷»¹Ã»ÓĞÌá½»£¨Ã»ÓĞgit commit£©,²¢²»ÊÇÎÒ²»ÏëÌá½»£¬¶øÊÇ¹¤×÷½øĞĞµ½Ò»°ëÊ±ºò£¬ÎÒÃÇ»¹ÎŞ·¨Ìá½»£¬±ÈÈçÎÒÕâ¸ö·ÖÖ§bugÒª2ÌìÍê³É£¬µ«ÊÇissue-404·ÖÖ§µÄbugĞŞ¸´ĞèÒª5¸öĞ¡Ê±ÄÚÍê³É¡£ÔõÃ´°ìÄØ£¿»¹ºÃ£¬Git»¹Ìá¹©ÁËÒ»¸östash¹¦ÄÜ£¬¿ÉÒÔ°Ñµ±Ç°¹¤×÷ÏÖ³¡£¨Ö¸dev·ÖÖ§£© ¡±Òş²ØÆğÀ´¡±£¬µÈÒÔºó»Ö¸´ÏÖ³¡ºó¼ÌĞø¹¤×÷£¬ÈçÏÂ£º
+
+git stash -----Òş²Ø¹¤×÷ÏÖ³¡£¨Ö¸µ±Ç°µÄdev·ÖÖ§£©,×¨ĞÄĞŞ¸´bug
+
+git checkout master ------ÇĞ»»µ½master·ÖÖ§
+
+git checkout -b issue-404 ------´´½¨issue-404·ÖÖ§£¬²¢ÇĞ»»µ½¸Ã·ÖÖ§£¬ ÔÚ¸Ã·ÖÖ§ÉÏĞŞ¸´bug
+
+¼ÙÈçÈëĞŞ¸´ÁËbug
+
+git add .
+
+git commit -m 'Íê³É404 bugĞŞ¸´'
+
+git checkout master ------ÇĞ»»µ½master·ÖÖ§
+
+git merge --on-ff -m 'ĞŞ¸´404 bug' issue-404 ------½«issue-404·ÖÖ§ºÏ²¢µ½master·ÖÖ§£¬Íê³É¸ÃbugĞŞ¸´ ( --on-ff±£ÁôĞÅÏ¢£¬ÒÔºóÄÜ²é¿´)
+
+git branch -d issue-404  -------É¾³ı¸Ã·ÖÖ§
+
+È»ºóÇĞ»»µ½dev·ÖÖ§¼ÌĞø¸É»î
+
+git checkout dev ----ÇĞ»»µ½dev·ÖÖ§
+
+´ËÊ±ÓÃgit status²é¿´¹¤×÷ÇøÊÇ¸É¾»µÄ£¬ÄÇÃ´ÎÒÃÇ¹¤×÷ÏÖ³¡È¥ÄÄÀïÄØ£¿ÎÒÃÇ¿ÉÒÔÊ¹ÓÃÃüÁî git stash listÀ´²é¿´
+
+»Ø¸´¹¤×÷ÇøµÄ·½·¨ÓĞ2£ºµÚÒ»ÖÖgit stash apply»Ö¸´£¬»Ö¸´ºó£¬stashÄÚÈİ²¢²»É¾³ı£¬ÄãĞèÒªÊ¹ÓÃÃüÁîgit stash dropÀ´É¾³ı£»ÁíÒ»ÖÖ·½Ê½ÊÇÊ¹ÓÃgit stash pop,»Ö¸´µÄÍ¬Ê±°ÑstashÄÚÈİÒ²É¾³ıÁË¡£
+
+
+
+
+
+
+
+<10>¶àÈËĞ­×÷
+
+git push origin master  ------ÏòÔ¶¶ËÍÆËÍmaster·ÖÖ§
+
+git push origin dev  ------ÏòÔ¶¶ËÍÆËÍdev	·ÖÖ§
+
+¶àÈËĞ­×÷Ê±£¬´ó¼Ò¶¼»áÍùmaster·ÖÖ§ÉÏÍÆËÍ¸÷×ÔµÄĞŞ¸Ä¡£ÏÖÔÚÎÒÃÇ¿ÉÒÔÄ£ÄâÁíÍâÒ»¸öÍ¬ÊÂ£¬¿ÉÒÔÔÚÁíÒ»Ì¨µçÄÔÉÏ£¨×¢ÒâÒª°ÑSSH keyÌí¼Óµ½githubÉÏ£©»òÕßÍ¬Ò»Ì¨µçÄÔÉÏÁíÍâÒ»¸öÄ¿Â¼¿ËÂ¡£¬ĞÂ½¨Ò»¸öÄ¿Â¼Ãû×Ö½Ğlearn-git1
+
+ÏÖÔÚÎÒÃÇµÄĞ¡»ï°éÒªÔÚdev·ÖÖ§ÉÏ×ö¿ª·¢£¬¾Í±ØĞë°ÑÔ¶³ÌµÄoriginµÄdev·ÖÖ§À­µ½±¾µØÀ´£¬ÓÚÊÇ¿ÉÒÔÊ¹ÓÃÃüÁî´´½¨±¾µØdev·ÖÖ§£º
+
+git checkout  ¨Cb dev origin/dev ------´´½¨Ô¶³ÌoriginµÄdev·ÖÖ§µ½±¾µØ(Ö»ÓĞmaster·ÖÖ§»áÀ­µ½±¾µØ£¬dev·ÖÖ§ĞèÒª´´½¨²¢Á¬½Ó)
+
+ÏÖÔÚĞ¡»ï°éÃÇ¾Í¿ÉÒÔÔÚdev·ÖÖ§ÉÏ×ö¿ª·¢ÁË£¬¿ª·¢Íê³Éºó°Ñdev·ÖÖ§ÍÆËÍµ½Ô¶³Ì¿â£º
+
+git push origin dev ------½«ÔÚdevÉÏµÄ¸Ä¶¯ÍÆËÍµ½Ô¶¶ËdevÉÏ
+
+Ã¿´ÎÔÚ¹¤×÷Ç°ÒªÀ­È¡×îĞÂµÄ´úÂë£º
+
+git pull
 
 
 
