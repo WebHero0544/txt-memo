@@ -1,3 +1,5 @@
+（1）常用命令
+
 npm install xxx --save 安装模块（生产环境依赖）
 
 npm install xxx --save-dev 安装模块(开发环境依赖)
@@ -11,3 +13,18 @@ npm ls -g 查看全局安装的模块及依赖
 npm uninstall xxx  (-g) 卸载模块
 
 npm cache clean 清理缓存
+
+
+
+
+
+（2）全局npm包 和 本地npm包
+
+比如：全局@angular/cli的版本为1.2.1   而本地@angular/cli的版本为1.0.1，
+
+在项目中如果package.json中含有该npm包并且node-modules中已经安装，则会使用本地@angular/cli，即版本为1.0.1的@angular/cli，
+
+如果在项目的外部，则会使用版本为1.2.1的@angular/cli，比如ng new 项目名会使用@angular/cli1.2.1
+
+
+
