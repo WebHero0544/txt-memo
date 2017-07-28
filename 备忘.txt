@@ -2,34 +2,18 @@
 
 （1）
 
-
 overflow-y
 
 超出条件：子元素的宽必须大于父元素的宽，且要指定宽高
 
-
-
 favicon.ico
 
-
-
-参考网站：
-
-
-http://www.chinahuangshan.gov.cn/
-
-
-
-
-
-
+参考网站：http://www.chinahuangshan.gov.cn/
 
 sublime 常用插件
 
-
 BracketHighlighter高亮显示匹配的括号、引号和标签
 BracketHighlighter这个插件能在左侧高亮显示匹配的括号、引号和标签，能匹配的[]?,??()?,??{}?,??""?,??''?,?<tag></tag>等甚至是自定义的标签，当看到密密麻麻的代码分不清标签之间包容嵌套的关系时，这款插件就能很好地帮你理清楚代码结构，快速定位括号，引号和标签内的范围。
-
 
 TrailingSpacer高亮显示多余的空格和Tab
 有时候在代码结尾打多了几个空格或Tab，一般不会察觉，TrailingSpacer这款插件能高亮显示多余的空格和Tab，并可以一键删除它们，有代码洁癖的朋友应该会喜欢这个插件。
@@ -38,9 +22,6 @@ TrailingSpacer高亮显示多余的空格和Tab
 { "keys":["ctrl+alt+d"], "command":"delete_trailing_spaces"},
 
 { "keys":["ctrl+alt+o"], "command":"toggle_trailing_spaces"}]
-
-
-
 
 
 Alignment 等号对齐
@@ -52,22 +33,17 @@ Clipboard-history 粘贴板历史记录
 
 插件下载：?https://github.com/kemayo/sublime-text-2-clipboard-history
 
-
-
-
 SideBarEnhancements侧边栏增强
 SideBarEnhancements本是增强侧边栏的插件，这里将教大家如何用来做sublime text 3浏览器预览插件，并可自定义浏览器预览的快捷键。
 
 安装此插件，点击工具栏的preferences > package setting > side bar > Key Building-User，键入以下代码，这里设置按Ctrl+Shift+C复制文件路径，按F1~F5分别在firefox，chrome，IE，safari，opera浏览器预览效果，当然你也可以自己定义喜欢的快捷键，最后注意代码中的浏览器路径要以自己电脑里的文件路径为准。
 
-
-
 Pretty JSON   格式化json文件  ctrl+alt+j
 
-
-
-
 swiper横向播放时可以不设置高
+
+
+
 
 
 
@@ -78,6 +54,7 @@ swiper横向播放时可以不设置高
 var boo = true;
 
 boo && fn1() || fn2()      -------如果boo为true调用fn1,否则调用fn2
+
 
 
 
