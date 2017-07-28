@@ -1,0 +1,11 @@
+官方文档：http://aui.github.io/artDialog/
+
+
+我在源码中删除了下面一段代码，以屏蔽esc键（按下esc键等于执行了dialog的oncancel事件），暂时没有出错：
+
+this._esc = function (t) {
+                var o = t.target, r = o.nodeName, n = /^input|textarea$/i, a = i.current === e, u = t.keyCode;
+                !a || n.test(r) && "button" !== o.type || 27 === u && e._trigger("cancel")
+            }, r(document).on("keydown", this._esc), this.addEventListener("remove", function () {
+                r(document).off("keydown", this._esc), delete p.list[this.id]
+            })

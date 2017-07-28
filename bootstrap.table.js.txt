@@ -1,0 +1,19 @@
+参考网站：
+
+http://bootstrap-table.wenzhixin.net.cn/zh-cn/getting-started/
+
+http://www.jq22.com/yanshi467
+
+
+强大的表格插件，里面包含分页功能，能导出excel等。。。。
+
+
+要想实现导出功能，请加载bootstrap.table.export.js(下载的bootstrap.table文件里有)和tableExport.js(并加载base64.js,
+将tableExport.js文件中调用的$.base64.encode()方法改为base64.js中的Base64.encode)
+
+
+tableExport.js 用于将html table导出为Excel   可与bootstrap.table.js 和 bootstrap.table.export.js（前者的扩展）配合使用 
+
+但除了txt和excel能正常导出外 其他的都乱码。
+
+我暂时使用的时 huangshan3>ls>lib>ableExport1.js     ableExport1.js代码复制于：https://my.oschina.net/u/2331760/blog/741649

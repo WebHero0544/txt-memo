@@ -1,0 +1,184 @@
+
+
+（1）
+
+
+overflow-y
+
+超出条件：子元素的宽必须大于父元素的宽，且要指定宽高
+
+
+
+favicon.ico
+
+
+
+参考网站：
+
+
+http://www.chinahuangshan.gov.cn/
+
+
+
+
+
+
+
+sublime 常用插件
+
+
+BracketHighlighter高亮显示匹配的括号、引号和标签
+BracketHighlighter这个插件能在左侧高亮显示匹配的括号、引号和标签，能匹配的[]?,??()?,??{}?,??""?,??''?,?<tag></tag>等甚至是自定义的标签，当看到密密麻麻的代码分不清标签之间包容嵌套的关系时，这款插件就能很好地帮你理清楚代码结构，快速定位括号，引号和标签内的范围。
+
+
+TrailingSpacer高亮显示多余的空格和Tab
+有时候在代码结尾打多了几个空格或Tab，一般不会察觉，TrailingSpacer这款插件能高亮显示多余的空格和Tab，并可以一键删除它们，有代码洁癖的朋友应该会喜欢这个插件。
+注意，在github上下载的插件缺少了一个设置快捷键的文件，可以新建一个名字和后缀为Default (Windows).sublime-keymap的文件，添加以下代码，即可设置“删除多余空格”和“是否开启TrailingSpacer ”的快捷键了。
+[
+{ "keys":["ctrl+alt+d"], "command":"delete_trailing_spaces"},
+
+{ "keys":["ctrl+alt+o"], "command":"toggle_trailing_spaces"}]
+
+
+
+
+
+Alignment 等号对齐
+按Ctrl+Alt+A，可以是凌乱的代码以等号为准左右对其，适合有代码洁癖的朋友。
+
+插件下载：?https://github.com/kevinsperrine/sublime_alignment/tree/python3
+Clipboard-history 粘贴板历史记录
+有了这个插件，便可方便使用sublime text 3里的粘贴板历史记录内容，快捷键Ctrl+Shift+V可调出该历史记录面板，按方向键选择想要粘贴的历史记录。不过这是sublime text 2下的插件，Ctrl+Shift+D清除粘贴板历史记录好像不能生效，不过重启sublime也可清除粘贴板的历史记录。
+
+插件下载：?https://github.com/kemayo/sublime-text-2-clipboard-history
+
+
+
+
+SideBarEnhancements侧边栏增强
+SideBarEnhancements本是增强侧边栏的插件，这里将教大家如何用来做sublime text 3浏览器预览插件，并可自定义浏览器预览的快捷键。
+
+安装此插件，点击工具栏的preferences > package setting > side bar > Key Building-User，键入以下代码，这里设置按Ctrl+Shift+C复制文件路径，按F1~F5分别在firefox，chrome，IE，safari，opera浏览器预览效果，当然你也可以自己定义喜欢的快捷键，最后注意代码中的浏览器路径要以自己电脑里的文件路径为准。
+
+
+
+Pretty JSON   格式化json文件  ctrl+alt+j
+
+
+
+
+swiper横向播放时可以不设置高
+
+
+
+
+
+（2）技巧
+
+var boo = true;
+
+boo && fn1() || fn2()      -------如果boo为true调用fn1,否则调用fn2
+
+
+
+
+
+（3）
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;    --------------------只有遵循这个顺序才能与父元素同宽同高
+
+
+
+
+
+
+（4）
+    $element.off( 'click');  //移除click事件上绑定的所有事件处理程序，不管是具名函数还是匿名函数(前提是用on方法绑定的)
+
+
+
+
+
+（5）JS中给正则表达式加变量 
+
+可以用构造函数来生成正则表达式
+var re = new RegExp("^\\d+$","gim"); //注意，反斜杠需要转义
+那么，给它加变量，就和我们前面写的给字符串加变量一样了。
+var v = "bl";
+var re =new RegExp("^\\d+" + v + "$","gim"); // re为/^\d+bl$/gim
+至此，最初的问题问题也完全解决了。
+?
+?
+另外，还有一种方法是用过eval动态执行一段字符串的方法，不过我觉得从各方面来说，都属下策。
+var re = eval("/^\\d+" + v + "$/gim")
+
+
+
+
+
+
+（6）对象数组排序
+	var d = [
+ 	 {
+	    "ip": "10.224.97.81",
+	    "name": "自动站文件分发服务器",
+	    "rectime": "20170606175000",
+	    "sendtime": "20170606183600"
+	  },
+	  {
+	    "ip": "10.224.97.82",
+	    "name": "雷达数据分发服务器",
+	    "rectime": "20170605080100",
+	    "sendtime": "20170606173200"
+	  }
+	]
+        	//对象数组排序（按元素对象中的filetime值由大到小排）
+        	d.sort(function (a, b) {
+            		var _a = self.common_toDate(a.filetime).getTime();
+            		var _b = self.common_toDate(b.filetime).getTime();
+            		return _b - _a;
+        	});
+
+
+
+
+
+
+（7）使用button时要指定 type="button"  不然点击时会刷新页面
+
+
+
+
+
+
+（8）移动端应使用html5原生的date控件，体验更好，样式不满足可以修改
+
+<input type="date|month|week|time|datetime|datetime-local" />   选择时间的变化应该可以用input事件监听（没有测过，应该可以）
+
+
+
+
+
+
+（9）  replace中$符的使用：
+
+'201707'.replace(/(\d{2}$)/, '年$1月')    -----$1存储第一个分组内的正则匹配到的值    输出结果为：2017年07月；
+
+'2017-07-17 18:34:55'.match(/\d{2}-\d{2}\s\d{2}/)[0].replace(/^(\d{2})-(\d{2})\s(\d{2})$/, ' 黄山旅游气象台$1月$2日$3时发布')
+
+
+
+
+
+
+
+
+
+
+
+
+
+

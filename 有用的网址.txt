@@ -1,0 +1,3 @@
+http://www.cnblogs.com/2050/p/4198792.html    -------  前端构建工具gulpjs的使用介绍及技巧 
+
+http://www.ydcss.com/archives/424  ------gulp教程之gulp中文API

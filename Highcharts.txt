@@ -1,0 +1,9 @@
+Highcharts
+
+注：Highcharts 从 4.2.0 开始，已经不依赖 jQuery（参考例子），如果你的页面中不需要 jQuery，
+那么无需引入；不依赖 jQuery 的原因是我们将去掉了适配器并支持 CommonJS 模块标准，也就是
+说 Highcharts 可以在所有 CommonJS 规范下的环境中运行（例如 Nodejs），这也使得我们的产
+品可以结合目前市面上常用的库使用，例如 React、Browserify 、Webpack、Vue、AngularJS 等。
+
+
+官网：https://www.hcharts.cn

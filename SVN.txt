@@ -1,0 +1,14 @@
+使用教程：http://jingyan.baidu.com/article/358570f6638aa4ce4724fcf7.html
+
+使用教程：http://www.cnblogs.com/leon2012/p/5148991.html
+
+使用教程：http://blog.csdn.net/lishehe/article/details/8257545
+
+使用教程：http://www.cnblogs.com/liuswi/p/3892211.html
+
+
+账号：dbs
+密码：dongbensheng123
+
+黄山SVN前端代码位置：https://112.126.93.77/svn/HsWeatherView/hsWeatherView/WebContent
+

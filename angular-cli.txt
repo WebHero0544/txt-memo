@@ -1,0 +1,28 @@
+
+（1）创建ng项目：
+
+@angular/cli 1.2.1
+
+npm install @angular/cli -g
+
+ng new 项目名
+
+ng set --global packageManager=cnpm  （设置后以后再用ng new创建项目时会自动用cnpm来安装包，仅需设置一次）
+
+cd 项目名
+
+cnpm install  (第一次用ng new创建项目时需手动执行， 以后无需再用)
+
+ng serve --open
+
+
+
+（2）如果在执行ng serve时报错： Cannot find module 'webpack/lib/node/NodeTemplatePlugin’
+解决办法：在项目中安装webpack, 及npm install wepack --save-dev
+
+
+
+（3）当ng项目目录被移动时，一般再启动ng serve时会报错，此时可以删除node-modules文件夹，执行cnpm install命令，重新下载所有npm包
+
+
+

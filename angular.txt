@@ -1,0 +1,9 @@
+
+
+npm install @angular/cli -g
+
+ng new 项目名
+
+进入项目
+
+ng serve --prod --aot   //能加快打开速度

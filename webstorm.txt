@@ -1,0 +1,21 @@
+（1） 手机访问webstorm服务下的项目：
+
+在settings>Build,Execution,Deployment>Debugger下，将can accept external comnections勾选上，
+
+以便允许你的服务被外部访问（在这儿也可以更改端口号port），然后手机与电脑连接同一个wifi，将webstorm
+
+服务下的项目地址拷贝到草料二维码中后将localhost替换成本机（电脑）的ip地址，生成二维码后就可以在手机上
+
+扫码查看了。
+
+
+
+（2）文件乱码解决
+
+在该文件窗口右键：  file Encoding > utf-8 > convert
+
+
+
+（3）常用快捷键：
+
+ctrl+alt+l : 格式化代码（.html, .css, .js , json.......）

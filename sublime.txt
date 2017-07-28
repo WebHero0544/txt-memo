@@ -1,0 +1,8 @@
+常用插件：
+
+（1）Doc?Blockr  ： 生成优美注释
+（2）JSFormat:  JavaScript的代码格式化插件
+（3）autoprefixer： CSS添加私有前缀
+（4）Highlighter： 可匹配[],?(),?{},?“”,?”,?<tag></tag>，高亮标记，便于查看起始和结束标记
+（5）AutoFileName：快捷输入文件名
+（6）codeFormatter： 一款可以对html、JS、CSS、PHP、python代码格式化的sublime插件  快捷键 ctrl+alt+f
