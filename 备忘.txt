@@ -149,7 +149,66 @@ var re = eval("/^\\d+" + v + "$/gim")
 
 
 
+（10）大数据循环时要考量性能（在满足条件时，foreach可以使用return false跳出循环，以减少循环次数；在满足条件时，在需求代码后面，删除该项元素，以减少循环次数），如下
 
+	var str = '';
+	// 用stationIds固定原有已排列好的数据（返回的数据跟我areaList中排列的顺序是不一致的）
+	stationIds.forEach(function (el) {
+		var isHas = false;
+		dataList.forEach(function (sonel, index, arr) {
+			if (el === sonel.obsstationid) {
+			var itemData = priSelf.dataFormat(sonel);
+			// 表格数据
+			str += '<tr id="'+ itemData.obsstationid +'">';
+			str += '<td>'+ itemData.obsstationid +'</td>';  //观测站号
+			str += '<td>'+ itemData.obsdatetime +'</td>';  //观测日期时间
+			str += '<td>'+ itemData.precipation +'</td>';  //1h降水量
+			str += '<td>'+ itemData.r05 +'</td>';  //5分钟降水量
+			str += '<td>'+ itemData.r20 +'</td>';  //20-当前降水量
+			str += '<td>'+ itemData.temp +'</td>';  //气温
+			str += '<td>'+ itemData.dewpoint +'</td>';  //露点温度
+			str += '<td>'+ itemData.rh +'</td>';  //相对湿度
+			str += '<td>'+ itemData.stationpressure +'</td>';  //气压
+			str += '<td>'+ itemData.windvelocity +'</td>';  //2分钟风速
+			str += '<td>'+ itemData.windd10ms +'</td>';  //2分钟风向
+			str += '<td>'+ itemData.hexmaxwindv +'</td>';  //极大风速
+			str += '<td>'+ itemData.hexmaxwindd +'</td>';  //极大风向
+			str += '<td>'+ itemData.visibility10min +'</td>';  //能见度
+			str += '</tr>';
+			isHas = true;
+			arr.splice(index, 1);  //在数据保存后就删掉该条数据，以减少循环数
+			return false;  //直接跳出循环，以减少循环数
+			}
+		});
+		//没有数据也要占位置
+		if (!isHas) {  
+			str += '<tr id="'+ el +'">';
+			str += '<td>'+ el +'</td>';  //观测站号
+			str += '<td>/</td>';  //观测日期时间
+			str += '<td>/</td>';  //1h降水量
+			str += '<td>/</td>';  //5分钟降水量
+			str += '<td>/</td>';  //20-当前降水量
+			str += '<td>/</td>';  //气温
+			str += '<td>/</td>';  //露点温度
+			str += '<td>/</td>';  //相对湿度
+			str += '<td>/</td>';  //气压
+			str += '<td>/</td>';  //2分钟风速
+			str += '<td>/</td>';  //2分钟风向
+			str += '<td>/</td>';  //极大风速
+			str += '<td>/</td>';  //极大风向
+			str += '<td>/</td>';  //能见度
+			str += '</tr>';									
+		}
+	});
+
+
+
+（11）socketRendererGis在频繁调用时如果用2判断，因为要操作dom会相当消耗性能（轻则卡顿，重则崩溃），即使该dom已经保存起来了，但仍然会去操作dom的属性
+
+function socketRendererGis (data) {
+	if (!self.isShowDataMap) return;  //1.最好给状态提前保存起来
+	// if (self.$dataMap.is(':hidden')) return;  //2.该处太消耗性能，以用上面的方式代替
+}
 
 
 

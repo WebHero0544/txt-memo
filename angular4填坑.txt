@@ -1,0 +1,10 @@
+（1）在对colSpan和rowSpan进行数据绑定时没有值时要添加默认值（为1），不然在IE上会报错
+
+（2）在IE11， IE10中，用webpack打包后的项目在控制台会报错： 对象不支持“assign”属性或方法，该问题在于webpack在打包时
+assign方法并没有babel转换，解决办法：在angular项目中的index.html中在所有脚本的最顶部引入  <script src="./assets/lib/polyfill.min.js"></script>，
+然后npm install --save babel-polyfill（http://babeljs.io/docs/usage/polyfill/），将dist文件夹下的polyfill.min.js放入assets/lib/目录下
+
+（3）对于（2）出现的问题是由于webpack没有配置好(polyfilly应在vendor之前加载)，回头好好学学webpack
+
+（4）在pdfJs.txt中有在angular4中使用pdf.js的方式
+ 

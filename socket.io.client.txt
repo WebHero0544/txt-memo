@@ -1,0 +1,95 @@
+socket.io v2.0.3 client (2017-10-11) 学习地址：https://socket.io/docs/client-api/#
+
+<一>  使用方式：socket.io向外暴露的命令空间为io
+（1）
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io('http://localhost');
+</script>
+（2）
+const io = require('socket.io-client');
+（3）
+// or with import syntax
+import io from 'socket.io-client';
+
+
+<二>  API的使用方式
+
+【多路复用：自动获取路径】
+（1）
+io.protocol 
+    ------ Returns number  协议修订号
+（2）
+io([url][, options])
+    ------ url (String) (默认值为window.location，即协议+域名)
+    ------ options (Object)
+        ------ forceNew (Boolean) 是否重用现有的连接
+    ------Returns Socket
+（3）
+//始终保持一个连接
+const socket = io();
+const adminSocket = io('/admin');
+// a single connection will be established
+（4）
+//创建两个独立的连接
+const socket = io();
+const adminSocket = io('/admin', { forceNew: true });
+// will create two distinct connections
+（5）
+//注意：重用相同的命令空间也会创建两个独立的连接
+const socket = io();
+const socket2 = io();
+// will also create two distinct connections
+
+【使用自定义路径】
+
+。。。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<三>  大致的使用方式
+	
+// 仅仅创建一个连接(连接地址默认为当前协议+域名,即wnidow.location)，所有数据都在此基础上传输(根据路径的不同)
+this.socket = io();
+// 在'/station'路径下进行数据交互
+this.stationSocket = io('/station');
+
+
+// 连接成功（成功后的事件监听，比如news事件，最好不要放在该事件的回调里，因为在重连成功后会再次绑定里面的时事件）
+this.stationSocket.on('connect', function () {
+	console.log('连接成功');
+});
+// 连接失败（失败时默认会自动无限次重连，直到成功为止）
+this.stationSocket.on('connect_error', function (err) {
+	console.log(err);
+});
+
+
+// 监听news（事件名是前后台共同商量定义的）事件，以接收数据（在连接成功后自动绑定，否则绑定无效）
+this.stationSocket.on('news', function (data) {
+	console.log('连接成功后即可进行数据交互！');
+	console.log(data);
+	// self.renderer(data);
+});
+
+
+// 向后台发布消息，以请求数据
+this.stationSocket.emit('news', {selectTime: self.$selectTime.val()}, function (data) {
+	console.log(data);
+	// this.renderer(data);
+});

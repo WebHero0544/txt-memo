@@ -1,0 +1,20 @@
+    
+    jQuery(document).ready(function($) {
+
+	  if (window.history && window.history.pushState) {
+	
+	    $(window).on('popstate', function() {
+	      var hashLocation = location.hash;
+	      var hashSplit = hashLocation.split("#!/");
+	      var hashName = hashSplit[1];
+	      if (hashName !== '') {
+	        var hash = window.location.hash;
+	        if (hash === '') {
+	          window.location.href='/ldadHF';//index.html?liindex='+liindex;
+	        }
+	      }
+	    });
+	    window.history.pushState(new_url, null, new_url);
+	  }
+	
+	});

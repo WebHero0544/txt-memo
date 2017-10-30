@@ -1,0 +1,116 @@
+bootstrap4大致会适配下面的五中宽度范围（移动设备优先）：
+
+（1）
+// Extra small devices (portrait phones, less than 576px) ------ 超小屏
+// No media query since this is the default in Bootstrap
+// 超小屏时，没有媒体查询,因为这是Bootstrap默认的，也就是说没有媒体查询时是定义超小屏(xs)的样式，
+//有媒体查询时是定义小屏(sm)，中等屏(md)，大屏(lg)，  超大屏(xl)的样式，样式都要写在对应的媒体查询里（体现了bootstrap移动设备优先的设计）
+
+（2）
+// Small devices (landscape phones, 576px and up) ------ 小屏
+@media (min-width: 576px) { ... }
+
+（3）
+// Medium devices (tablets, 768px and up) ------ 中等屏
+@media (min-width: 768px) { ... }
+
+（4）
+// Large devices (desktops, 992px and up) ------ 大屏
+@media (min-width: 992px) { ... }
+
+（5）
+// Extra large devices (large desktops, 1200px and up)  ------ 超大屏
+@media (min-width: 1200px) { ... }
+
+
+
+
+
+也可以反方向使用：
+
+（1）
+// Extra small devices (portrait phones, less than 576px) ------ 超小屏
+@media (max-width: 575px) { ... }
+
+（2）
+// Small devices (landscape phones, less than 768px) ------ 小屏
+@media (max-width: 767px) { ... }
+
+（3）
+// Medium devices (tablets, less than 992px) ------ 中等屏
+@media (max-width: 991px) { ... }
+
+（4）
+// Large devices (desktops, less than 1200px) ------ 大屏
+@media (max-width: 1199px) { ... }
+
+（5）
+// Extra large devices (large desktops)  ------ 超大屏
+// No media query since the extra-large breakpoint has no upper bound on its width
+// 超大屏时没有媒体查询，宽度没有上线
+
+
+
+亦或者是这样：
+
+（1）
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575px) { ... }
+
+（2）
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) and (max-width: 767px) { ... }
+
+（3）
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { ... }
+
+（4）
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { ... }
+
+（5）
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+
+
+
+
+在bootstrap4中可利用ml-auto（也可加上-xs, -md....对不同分辨率做相应调整）类使菜单居右，利用mr-auto类使菜单居左，添加在带有navbar-nav类的元素上（通常是ul元素）
+         .....
+        <ul class="navbar-nav ml-lg-auto mt-2 mt-lg-0">
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/wfs/monitoring" routerLinkActive="active">
+                    <i class="iconfont icon-jiankong pr-1"></i>
+                    实况监测
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/wfs/provinceForecast" routerLinkActive="active">
+                    <i class="iconfont icon-tianqiyubao pr-1"></i>
+                    天气预报
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/wfs/sceneryForecast" routerLinkActive="active">
+                    <i class="iconfont icon-jingdianyubaoshikuangshuju pr-1"></i>
+                    气象景观预报
+                </a>
+            </li>
+
+            <!-- 这是一个a标签的跳转,没有iconfont,样式与前面稍微有区别 -->
+            <li class="nav-item d-flex align-items-center">
+                <a class="nav-link" href="https://www.baidu.com">气象景观预报和发布系统</a>
+            </li>
+
+        </ul>
+        ........
+
+
+
+
+
+
