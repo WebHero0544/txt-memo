@@ -214,7 +214,7 @@ function socketRendererGis (data) {
 
 
 
-（12）JS的事件频繁触发，只执行最后一次 
+（12）JS的事件频繁触发，只执行最后一次 ，比如连续点击触发的click事件，而并不是指（mousemove, resize）事件的节流
 
 有时候我们在JS编程的过程中经常遇到一个问题就是事件频繁高速被触发，利用计时器来控制频率又会丢弃掉有用的事件，我们只是想让程序执行最后一次的事件，那么就可以用如下方法解决问题
 
@@ -228,6 +228,21 @@ var iTime;
     }, 100);
 
 如果大家有更好的方法解决此问题欢迎留言，希望和大家一起沟通学习
+
+
+
+
+
+（13）change 和 input，propertychange的区别：
+
+change ：在input失去焦点并且值改变时触发，js动态改变的值不会触发
+ input，propertychange ：在input值改变时触发，js动态改变的值不会触发
+
+
+
+（14）jquery index()
+$dom.index() -------相对于$dom的父元素获取$dom的位置
+$list.index(selector|jquery dom) ------ 有参数（jquery选择器或者jquery对象）时表示参数中获取的jquery dom在$list中的位置
 
 
 

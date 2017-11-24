@@ -1,0 +1,2 @@
+（1）System.out.println(xx);
+输出数据到控制台

@@ -1,0 +1,13 @@
+<一>
+
+电脑上已有老版本node要安装最新版本node时, 可直接在官网下载最新版本安装，注意：在安装完成后，一般要安装cnpm,
+
+npm install -g cnpm --registry=https://registry.npm.taobao.org , 
+
+或者在启动命令的路径下添加.npmrc文件（将源指向淘宝npm镜像），内容为：
+
+phantomjs_cdnurl=http://cnpmjs.org/downloads
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass
+registry=https://registry.npm.taobao.org
+
+
