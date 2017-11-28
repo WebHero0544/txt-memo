@@ -249,3 +249,14 @@ $list.index(selector|jquery dom) ------ 有参数（jquery选择器或者jquery对象）时表
 
 
 
+（15）解析这个语法： obj && fn1() || fn2()
+
+解析： 假如obj是一个对象，会调用默认的toString方法（该方法可以被重写），然后将该方法的返回值进行隐式转换，如果为true则调用fn1，
+如果fn1没有返回值，则会默认返回undefined, 就隐式转换成了false, 最后obj && fn1()表达式为false,于是也执行了fn2；如果fn1有返回值且能
+隐式转换为true,则obj && fn1()表达式返回true, 由于||是短路操作（&&也是），所以fn2不被调用
+
+
+
+
+
+
