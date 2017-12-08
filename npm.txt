@@ -27,4 +27,9 @@ npm cache clean 清理缓存
 如果在项目的外部，则会使用版本为1.2.1的@angular/cli，比如ng new 项目名会使用@angular/cli1.2.1
 
 
+（3）查看全局或本地安装了哪些npm包
+
+全局：npm list -g --depth 0   （如果没有参数--depth 0则全局npm包依赖的npm包也会打印出来，太多没法看）
+本地：npm list --depth 0    （如果没有参数--depth 0则本地npm包依赖的npm包也会打印出来，太多没法看）
+
 
