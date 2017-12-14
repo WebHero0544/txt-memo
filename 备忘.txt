@@ -259,4 +259,25 @@ $list.index(selector|jquery dom) ------ 有参数（jquery选择器或者jquery对象）时表
 
 
 
+（16）移动端浏览器给body元素添加overflow:hidden失效的解决方案：
+
+我项目中的解决方案：相当于是网上的三种解决方案中的第一种（其他的在我的项目中均无效）
+html, body {
+  height: 100%;
+  overflow: hidden !important;
+  
+}
+body {
+  position:fixed;
+  width: 100%;
+}
+
+网上的三种解决方案：
+1、body加position:fixed;width:100%;height:100%。
+2、给要滚动的元素添加一个父级，设定高度，overflow：auto；
+3、html,body{height:100%;overflow:hidden}
+建议使用第三种，可以把overflow:hidden作为一个单独的隐藏类，更方便控制。
+
+
+
 
