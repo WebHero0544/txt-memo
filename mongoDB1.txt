@@ -1,0 +1,74 @@
+<二> 连接mongodb
+
+在bin目录下执行mongo命令连接到mongodb数据库
+
+在shell中输入大量数据时，可以在别处将命令写好，再复制到docs中，按enter将执行
+
+
+常用命令：
+
+db  ------  显示当前数据库名称，默认为test
+
+show dbs  ------  显示除当前数据库外的所有数据库名称
+
+show collections  ------  显示当前数据库中的所有集合
+
+use <数据库名称>  ------  切换到某一数据库，如果该数据库不存在，则会创建这个数据库
+
+db.dropDatabase()  ------  删除当前数据库
+
+db.userInfo.insert({name: 'dong'})  ------  向当前数据库名为userInfo的集合中添加数据，如果该集合不存在，则会创建该集合  
+
+db.userInfo.drop()  ------  删除当前数据库中名为userInfo的集合
+
+
+
+<三>mongodb crud (增删改查，create read update delete)
+
+插入文档：
+
+db.userInfo.insert({name: 'yyy'})  ------  向userInfo集合中添加一个文档（如果要添加多个文档，请使用数组），如果该集合不存在，会首先创建该集合，然后在添加文档
+
+查询文档：
+
+db.userInfo.find()  ------  显示当前数据库中userInfo集合中的所有文档
+
+db.userInfo.find().pretty()  ------  显示当前数据库中userInfo集合中的所有文档(更美观，更易阅读)
+
+db.users.find({status:'A'})  ------  从当前数据库 users 集合中检索 status 字段值为 "A" 的所有文档
+
+db.users.find({status:'A'}).pretty()  ------ 无操作符：  从 users 集合中检索 status 字段值为 "A" 的所有文档(更美观，更易阅读)
+
+db.users.find( { status: { $in: [ "P", "D" ] } } )  ------ 操作符$in： 从 user 集合中检索 status 字段值为 "P" 或者 "D" 的所有文档
+
+db.users.find( { status: "A", age: { $lt: 30 } } )  ------ 指定 AND 条件： 在 users 集合中检索 status 等于 "A"并且 age 小于 ($lt) 30 是所有文档
+
+db.users.find( { $or: [ { status: "A" }, { age: { $lt: 30 } } ] } )  ------  指定 OR 条件：在 users 集合中检索 status 等于 "A"或者age 小于 ($lt) 30 是所有文档
+
+db.users.find( { status: "A", $or: [ { age: { $lt: 30 } }, { type: 1 } ] } )  ------  指定 AND 和 OR 条件：选择集合中`status`` 等于 "A" 并且 要么 age 小于 ($lt) 30 要么 type 等于 1 的所有文档
+
+略！，请参看mongodb中文社区
+...
+...
+...
+
+
+更新文档：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
