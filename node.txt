@@ -11,3 +11,87 @@ sass_binary_site=https://npm.taobao.org/mirrors/node-sass
 registry=https://registry.npm.taobao.org
 
 
+<二>
+exports 与 module.exports 的区别：
+
+exports 是 module.exports 对象的引用， 相当于 const exports = module.exports,
+
+正因为exports 是 module.exports 对象的引用，所以在使用exports时不能改变其原有指针，例如：
+
+exports  = {
+    text: 'xxx'
+}
+
+上面的使用方式是错误的,因为引用地址改变了，此时导出此模块时module.exports为{}，所以使用exports只能在该引用上添加属性，例如：
+
+exports.test = 'xxx';  正确
+
+而module.exports则可以以下面的两种方式使用：
+
+module.exports.test = 'xxx'; 或 module.exports = { test: 'xxx' }
+
+
+
+
+<三>
+node 全局对象 global:
+
+commonjs : require, module, exports 
+
+buffer
+
+process
+
+console
+
+timer(定时器相关)： setInterval, setTimeout, setImmediate 
+
+
+<四> 
+setTimeout, setImmediate 和 process.nextTick 的区别：
+
+process.nextTick：在当前事件循环的队尾这行
+setTimeout：在当前事件循环结束 和 在下一个事件循环开始之前执行
+setImmediate ：在下一个事件循环的队首执行
+
+即process.nextTick早于setTimeout执行，setTimeout又早于setImmediate 执行
+
+
+
+
+
+
+
+
+<五>
+
+以下npm包可以自动重新启动node服务：
+nodemon（推荐，github上的star数多）, supervisor
+
+
+
+
+
+<六>
+由于现在的浏览器都支持 gzip, deflate等， 所以要在服务器实现，node提供内置zlib模块以供使用
+
+
+
+
+
+
+<七> 
+curl ：调试网络请求的工具
+
+
+
+
+
+
+
+
+
+
+
+
+
