@@ -1,3 +1,47 @@
-mongoDB使用记要：
+参考文章：
+https://www.cnblogs.com/lecaf/archive/2013/08/23/mongodb.html
+http://blog.csdn.net/mzbonnt/article/details/51461331
+http://blog.csdn.net/wycf1314/article/details/10113881     ---服务无法启动的问题，原因在于cmd运行时没有使用管理员权限
+
+
+
+
+
+mongoDB（3.6.0）使用记要：
+
+
+我的mongodb安装在：E:\mongodb文件夹下
+
+在这我将存储数据的文件夹data放在了安装目录的里面，即：E:\mongodb，然后在data里再手动创建db和log文件夹
+
+
+
+
+
+<一> 启动mongodb服务：
+
+进入E:\mongodb\bin目录，打开命令行，执行mongod.exe以启动mongodb服务，配置方式有两种， 如下：
+（1）[mongod.exe | mongod]    --dbpath E:\mongodb\data   ---指定数据库文件夹所在位置；
+（2）[mongod.exe | mongod]    [-f | --config]    E:\mongodb\etc\mongod.conf   ---指定配置文件所在位置；
+
+服务启动成功后，会有这样的提示： ... waiting for connections on port 27017 ..., 表明服务以启动成功，服务端口为27017,
+如果以方式（2）启动的，则不会有提示成功的信息，需要在E:\mongodb\data\log\mongod.log系统日志中查看，如果出现什么异常，
+可查看E:\mongodb\data\log\mongod.log以了解错误
+
+安装mongodb服务(注意：cmd需要管理员权限， 找到C:\Windows\System32\cmd.exe，右键以管理员打开), 步骤如下：
+mongod -f E:\mongodb\etc\mongod.conf --install --serviceName "MongoDB" --serviceDisplayName "MongoDB"  ------ 注册服务
+net start MongoDB ------ 启动服务
+net start MongoDB ------ 停止服务
+mongod --remove   ------ 删除服务
+为什么要安装mongodb服务？ 当服务启动后，可以在当前窗口下使用mongo shell,而无需再单独打开一个docs窗口
+
+
+
+
+
+<二>连接mongodb
+进入E:\mongodb\bin目录，执行mongo命令，以连接mongodb
+
+
 
 

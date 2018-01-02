@@ -7,4 +7,9 @@ assign方法并没有babel转换，解决办法：在angular项目中的index.html中在所有脚本的最
 （3）对于（2）出现的问题是由于webpack没有配置好(polyfilly应在vendor之前加载)，回头好好学学webpack
 
 （4）在pdfJs.txt中有在angular4中使用pdf.js的方式
+
+
+
+
+（5） angular > animate > AnimationEvent        看看这篇文章 ： https://www.cnblogs.com/flxy-1028/p/8012919.html
  

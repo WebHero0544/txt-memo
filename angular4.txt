@@ -9,5 +9,36 @@ ng new 项目名 --routing    //自动生成带有路由配置的项目
 
 ng serve --prod --aot   //能加快打开速度
 
+
+
+
 （2）以后会考虑将前端代码（client）和后端代码（server）放在一个文件夹中，然后将其提交到github远端仓库上，在这儿使用@angular/cli创建后，已经生成了本地
 git仓库，如果前后端代码放在一个文件中就不需要该本地仓库了（删除.git, .gitignore），要在该文件夹下进行git init操作，并配置.gitignore文件，以过滤不需要提交的文件
+
+
+
+
+
+（3） Angular 2 HostListener & HostBinding     ------  https://segmentfault.com/a/1190000008878888
+
+
+
+
+（4）单选按钮的绑定方式：
+
+baseLayerType = 'street';
+
+<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl(map, $event)" value="moon" />
+<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl(map, $event)" value="street" />
+
+当点击选中时baseLayerType 会与当前选中的radio的value相等，在这儿默认选中第二个radio
+
+
+（5）Angular 2 ViewChild & ViewChildren     https://segmentfault.com/a/1190000008695459    https://www.cnblogs.com/yw0219/p/7788633.html
+
+
+
+
+
+
+

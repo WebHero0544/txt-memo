@@ -1,8 +1,8 @@
 // 提示弹窗
-function hintPopup (text, showDuration) {  //string 显示的提示文本|number 单位：毫秒 显示时时长
+function hintPopup (text, showDuration) {  //string 显示的提示文本|number？ 单位：毫秒 显示时时长
 	var id = 'myHintPopupComponent_1_0_0';  //之所以这么写是为了防止冲突(这里myHintPopupComponent_1_0_0如果换成myHintPopupComponent_1.0.0会获取不到该id对应的dom)
 	
-	if ($('#' + id).length) return;  //如果该提示弹窗已经被打开，这儿不允许再生成一个
+	if ($('#' + id).length) return;  //如果该提示弹窗已经被打开，这儿不允许再生成一个，也就是页面中只能同时显示一个提示弹窗
 
 	var parentcss = {
 		zIndex: '999999',
@@ -29,5 +29,5 @@ function hintPopup (text, showDuration) {  //string 显示的提示文本|number 单位：
 
 	setTimeout(function () {
 		$hintPopup.remove();
-	}, showDuration);
+	}, showDuration || 800);
 }
