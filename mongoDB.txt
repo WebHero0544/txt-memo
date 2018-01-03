@@ -28,7 +28,7 @@ mongoDB（3.6.0）使用记要：
 如果以方式（2）启动的，则不会有提示成功的信息，需要在E:\mongodb\data\log\mongod.log系统日志中查看，如果出现什么异常，
 可查看E:\mongodb\data\log\mongod.log以了解错误
 
-安装mongodb服务(注意：cmd需要管理员权限， 找到C:\Windows\System32\cmd.exe，右键以管理员打开), 步骤如下：
+安装mongodb服务(注意：cmd需要管理员权限， 找到C:\Windows\System32\cmd.exe，右键以管理员打开， cd到E:\mongodb\bin), 步骤如下：
 mongod -f E:\mongodb\etc\mongod.conf --install --serviceName "MongoDB" --serviceDisplayName "MongoDB"  ------ 注册服务
 net start MongoDB ------ 启动服务
 net start MongoDB ------ 停止服务

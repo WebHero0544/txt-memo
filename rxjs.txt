@@ -1,0 +1,11 @@
+（1） 参考地址：
+
+https://zhuanlan.zhihu.com/p/27997606  ------  有对concat，forkJoin，mergeMap， pairwise, switchMap, combineLatest 操作符的解释
+https://www.jianshu.com/u/d01a391b4a74 ------ 
+
+
+
+
+（2）操作符：
+
+switchMap ------ 类似于 mergeMap，但是当源 Observable 发出值时会取消内部 Observable 先前的所有订阅 。
