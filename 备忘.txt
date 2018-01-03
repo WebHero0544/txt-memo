@@ -281,3 +281,62 @@ body {
 
 
 
+（17） 针对animationend和transitionend多次执行的问题解决方案 
+
+对于animationend事件来说的话，如果我们在外层添加这个事件监听，如果监听元素里面还有动画，则里面元素动画结束也会执行这个animationend事件。所以我们可以这样做：
+
+if(e.target === this) {
+    console.log('end');
+}
+或者
+if(e.target === e.currentTarget) {
+    console.log('end');
+}
+
+对于transitionend事件多次执行，一般情况下是因为监听元素有多个属性同时变化，所以执行多次transitionend事件，而且如果里面有子元素还会监听子元素的end事件，所以我们针对transitionEnd事件需要这样做：
+
+var transitionFlag = true;
+wrap.addEventListener('webkitTransitionEnd',function(e){
+    if(e.target === e.currentTarget && transitionFlag) {
+        transitionFlag = false;
+        console.log('end');
+    }
+},false);
+或者
+var transitionFlag = true;
+wrap.addEventListener('webkitTransitionEnd',function(e){
+    if(e.target === this && transitionFlag) {
+        transitionFlag = false;
+        console.log('end');
+    }
+},false);
+
+
+
+
+
+
+
+
+
+（18）js中url地址中文乱码的问题（在IE中会出现问题，chrome中没事，firefox中未测）：
+
+使用encodeURI对整个url进行编码
+
+
+
+
+
+
+
+
+（19） 用css使文本两端对齐： https://segmentfault.com/a/1190000011336392
+
+
+
+
+
+
+
+
+
