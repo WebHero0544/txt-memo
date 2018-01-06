@@ -12,6 +12,9 @@ ng serve --prod --aot   //ÄÜ¼Ó¿ì´ò¿ªËÙ¶È
 
 
 
+
+
+
 £¨2£©ÒÔºó»á¿¼ÂÇ½«Ç°¶Ë´úÂë£¨client£©ºÍºó¶Ë´úÂë£¨server£©·ÅÔÚÒ»¸öÎÄ¼ş¼ĞÖĞ£¬È»ºó½«ÆäÌá½»µ½githubÔ¶¶Ë²Ö¿âÉÏ£¬ÔÚÕâ¶ùÊ¹ÓÃ@angular/cli´´½¨ºó£¬ÒÑ¾­Éú³ÉÁË±¾µØ
 git²Ö¿â£¬Èç¹ûÇ°ºó¶Ë´úÂë·ÅÔÚÒ»¸öÎÄ¼şÖĞ¾Í²»ĞèÒª¸Ã±¾µØ²Ö¿âÁË£¨É¾³ı.git, .gitignore£©£¬ÒªÔÚ¸ÃÎÄ¼ş¼ĞÏÂ½øĞĞgit init²Ù×÷£¬²¢ÅäÖÃ.gitignoreÎÄ¼ş£¬ÒÔ¹ıÂË²»ĞèÒªÌá½»µÄÎÄ¼ş
 
@@ -19,7 +22,12 @@ git²Ö¿â£¬Èç¹ûÇ°ºó¶Ë´úÂë·ÅÔÚÒ»¸öÎÄ¼şÖĞ¾Í²»ĞèÒª¸Ã±¾µØ²Ö¿âÁË£¨É¾³ı.git, .gitignore£
 
 
 
+
+
 £¨3£© Angular 2 HostListener & HostBinding     ------  https://segmentfault.com/a/1190000008878888
+
+
+
 
 
 
@@ -34,7 +42,36 @@ baseLayerType = 'street';
 µ±µã»÷Ñ¡ÖĞÊ±baseLayerType »áÓëµ±Ç°Ñ¡ÖĞµÄradioµÄvalueÏàµÈ£¬ÔÚÕâ¶ùÄ¬ÈÏÑ¡ÖĞµÚ¶ş¸öradio
 
 
+
+
+
+
+
+
 £¨5£©Angular 2 ViewChild & ViewChildren     https://segmentfault.com/a/1190000008695459    https://www.cnblogs.com/yw0219/p/7788633.html
+
+
+@ViewChild(ChildComponent) public child: ChildComponent;  //»ñÈ¡×Ó×é¼şµÄÊµÀı
+
+
+@ViewChild('greet') private greetDiv: ElementRef;  //»ñÈ¡×é¼şÖĞµÄÔªËØ£¬greetÊÇÄ£°åÒıÓÃ±äÁ¿    Àı£º <div #greet></div>
+
+@ViewChild('tpl', { read: ViewContainerRef }) tplVcRef: ViewContainerRef;   //
+
+±ğµÄÊ¹ÓÃ·½Ê½ÂÔ......
+
+@ViewChildren
+
+
+
+
+
+
+
+
+
+
+
 
 
 

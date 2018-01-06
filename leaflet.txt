@@ -1,0 +1,4 @@
+（1）var myIcon = L.divIcon({className: 'my-div-icon'});
+
+在使用divIcon时className中定义的样式不能定义position属性值除了absolute以外的任何值，因为在leaflet中已经定义该属性为position = absolute了，
+如果更改，marker在地图上的标记会出现异常，所有最好不要再设置position = absolute了

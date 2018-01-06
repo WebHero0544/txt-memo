@@ -331,6 +331,7 @@ wrap.addEventListener('webkitTransitionEnd',function(e){
 
 
 （19） 用css使文本两端对齐： https://segmentfault.com/a/1190000011336392
+（20）js Math.random():   https://www.cnblogs.com/javaScriptYang/p/5684797.html
 
 
 
