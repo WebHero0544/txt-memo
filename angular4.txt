@@ -68,6 +68,27 @@ baseLayerType = 'street';
 
 
 
+（6）EmbeddedViewRef， TemplateRef， ViewContainerRef
+
+微语法在ng-template上的使用：    <ng-template ngFor let-item [ngForOf]="items"></ng-template>
+
+相关文章：https://www.kancloud.cn/wujie520303/angular2_note/262955
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
