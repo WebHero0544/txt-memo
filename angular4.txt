@@ -65,9 +65,43 @@ baseLayerType = 'street';
 
 
 
+（6） 当在form表单中使用[(ngModel)]时，必须要定义name属性
+
+因为在内部，Angular 表单用它注册控件，Angular 创建了一些FormControl，并把它们注册到NgForm指令，再将该指令附加到<form>标签。 注册每个FormControl时，使用name属性值作为键值。
 
 
 
+
+
+
+
+（7）  菜单导航示例：
+
+toggleMenu = {
+    
+	list: [
+      
+		{
+        name: '基本信息'
+      },
+     
+		{
+        name: '权限分配'
+      }
+    
+	       ],
+    
+	index: 0
+  
+};
+
+ <div class="toggle-menu">
+       
+ 	<div *ngFor="let item of toggleMenu.list; let i=index" class="item" [class.active]="i==toggleMenu.index" (click)="toggleMenu.index=i">{{item.name}}</div>
+   
+ </div>
+<section [class.d-none]="toggleMenu.index != 0">xxxxxxx</section>
+<section [class.d-none]="toggleMenu.index != 1">xxxxxxx</section>
 
 
 
