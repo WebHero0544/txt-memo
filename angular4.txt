@@ -70,6 +70,27 @@ baseLayerType = 'street';
 因为在内部，Angular 表单用它注册控件，Angular 创建了一些FormControl，并把它们注册到NgForm指令，再将该指令附加到<form>标签。 注册每个FormControl时，使用name属性值作为键值。
 
 
+（6）EmbeddedViewRef， TemplateRef， ViewContainerRef
+
+微语法在ng-template上的使用：    <ng-template ngFor let-item [ngForOf]="items"></ng-template>
+
+相关文章：https://www.kancloud.cn/wujie520303/angular2_note/262955
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
