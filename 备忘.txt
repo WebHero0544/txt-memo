@@ -351,6 +351,95 @@ setInterval(() => {
 
 
 
+（22）Object.prototype.toString.call(某一数据类型的对象);  可用于判断数据类型
+
+例： const num = 2; Object.prototype.toString.call(num );  ---- 返回："[object Number]"
+
+例： const arr = [1,1]; Object.prototype.toString.call(arr );  ---- 返回："[object Array]"
+
+此外，function,date,string,boolean,undefined,null，RegExp等都能以该种方式判断类型
+
+注意： 由于Object对象原型下的toString()方法能被重写，所以在使用时请确保Object对象下的toString()方法没有被重写
+
+例： 
+Object.prototype.toString = function () {return 'xxx'}
+
+Object.prototype.toString.call(1)
+  ----返回："xxx"
+
+
+
+
+（23）typeof判断数据类型
+
+typeof只能判断出undefined, string, number, boolean, function类型，而没有办法区分array, abject, null, Date, RegExp等类型对象，他们都返回'object'
+
+
+
+
+
+
+（24） bluebird.js ：可以让让所有浏览器都支持 ES6 Promise 对象（主要针对ie）
+
+
+
+
+
+
+
+
+（25）得到一个  >=8 && <=40 的数
+
+  resize(delta: number) {
+    this.size = Math.min(40, Math.max(8, +this.size + delta));
+    this.sizeChange.emit(this.size);
+  }
+
+
+
+
+
+
+
+
+
+
+（26）Object.assign(target, sourse,....)   实现的是浅拷贝，即sourse中的属性值如果为引用数据类型时，在target中属性对应的值为sourse中的引用
+
+例： let  sourseObj = { name: 'dong', place: {x: 10, y: 20} }; let targetObj = {name: 'zhang'};
+
+执行 Object.assign(targetObj , sourseObj )后：targetObj 值为： {name: 'dong', place: {x: 10, y: 20}}；
+
+此时令sourseObj.place.x = 1000, 则targetObj.place.x的值为1000， 这就是浅拷贝，对于基本数据类型的属性值不存在引用问题，如：
+
+sourseObj.name = 'xxxx' 则 targetObj.name依然为 'dong'
+
+
+
+
+
+（27）深拷贝
+
+
+
+
+
+
+
+
+
+
+（28）break可用于跳出for循环，而return false则不能，forEach没法跳出循环
+
+
+
+
+
+
+
+
+
+
 
 
 

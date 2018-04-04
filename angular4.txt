@@ -3,7 +3,7 @@
 
 npm install @angular/cli -g
 
-ng new ÏîÄ¿Ãû --routing    //×Ô¶¯Éú³É´øÓĞÂ·ÓÉÅäÖÃµÄÏîÄ¿
+ng new ÏîÄ¿Ãû --routing --style=scss    //×Ô¶¯Éú³É´øÓĞÂ·ÓÉÅäÖÃµÄÏîÄ¿²¢ÇÒÊ¹ÓÃscss
 
 ½øÈëÏîÄ¿
 
@@ -36,8 +36,8 @@ git²Ö¿â£¬Èç¹ûÇ°ºó¶Ë´úÂë·ÅÔÚÒ»¸öÎÄ¼şÖĞ¾Í²»ĞèÒª¸Ã±¾µØ²Ö¿âÁË£¨É¾³ı.git, .gitignore£
 
 baseLayerType = 'street';
 
-<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl(map, $event)" value="moon" />
-<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl(map, $event)" value="street" />
+<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl($event)" value="moon" />
+<input name="baseLayerType" type="radio" [(ngModel)]="baseLayerType" (ngModelChange)="baseLayerControl($event)" value="street" />
 
 µ±µã»÷Ñ¡ÖĞÊ±baseLayerType »áÓëµ±Ç°Ñ¡ÖĞµÄradioµÄvalueÏàµÈ£¬ÔÚÕâ¶ùÄ¬ÈÏÑ¡ÖĞµÚ¶ş¸öradio
 
@@ -124,6 +124,53 @@ toggleMenu = {
 <section [class.d-none]="toggleMenu.index != 0">xxxxxxx</section>
 <section [class.d-none]="toggleMenu.index != 1">xxxxxxx</section>
 
+
+
+
+£¨8£©angular5 Custom Validators   ±íµ¥×Ô¶¨ÒåÑéÖ¤
+
+  ²Î¿¼ÎÄÕÂ£º    https://codecraft.tv/courses/angular/advanced-topics/basic-custom-validators/
+
+
+£¨9£©angular5 Custom Async Validators ±íµ¥×Ô¶¨ÒåÒì²½ÑéÖ¤
+
+  ²Î¿¼ÎÄÕÂ£º    https://alligator.io/angular/async-validators/
+
+
+
+£¨10£©angular5 animation
+
+²Î¿¼ÎÄÕÂ£ºhttps://www.cnblogs.com/flxy-1028/p/8012919.html
+
+
+
+
+
+
+£¨11£©ÕÆÎÕ<ng-content></ng-content>µÄÓÃ·¨
+²Î¿¼ÎÄÕÂ: https://segmentfault.com/a/1190000010730597
+
+
+
+
+
+
+£¨12£©angular ×é¼ş¼Ì³ĞºÍÄ£°å½»»»
+
+²Î¿¼ÎÄÕÂ£ºhttps://coryrylan.com/blog/angular-component-inheritance-and-template-swapping
+
+
+
+
+
+
+£¨12£©ÔÚ×é¼şÉÏÊµÏÖÊı¾İµÄË«Ïò°ó¶¨
+
+ÀıÈç£º<app-component [(attrName)]="variable"></app-component>
+
+ÔÚNG-ZORROÖĞµÄnz-switch×é¼şÖĞ¿ÉÓÃngModelÊµÏÖË«ÏòÊı¾İ°ó¶¨£¬»ØÍ·¿´¿´Ô´ÂëÊ±ÔõÃ´ÊµÏÖµÄ£¬´úÂëÊ¹ÓÃÈçÏÂ£º
+
+<nz-switch [(ngModel)]="switchValue"></nz-switch>
 
 
 
