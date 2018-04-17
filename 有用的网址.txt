@@ -2,4 +2,11 @@ http://www.cnblogs.com/2050/p/4198792.html    -------  Ç°¶Ë¹¹½¨¹¤¾ßgulpjsµÄÊ¹ÓÃ½
 
 http://www.ydcss.com/archives/424  ------gulp½Ì³ÌÖ®gulpÖĞÎÄAPI
 
-https://www.windy.com
+https://www.windy.com  ------  map about this weather
+
+
+
+
+http://www.cnblogs.com/xiaohuochai/    ------ ½øÈë¸ÃÍøÖ·£¬ËÑË÷svg
+
+http://www.zhangxinxu.com/wordpress/2014/06/svg-path-d-polyline-points-bezier-curves/    ------ svg
