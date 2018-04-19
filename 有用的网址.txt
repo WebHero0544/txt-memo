@@ -10,3 +10,8 @@ https://www.windy.com  ------  map about this weather
 http://www.cnblogs.com/xiaohuochai/    ------ 进入该网址，搜索svg
 
 http://www.zhangxinxu.com/wordpress/2014/06/svg-path-d-polyline-points-bezier-curves/    ------ svg
+
+
+
+
+https://www.oreilly.com/ -------- 一个外国学习网站
