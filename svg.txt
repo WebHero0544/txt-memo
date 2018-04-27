@@ -7,3 +7,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths
 
 （1）在对svg转化为图片时，不要用class定义元素的样式，否则在图片上不会显示class里定义的样式，只能使用行内样式（使用统一的style="......." 或  分开写）
 
+
+
+
+(2) 在写path时 M 后的整数值加0.5会使画出的线更细腻，比如 <path d="M100.5,200.5H400">
