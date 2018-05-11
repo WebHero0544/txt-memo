@@ -1,0 +1,19 @@
+
+（1）可参考学习的网站：
+https://h5.m.taobao.com/  ------  翻看该网站的代码
+http://caibaojian.com/  ------  一个前端开发博客网站
+
+
+
+
+
+
+
+
+（2）rem
+ http://caibaojian.com/t/rem
+
+
+
+(3) 纯CSS3使用vw和vh视口单位实现自适应
+http://caibaojian.com/vw-vh.html
