@@ -9,3 +9,38 @@ https://www.jianshu.com/u/d01a391b4a74 ------
 （2）操作符：
 
 switchMap ------ 类似于 mergeMap，但是当源 Observable 发出值时会取消内部 Observable 先前的所有订阅 。
+
+public mapTo(value: any): Observable ------ 将源 Observable 发出值都映射成一个相同的任意类型的值， 返回新Observable
+
+public map(project: function(value: T, index: number): R, thisArg: any): Observable<R> ------ 将源 Observable 发出值映射成任意类型的值（不一定相同了）， 返回新Observable， 其实用法跟Array.prototype.map一样
+
+
+
+
+
+
+（3）Observable
+
+
+bindCallback：将一个回调函数转化为一个Observable
+例：
+var x = function (x, cb) {cb(x)};  //函数x最后一个参数必须是一个函数并且要在函数x里面调用
+Rx.Observable.bindCallback(x)(5).subscribe(data => {console.log(data)})
+
+
+race：在多个Observable中返回最先发出值得Observable
+例：
+Rx.Observable.race(Rx.Observable.of('delay100').delay(100),Rx.Observable.of('delay50').delay(50)).subscribe(d => {console.log(d)}) ------ 'delay50'
+
+
+
+
+
+
+
+
+
+
+
+
+
