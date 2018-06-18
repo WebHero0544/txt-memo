@@ -1,0 +1,10 @@
+（1）针对@angular/cli@6.0.8
+
+在启动服务时，即ng serve,如果出现95% emitting LicenseWebpackPlugin的问题的解决办法：
+
+删除node-modules,在用npm install 安装，不要使用cnpm
+
+
+
+
+（2）我用@angular/cli@6.0.8创建一个angular6项目使用的命令：ng new appName --routing --style scss

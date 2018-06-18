@@ -33,3 +33,28 @@ npm cache clean 清理缓存
 本地：npm list --depth 0    （如果没有参数--depth 0则本地npm包依赖的npm包也会打印出来，太多没法看）
 
 
+
+
+（4）
+$ npm config --help     ------查看npm config 下有哪些可以使用的命令
+npm config set <key> <value>  ------设置某一项配置
+npm config get [<key>]  ------查看某一项配置
+npm config delete <key>  ------删除某一项配置
+npm config list     ------"npm config ls -l" to show all defaults.
+npm config edit  ------编辑某一项配置
+npm set <key> <value> ==  npm config set <key> <value>
+npm get [<key>] ==  npm config get [<key>]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
