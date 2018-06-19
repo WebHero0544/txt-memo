@@ -1,0 +1,5 @@
+(1)请求参数中含有中文乱码
+
+在含有中文的地方用调用encodeURIComponent进行编码
+
+例：'http://localhost:3000/services/api/meteodata/data?elements=' + encodeURIComponent('可见光')

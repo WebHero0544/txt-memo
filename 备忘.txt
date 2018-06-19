@@ -470,6 +470,10 @@ sourseObj.name = 'xxxx' 则 targetObj.name依然为 'dong'
 
 
 
+  (32) $img.attr('src', data.data.imgPath.replace('/proxy/', 'http://'));  //带上协议才会显示图片
+
+
+
 
 
 

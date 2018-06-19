@@ -1,6 +1,4 @@
-http://www.cnblogs.com/2050/p/4198792.html    -------  前端构建工具gulpjs的使用介绍及技巧 
 
-http://www.ydcss.com/archives/424  ------gulp教程之gulp中文API
 
 https://www.windy.com  ------  map about this weather
 
@@ -18,3 +16,6 @@ https://www.oreilly.com/ -------- 一个外国学习网站
 
 
 https://developer.mozilla.org/zh-CN/  ------- 火狐开发者文档
+
+
+https://segmentfault.com -------

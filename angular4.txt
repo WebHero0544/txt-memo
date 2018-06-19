@@ -24,9 +24,7 @@ git²Ö¿â£¬Èç¹ûÇ°ºó¶Ë´úÂë·ÅÔÚÒ»¸öÎÄ¼şÖĞ¾Í²»ĞèÒª¸Ã±¾µØ²Ö¿âÁË£¨É¾³ı.git, .gitignore£
 
 
 
-£¨3£© Angular 2 HostListener & HostBinding     ------  https://segmentfault.com/a/1190000008878888
-
-
+£¨3£© Angular 2 HostListener & HostBinding     ------  https://segmentfault.com/a/1190000008878888   ÕâÁ½¸öÊôĞÔ×°ÊÎ¿ÉÒÔÓÃÔÚÖ¸ÁîºÍ×é¼şÖĞ
 
 
 
@@ -179,6 +177,57 @@ toggleMenu = {
 £¨13£©CSS ±ê×¼ÖĞÓÃÓÚ "´Ì´© Shadow DOM" µÄ×éºÏÆ÷ÒÑ¾­±»·ÏÆú£¬²¢½«Õâ¸öÌØĞÔ´ÓÖ÷Á÷ä¯ÀÀÆ÷ºÍ¹¤¾ßÖĞÒÆ³ı¡£ 
 Òò´Ë£¬ÎÒÃÇÒ²½«ÔÚ Angular ÖĞÒÆ³ı¶ÔËüÃÇµÄÖ§³Ö£¨°üÀ¨ /deep/¡¢>>> ºÍ ::ng-deep£©¡£ 
 Ä¿Ç°£¬½¨ÒéÏÈÍ³Ò»Ê¹ÓÃ ::ng-deep£¬ÒÔ±ã¼æÈİ½«À´µÄ¹¤¾ß¡£
+
+
+
+
+
+
+
+
+
+(14) @HostListenerºÍ@HostBindingµÄÁ½ÖÖÊ¹ÓÃ·½Ê½£ºÓÃÓÚ¸øËŞÖ÷ÔªËØ°ó¶¨ÊÂ¼şºÍÊôĞÔ
+
+import { Directive, ElementRef, HostListener, Input, Renderer2, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+
+@Directive({
+    selector: '[myDragElement]',
+    host: {
+        //·½Ê½Ò»
+        '[style.color]': 'color',  //ÓëHostBinding('style.color') color = '#fff';ÊÇµÈ¼ÛµÄ
+        // ·½Ê½Ò»
+        '(click)': 'onClick($event.target)'  //Óë@HostListener('click', ['$event.target']) onMouseUp(target) {}ÊÇµÈ¼ÛµÄ
+    }
+})
+export class DragElementDirective {
+
+    // @Input('myDragElement') Options: Options;  //¸øÖ¸ÁîÃûÖ¸¶¨±ğÃûÎªOptions£¨¸üÈİÒ×ÔÄ¶Á £©
+
+    color = '#fff';
+
+    constructor(
+        private el: ElementRef,  //ËŞÖ÷ DOM ÔªËØ
+        private renderer2: Renderer2
+    ) { }
+
+    ngOnInit() { }
+
+    ngAfterViewInit() {}
+
+    ngOnDestroy() {}
+
+    // ·½Ê½¶ş
+    @HostBinding('class.pressed') isPressed: boolean;
+
+    other = 'other'
+    // ·½Ê½¶ş
+    // HostListenerµÄµÚ¶ş¸ö²ÎÊı±íÊ¾Ïò¼àÌıµÄ»Øµ÷º¯Êı(onMouseDown)ÖĞ´«µİµÄ²ÎÊıÊı×é
+    @HostListener('mousedown', ['$event', 'other']) onMouseDown(event, other) {
+        console.log(event);
+        console.log(other);
+    }
+
+}
 
 
 

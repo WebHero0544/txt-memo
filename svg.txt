@@ -10,4 +10,9 @@ https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial/Paths
 
 
 
-(2) 在写path时 M 后的整数值加0.5会使画出的线更细腻，比如 <path d="M100.5,200.5H400">
+  (2) 在写path时 M 后的整数值加0.5会使画出的线更细腻，比如 <path d="M100.5,200.5H400">
+
+
+
+（3）svg transform 属性的使用方式：
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
