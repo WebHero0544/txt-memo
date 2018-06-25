@@ -477,6 +477,118 @@ sourseObj.name = 'xxxx' 则 targetObj.name依然为 'dong'
 
 
 
+（33）js 如何一次性删除数组中的多个元素？ 
+
+用for循环或者forEach遍历数组的话，在方法体内部splice都得不到正确的结果，解决方法是使用逆向循环
+
+方法一，用 filter
+var arr = [2, 3, 5, 7];
+arr = arr.filter(item => item !== 5);
+
+方法二，用逆向循环
+var arr = [2, 3, 5, 7];
+for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === 5) {
+        arr.splice(i, 1);
+    }
+}
+
+
+
+
+
+
+
+
+（34）将数据中的无效值先去掉再排序， 最后再将无效值放在排序好的数据的后面
+
+
+  /**
+   * 纯洁的排序，无效值不参于排序，并将其放在排序后的数组后面(对于对象数组而言)
+   * 
+   * @param arr 要排序的数组
+   * @param sortKey 要排序的元素的键
+   * @param sortType 直接用string排序还是用number排序  string | number
+   * @param isAsc 是否升序 默认true
+   */ 
+  pureSort(arr: any[], sortKey: string, sortType: string, isAsc: boolean = true) {
+    let inVoid = [];
+    for (let i = arr.length - 1; i >= 0; i--) {  //使用逆向循环才能删除要排除的元素
+      const el = arr[i];
+      const sortItem = el[sortKey];
+      if (sortItem == '' || sortItem == null || sortItem == undefined || sortItem == '9999') {
+        inVoid.push(el);
+        arr.splice(i, 1);
+      }
+    }
+    arr = arr.sort((a, b) => {
+      let la, lb;
+      if (sortType == 'number') {
+        la = parseFloat(a[sortKey]);
+        lb = parseFloat(b[sortKey]);
+        return isAsc ? (lb - la) : (la - lb);
+      }else {
+        la = a[sortKey] + '';
+        lb = b[sortKey] + '';
+        return  isAsc ? lb.localeCompare(la) : la.localeCompare(lb);
+      }
+    });
+
+    arr.push(...inVoid.reverse());
+  }
+
+
+
+
+
+
+
+
+
+
+
+（35）对象数组多条件排序
+var arr= [ 
+    { 'sortNo': 2, 'sortNo2': 3},
+    { 'sortNo': 1, 'sortNo2': 3},
+    { 'sortNo': 5, 'sortNo2': 3},
+    { 'sortNo': 6, 'sortNo2': 3},
+    { 'sortNo': 7, 'sortNo2': 3},
+    { 'sortNo': 3, 'sortNo2': 4},
+    { 'sortNo': 3, 'sortNo2': 2},
+    { 'sortNo': 3, 'sortNo2': 1},
+    { 'sortNo': 3, 'sortNo2': 3},
+    { 'sortNo': 8, 'sortNo2': 3},
+    { 'sortNo': 4, 'sortNo2': 1},
+    { 'sortNo': 4, 'sortNo2': 2}
+];
+arr.sort(function(a, b){
+    if (a.sortNo === b.sortNo) {
+            return b.sortNo2 - a.sortNo2;
+    } else {
+            return a.sortNo - b.sortNo;
+    }
+});
+console.log(arr); 
+
+//输出结果
+//{ 'sortNo': 1, 'sortNo2': 3}
+//{ 'sortNo': 2, 'sortNo2': 3}
+//{ 'sortNo': 3, 'sortNo2': 4}
+//{ 'sortNo': 3, 'sortNo2': 3}
+//{ 'sortNo': 3, 'sortNo2': 2}
+//{ 'sortNo': 3, 'sortNo2': 1}
+//{ 'sortNo': 4, 'sortNo2': 2}
+//{ 'sortNo': 4, 'sortNo2': 1}
+//{ 'sortNo': 5, 'sortNo2': 3}
+//{ 'sortNo': 6, 'sortNo2': 3}
+//{ 'sortNo': 7, 'sortNo2': 3}
+//{ 'sortNo': 8, 'sortNo2': 3}   
+
+
+
+
+
 
 
 
