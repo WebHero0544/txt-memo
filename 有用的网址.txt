@@ -11,11 +11,15 @@ http://www.zhangxinxu.com/wordpress/2014/06/svg-path-d-polyline-points-bezier-cu
 
 
 
-
 https://www.oreilly.com/ -------- 一个外国学习网站
 
 
 https://developer.mozilla.org/zh-CN/  ------- 火狐开发者文档
 
 
-https://segmentfault.com -------
+
+https://segmentfault.com ------- 开发者论坛
+
+
+
+devdocs.io ------  有许多语言和框架的使用教程（英文）

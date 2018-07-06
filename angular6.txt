@@ -2,9 +2,29 @@
 
 在启动服务时，即ng serve,如果出现95% emitting LicenseWebpackPlugin的问题的解决办法：
 
-删除node-modules,在用npm install 安装，不要使用cnpm
+删除node-modules,再用npm install 安装，不要使用cnpm
 
 
 
 
 （2）我用@angular/cli@6.0.8创建一个angular6项目使用的命令：ng new appName --routing --style scss
+
+
+
+
+
+（3）请求文件（xml | html ....）的配置：this.http.get('文件路径', {responseType: 'text'});
+
+
+
+
+
+（4）操作dom的方式：@ViewChild('模板引用变量名称')，ElementRef， Renderer2
+
+@ViewChild : https://segmentfault.com/a/1190000008695459
+
+
+
+
+（5）对于请求文件
+this.http.get( '文件路径', { responseType: 'text' })
