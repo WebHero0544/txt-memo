@@ -8,6 +8,54 @@ http://www.zhangxinxu.com/wordpress/2012/05/getcomputedstyle-js-getpropertyvalue
 
 
 
-(2)  原生 JS 获取元素的尺寸和位置 
+ (2)  原生 JS 获取元素的尺寸和位置 
 
 https://segmentfault.com/a/1190000007687940
+
+
+
+
+
+
+（3）array reduce
+
+数值型数组的累加
+[1, 2, 3].reduce((sum, el) => sum + el, 0)     或   [1, 2, 3].reduce((sum, el) => sum + el)；
+
+对象型数组的累加
+[{num: 1, ind: 2}, {num: 1, ind: 2}, {num: 1, ind: 2}].reduce((sum, el) => {sum.num = sum.num + el.num;sum.ind = sum.ind + el.ind; return sum}, {num: 0, ind: 0})
+或
+[{num: 1, ind: 2}, {num: 1, ind: 2}, {num: 1, ind: 2}].reduce((sum, el) => {sum.num = sum.num + el.num;sum.ind = sum.ind + el.ind; return sum})
+
+
+
+
+
+（4）promise 串行请求（可改造成可以控制并发数的串行请求）
+
+    layerDef._loadDisposable = this.backendService.getData('./assets/datas/fi/airport.json').map(res => res.json()).mergeMap((res: any) => {
+      let promiseQueue:any = Promise.resolve(null);
+      res.features.forEach((element, index) => {
+        promiseQueue = promiseQueue.then((data) => {  //then方法会返回新的promise,所以需要存储最新的
+          if (data && data.data) {
+            dataRender(data.data);
+          }
+
+          if (!this.amdarCancel) {  //由于rxjs不知道为什么这里订阅取消不掉，才采用这种不妥的方式来取消订阅
+            return this.backendService.getData(url+ '&airport=' + element.properties.name).map(res => res.json()).toPromise();
+          }
+
+          return null;
+        })
+      });
+      promiseQueue.catch((err) => console.error(err));
+
+      return promiseQueue;
+    }).subscribe(
+      (data: any) => {
+        this.missionService.addloading(false);
+      },
+      err => {
+        this.missionService.addloading(false);
+      }
+    );

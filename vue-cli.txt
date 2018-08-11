@@ -1,5 +1,13 @@
 @vue/cli3.0.0-rc.5
 
+安装：  yarn global add @vue/cli， 创建：vue create my-project
+
+
+
+
+
+
+
 （1）我用yarnan安装了最新的@vue/cli,显示的是3.x.x版本，但我用vue -V 查看版本却是2.8.1,然后我用yarn卸载重新安装后，
 还是一样，最后找出来的原因是我以前用npm安装了vue-cli2.8.1
 
@@ -8,3 +16,9 @@
 
 （2）在vue create app-name时在git-bash中不知道怎么交互，最后在cmd中完成了交互，最终创建完成了项目，其中在git-bash
 中按上下键无法切换，不知道具体的快捷键是什么，但在cmd中可以
+
+
+
+
+
+（3）
