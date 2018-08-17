@@ -34,9 +34,6 @@ this.http.get( '文件路径', { responseType: 'text' })
 
 
 
-
-
-
 （6）NgTemplateOutlet
 
 
@@ -49,6 +46,61 @@ this.http.get( '文件路径', { responseType: 'text' })
 
 
 （6）ng-template详解：https://toddmotto.com/angular-ngfor-template-element
+
+
+
+
+
+
+（7）一个属性可以同时使用多个属性装饰器（下面的代码来自于组件）
+
+  // dbsChecked 同时用了两个属性装饰器，表示当输入属性的值为true时，在组件的宿主元素上加上名为active的class样式，当false时，则去掉名为active的class样式
+  @Input()
+  @HostBinding('class.active') dbsChecked: boolean = false;
+
+
+
+
+
+
+
+（8）[ngStyle]="{'background-image': 'url('+ dbsRightTop +')'}"    这样绑定可以避免出现安全性的警告
+
+
+
+
+
+
+
+（9）async函数的简单使用方式以及需要注意的事项：
+export class DropForecastService {
+
+  constructor(
+    public http: HttpClient,
+  ) {
+    this.asyncFn()
+    .then(function (data) {
+      console.log(data);
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+  }
+
+  // async函数中 当await后面的promise返回结果时才会继续执行后面的代码，捕获错误时要用throw抛出异常，不然catch不会被调用
+  async asyncFn () {
+    try {
+      const f1: any = await this.http.get('./assets/demo.json').toPromise();
+      const f2: any = await this.http.get('./assets/demo.json', {params: f1}).toPromise();
+      return this.http.get('./assets/demo.json', {params: f2}).toPromise();
+    } catch (error) {
+      // new Error(error);  //这样任然会调用then,而catch不会被调用
+      throw new Error(error);
+    }
+
+  };
+
+}
 
 
 
