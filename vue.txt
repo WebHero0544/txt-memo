@@ -1,0 +1,4 @@
+vue2.x
+
+
+(1）侦听器(watch)不仅可以侦听data中的属性，还可以侦听computed中的属性（props中的属性应该也能）
