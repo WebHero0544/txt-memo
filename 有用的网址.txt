@@ -29,3 +29,12 @@ https://salttiger.com/ ------ 每天一本编程书，每天进步一点点
 
 
 https://antv.alipay.com  ------  蚂蚁数据可视化
+
+
+
+https://developer.mozilla.org/zh-CN/    ------ 源于开发者，服务开发者。
+
+
+https://www.tslang.cn/  ------  JavaScript的超集。中文
+
+http://www.typescriptlang.org/  ------  JavaScript的超集。英文

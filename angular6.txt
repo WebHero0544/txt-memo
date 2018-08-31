@@ -132,6 +132,7 @@ animations: [
 
 
 
+£¨11£©ContentChild    $implicit
 
 
 

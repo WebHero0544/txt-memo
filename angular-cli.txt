@@ -35,8 +35,13 @@ ng serve --open
 
 
 
-（6）创建一个内联样式和模板的组件：ng generate component 组件名（前面可以有路径） --inline-style --inline-template
- 简写：ng g component 组件名（前面可以有路径） -s -t
+（6）创建一个自定义前缀的内联样式和模板的组件（并确认属于哪个模块）：ng generate component 组件名（前面可以有路径） --inline-style --inline-template --prefix base --module base
+ 简写：ng g component 组件名（前面可以有路径） -s -t -p base -m base
+
+
+
+
+
 
 
 
