@@ -40,7 +40,14 @@ mongod --remove   ------ 删除服务（在E:\mongodb\bin的docs窗口下执行该命令）
 
 
 <二>连接mongodb
-进入E:\mongodb\bin目录，执行mongo命令，以连接mongodb
+进入E:\mongodb\bin目录，执行mongo命令，以操作mongodb数据库，但是每次都进入该目录去执行mogo shell(即操作mongodb
+数据库)太过麻烦,此时可以将该目录添加到环境变量，这样就可以打开cmd便可以使用mongo shell,方法是：复制mongodb的可执行文件的目录路径，在名为Path的环境变量中追加该路径，保存后即可使用
+
+
+
+
+<三>最后
+通过上面的配置，我可以这样启动并操作mongodb数据库：打开cmd ,执行net start MongoDB启动服务，然后执行mongo去操作数据库
 
 
 
