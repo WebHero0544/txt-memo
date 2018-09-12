@@ -138,6 +138,74 @@ animations: [
 
 
 
+（12）使用<ng-template></ng-template>来实现递归循环
+
+父组件传递给子组件（即要实现的递归组件）的数据：
+
+    introduceNavList = [
+      {
+        domId: 'content1',
+        name: '形态特征'
+      },
+      {
+        domId: 'content2',
+        name: '黄山风景区自然概况'
+      },
+      {
+        domId: 'content3',
+        name: '黄山杜鹃花资源价值',
+        children: [
+          {
+            domId: 'content3_1',
+            name: '美学观赏价值'
+          },
+          {
+            domId: 'content3_2',
+            name: '药用治疗价值'
+          },
+          {
+            domId: 'content3_3',
+            name: '科学研究价值'
+          },
+          {
+            domId: 'content3_4',
+            name: '旅游经济价值'
+          },
+        ]
+      },
+      {
+        domId: 'content4',
+        name: '形态特征'
+      },
+    ];
+
+
+子组件（即要实现的递归组件）接收父组件传递过来的数据：
+
+@Input('baseList') navList = [];
+
+
+
+
+在子组件模板中实现递归：
+
+
+<ng-container *ngTemplateOutlet="tpl; context: {navList: navList}"></ng-container>  //ngTemplateOutlet即显示名为tpl的模板
+
+<ng-template #tpl let-navList="navList">
+    <ul class="nav-box">
+        <li class="nav-item" *ngFor="let item of navList">
+            <a>{{item.name}}</a>
+            <ng-container *ngIf="item.children && item.children.length">
+                <ng-container *ngTemplateOutlet="tpl; context: {navList: item.children}"></ng-container>  //在名为tpl模板中有条件的显示自己
+            </ng-container>
+        </li>
+    </ul>
+</ng-template>
+
+
+
+
 
 
 

@@ -1,7 +1,8 @@
+@angular/cli 6.0.8
+
+
 
 （1）创建ng项目：
-
-@angular/cli 6.0.8
 
 npm install @angular/cli -g
 
@@ -11,7 +12,7 @@ ng set --global packageManager=cnpm  （设置后以后再用ng new创建项目时会自动用cnp
 
 cd 项目名
 
-cnpm install  (第一次用ng new创建项目时需手动执行， 以后无需再用)
+npm install
 
 ng serve --open
 
@@ -37,6 +38,37 @@ ng serve --open
 
 （6）创建一个自定义前缀的内联样式和模板的组件（并确认属于哪个模块）：ng generate component 组件名（前面可以有路径） --inline-style --inline-template --prefix base --module base
  简写：ng g component 组件名（前面可以有路径） -s -t -p base -m base
+
+
+
+
+
+
+
+
+
+
+
+@angular/cli 6.1.5
+
+（1）ng new hsForecastSystem --routing --style scss
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
