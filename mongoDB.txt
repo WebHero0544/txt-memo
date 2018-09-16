@@ -41,13 +41,73 @@ mongod --remove   ------ 删除服务（在E:\mongodb\bin的docs窗口下执行该命令）
 
 <二>连接mongodb
 进入E:\mongodb\bin目录，执行mongo命令，以操作mongodb数据库，但是每次都进入该目录去执行mogo shell(即操作mongodb
-数据库)太过麻烦,此时可以将该目录添加到环境变量，这样就可以打开cmd便可以使用mongo shell,方法是：复制mongodb的可执行文件的目录路径，在名为Path的环境变量中追加该路径，保存后即可使用
+数据库)太过麻烦,此时可以将该目录添加到环境变量，这样就可以打开cmd便可以使用mongo shell以及mongod shell了,方法是：复制mongodb的可执行文件的目录路径，在名为Path的环境变量中追加该路径，保存后即可使用
 
 
 
 
-<三>最后
-通过上面的配置，我可以这样启动并操作mongodb数据库：打开cmd ,执行net start MongoDB启动服务，然后执行mongo去操作数据库
+<三>对上面的总结
+通过上面的配置，我可以这样启动并操作mongodb数据库：打开cmd（要有管理员权限） ,执行net start MongoDB启动服务，然后执行mongo去操作数据库
+
+
+
+
+
+
+
+<四>创建用户
+
+（1）先关闭auth认证, 用net start MongoDB(如果配置文件里启用了auth，要先改为false)命令启动mongodb，以使mongodb在
+无auto的状态下启动
+
+（2）首先要创建一个管理用户的用户（userAdminAnyDatabase, 只在admin数据库中可用，赋予用户所有数据库的userAdmin权限
+,即只能新建数据库并添加用户，或修改以有数据库的用户，userAdminAnyDatabase 权限只是针对用户管理的，对其他是没有权限的），创建在名为admin的库里，以管理所有用户，如下：
+
+use admin
+db.createUser({
+	user: 'admin'，
+	pwd: 'admin',
+	roles: [{ role: 'userAdminAnyDatabase', db: 'admin' }]
+})
+
+（3）刚建立了 userAdminAnyDatabase 角色，用来管理用户，可以通过这个角色来创建、删除用户。验证：需要开启auth参数（该参数可以在配置文件中配置，或者在doc窗口执行：mongod -f E:\mongodb\etc\mongod.conf --auth）登录方式如下:
+use admin
+db.auth('admin', 'admin')
+
+登陆后就可以管理用户了
+
+
+
+（4）创建某一个数据库的超级管理员用户,该用户可以对该数据库做任何操作
+use shopping
+db.createUser({user:'dong',pwd:'dong',roles:[{role:'dbOwner',db:'shopping'}]})
+
+
+（5）后续请看：https://www.cnblogs.com/zhoujinyi/p/4610050.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
