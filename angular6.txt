@@ -213,5 +213,18 @@ animations: [
 
 
 
+（13）import { DomSanitizer } from '@angular/platform-browser';     
+
+DomSanitizer 可以把值净化为在不同 DOM 上下文中的安全内容，来帮你防范跨站脚本攻击（XSS）类的安全问题。
+
+
+
+
+
+
+
+
+
+
 
 

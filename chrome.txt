@@ -1,0 +1,6 @@
+（1）常用扩展程序
+
+fireShot ------  网页截图
+
+JSON Formatter ------  json 格式化
+
