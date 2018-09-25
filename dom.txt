@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 （1）HTML中常见的各种位置距离以及dom中的坐标讨论     ------   https://www.cnblogs.com/liuyuqing/p/4520470.html
+=======
+（1）offset
+https://segmentfault.com/a/1190000007179236
+>>>>>>> c3972b2c5617f71ad52425ca42ae7923cd0dd042

@@ -1,4 +1,15 @@
 vue2.x
 
 
-(1）侦听器(watch)不仅可以侦听data中的属性，还可以侦听computed中的属性（props中的属性应该也能）
+  (1）侦听器(watch)不仅可以侦听data中的属性，还可以侦听computed中的属性（props中的属性应该也能）
+
+
+
+
+（2）在vue中使用typescript: 在官网的生态系统>vue资源中可以找到相关教程
+
+一个简单示例地址：https://segmentfault.com/a/1190000011744210?utm_source=tuicool&utm_medium=referral
+
+
+
+（3）异步组件，最好在大型的项目中使用，小型项目无需使用，因为会增加http请求

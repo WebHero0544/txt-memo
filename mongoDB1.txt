@@ -23,6 +23,10 @@ db.userInfo.insert({name: 'dong'})  ------  向当前数据库名为userInfo的集合中添加
 
 db.userInfo.drop()  ------  删除当前数据库中名为userInfo的集合
 
+show users ------  查看当前库下的用户
+
+db.system.users.find().pretty() ------查看系统所有用户
+
 
 
 <三>mongodb crud (增删改查，create read update delete)
