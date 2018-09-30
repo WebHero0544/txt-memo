@@ -72,6 +72,40 @@ https://halistechnology.com/2015/05/28/use-javascript-to-export-your-data-as-csv
 
 
 
+£¨6£©Ò³Ãæ¹ö¶¯
+
+var toTop = document.documentElement.scrollHeight;
+
+
+var timer = setInterval(function (){
+	if(toTop<0) {clearInterval(timer)}
+	document.documentElement.scrollTo(0, toTop-=10);
+},5);
+
+
+
+https://blog.csdn.net/github_39598787/article/details/80310997
+
+https://blog.csdn.net/white__cat/article/details/55188948
+
+https://blog.csdn.net/houyanhua1/article/details/79579714
+
+https://blog.csdn.net/L25000/article/details/46343665
+
+https://blog.csdn.net/zhq426/article/details/5755825
+
+
+
+
+
+
+£¨7£©offsetTop
+
+
+
+
+
+
 
 
 
