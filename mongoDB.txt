@@ -58,10 +58,10 @@ mongod --remove   ------ 删除服务（在E:\mongodb\bin的docs窗口下执行该命令）
 <四>创建用户
 
 （1）先关闭auth认证, 用net start MongoDB(如果配置文件里启用了auth，要先改为false)命令启动mongodb，以使mongodb在
-无auto的状态下启动
+无auth的状态下启动
 
 （2）首先要创建一个管理用户的用户（userAdminAnyDatabase, 只在admin数据库中可用，赋予用户所有数据库的userAdmin权限
-,即只能新建数据库并添加用户，或修改以有数据库的用户，userAdminAnyDatabase 权限只是针对用户管理的，对其他是没有权限的），创建在名为admin的库里，以管理所有用户，如下：
+,即只能新建数据库并添加用户，或修改已有数据库的用户，userAdminAnyDatabase 权限只是针对用户管理的，对其他是没有权限的），创建在名为admin的库里，以管理所有用户，如下：
 
 use admin
 db.createUser({

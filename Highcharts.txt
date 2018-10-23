@@ -7,3 +7,17 @@ Highcharts
 
 
 官网：https://www.hcharts.cn
+
+
+
+
+（1）多个箱线图在x轴上无法对齐的原因在于在series配置中默认启用了分组，即grouping = true, 使grouping = false即可
+
+
+
+
+
+（2）在angular2+中怎么引入导出功能
+import * as Highcharts from 'highcharts';
+require('highcharts/modules/exporting.src')(Highcharts)
+require('highcharts/modules/offline-exporting.src')(Highcharts)
