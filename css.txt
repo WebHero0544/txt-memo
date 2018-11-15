@@ -138,7 +138,14 @@ user-select:none;
 
 
 
+（5）table的两个重要属性
+border-spacing: 0;     ------  设置单元格之间的空隙
+border-collapse:collapse;  ------  合并单元格边框
 
+
+
+（6）css3 loading 动画
+http://www.17sucai.com/pins/demo-show?id=12579
 
 
 

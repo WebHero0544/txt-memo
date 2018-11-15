@@ -110,6 +110,30 @@ https://blog.csdn.net/zhq426/article/details/5755825
 
 
 
+（8）js判断是否是数字
+
+    // 判断一个字符串是否为数字
+    isNumber(str: string) {
+        // [+-]?  匹配一个加或一个减或不匹配
+        //(0|[1-9][0-9]*)  只匹配一个0 或 匹配以非零开始的整数
+        //(\.[0-9]+)?  /要么不匹配要么匹配一个.并且后面跟有数字
+        return /^[+-]?(0|[1-9][0-9]*)(\.[0-9]+)?$/.test(str);
+    }
+
+    // 强化isNaN函数,以判断是否为非数字
+    isNaN(val: any) {
+        // /^\s*$/ 匹配空字符
+        if (/^\s*$/.test(val) || val === null) return true;
+        return isNaN(val);
+    }
+
+
+
+
+
+
+
+
 
 
 
