@@ -21,4 +21,4 @@
 
 
 
-（3) 
+（3) vue create app-name   ------   使用vue-cli创建一个项目

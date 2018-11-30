@@ -233,6 +233,12 @@ https://segmentfault.com/a/1190000013972657
 
 
 
+£®16£©angular violation   ------  angular ø®∂ŸŒ Ã‚
+
+https://github.com/angular/angular/issues/21910
+
+
+
 
 
 
