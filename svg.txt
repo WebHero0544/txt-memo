@@ -18,3 +18,39 @@ https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial
 
 （4）svg transform 属性的使用方式：
 https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+
+
+
+
+（5）svg path   ------   https://www.zhangxinxu.com/wordpress/2014/06/deep-understand-svg-path-bezier-curves-command/
+
+
+
+
+
+（6）https://www.cnblogs.com/xiaohuochai/p/7478595.html
+
+var svgEl = document.createElementNS('http://www.w3.org/2000/svg', tagName);
+svgEl.setAttributeNS('http://www.w3.org/1999/xlink', key, attr[key]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
