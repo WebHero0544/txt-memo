@@ -35,7 +35,7 @@ Rx.Observable.race(Rx.Observable.of('delay100').delay(100),Rx.Observable.of('del
 
 
 
-
+（4）https://segmentfault.com/a/1190000012252368?utm_source=tag-newest     --------  一个还不错的文章
 
 
 
