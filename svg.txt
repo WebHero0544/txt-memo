@@ -4,6 +4,8 @@ http://www.w3school.com.cn/svg/index.asp
 
 https://developer.mozilla.org/zh-CN/docs/Web/SVG/Tutorial
 
+https://www.w3cplus.com/svg/svg-animation-guide.html
+
 
 
 

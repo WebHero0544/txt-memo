@@ -131,6 +131,22 @@ https://blog.csdn.net/zhq426/article/details/5755825
 
 
 
+（9）巧用 || 逻辑运算符
+
+  var name = obj.name;  //假定obj对象下的name属性不一定存在，但是我想保正如果不存在时name值为空字符串;
+
+例1：name = name || '';
+例2:  name = name ? name : '';
+
+想要的输出：var domStr = '<img src="./xxx.png" title="'+ name +'">';
+
+由上可见例1比例2更简单
+
+
+
+
+
+
 
 
 

@@ -22,7 +22,7 @@ https://blog.csdn.net/naipeng/article/category/6584421
 （2）得到不重叠的数据
 
 var page = {
-  map: leafletMap,  //地图对象
+  map: leafletMap,  //地图实例
   // 得到不相交的数据
   getNoIntersectData: function(data) {
     var self = this;
@@ -68,3 +68,12 @@ var page = {
     return result;
   }
 }
+
+
+
+
+
+（3）写leaflet插件的方式： http://0x0803.top/2018/06/05/gis-leaflet-tutorials-extends/
+
+
+
