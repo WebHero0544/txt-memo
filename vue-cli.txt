@@ -22,3 +22,16 @@
 
 
 （3) vue create app-name   ------   使用vue-cli创建一个项目
+
+
+
+（4）当使用yarn安装包失败时，可将node_modules文件夹删除再重新安装(执行yarn 或 yarn install)
+
+
+
+
+
+
+
+
+

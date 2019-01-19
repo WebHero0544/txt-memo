@@ -13,3 +13,14 @@ vue2.x
 
 
 （3）异步组件，最好在大型的项目中使用，小型项目无需使用，因为会增加http请求
+
+
+
+（4）img标签图片地址的写法
+
+<img :src="require('../../../assets/images/' + item.fileName + '.png')">
+
+
+
+（5）在v-if, v-for, v-show的异步渲染中，需要在setTimeout中才能获取到this.$refs,  另外，用this.$nextTick也能获取到this.$refs，
+但是，获取到元素的属性值与实际值不一致
