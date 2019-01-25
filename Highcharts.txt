@@ -18,6 +18,46 @@ Highcharts
 
 
 （2）在angular2+中怎么引入导出功能
-import * as Highcharts from 'highcharts';
-require('highcharts/modules/exporting.src')(Highcharts)
-require('highcharts/modules/offline-exporting.src')(Highcharts)
+import * as Highcharts from "highcharts/highcharts.src";
+require("highcharts/highcharts-more.src")(Highcharts);
+require('highcharts/modules/exporting.src')(Highcharts);
+require('highcharts/modules/offline-exporting.src')(Highcharts);
+
+
+
+Highcharts.setOptions({
+      lang: {
+        contextButtonTitle: '下载',
+        printChart: '打印',
+        downloadPNG: '导出PNG格式',
+        downloadJPEG: '导出JPEG格式',
+        downloadPDF: '导出PDF格式',
+        downloadSVG: '导出SVG格式'
+      }
+    });
+
+
+
+
+      exporting: {
+        chartOptions: {
+          plotOptions: {
+            series: {
+              dataLabels: {
+                enabled: true
+              }
+            }
+          }
+        },
+        fallbackToExportServer: false,
+        filename: '多要素实况-预报折线图',
+        buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG']
+          }
+        },
+        scale: 6
+      },
+
+
+
