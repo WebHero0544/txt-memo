@@ -19,7 +19,7 @@ https://cesium.com/docs/tutorials/cesium-workshop/#adding-terrain   ------介绍怎
 
 https://cesium.com/docs/tutorials/terrain/  ------介绍怎么在cesium中添加地形
 
-https://github.com/AnalyticalGraphicsInc/quantized-mesh ------自己开发地形数据的格式
+https://github.com/AnalyticalGraphicsInc/quantized-mesh ------自己开发的地形数据遵循的数据格式
 
 https://cesiumjs.org/Cesium/Build/Documentation/CesiumTerrainProvider.html  ------自己开发地形数据显示时需要用到的类
 
