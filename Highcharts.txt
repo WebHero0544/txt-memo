@@ -61,3 +61,53 @@ Highcharts.setOptions({
 
 
 
+
+
+（3）highcharts自定义symbol, 下面symbol表示风向标
+
+    // option.rotate表示风向
+    Highcharts.SVGRenderer.prototype.symbols.cross = function (x, y, w, h, option) {
+      const centerLeng = 10;
+      const hypLeng = 18;
+      const iconAngle = 60;
+
+      //角度
+      const angle = option.rotate; 
+
+      // 顶点（绝对路径）
+      const topX = x + centerLeng * Math.cos(angle);
+      const topY = y + centerLeng * Math.sin(angle);
+
+      // 左侧点（相对路径，相对于顶点）
+      const leftX = hypLeng * Math.cos(angle + iconAngle);
+      const leftY = hypLeng * Math.sin(angle + iconAngle);
+
+      // 右侧点（相对路径，相对于顶点）
+      const rightX = hypLeng * Math.cos(angle - iconAngle);
+      const rightY = hypLeng * Math.sin(angle - iconAngle);
+
+      return ['M', topX, topY, 'l', leftX, leftY, 'L', x, y, 'M', topX, topY, 'l', rightX, rightY, 'L', x, y];
+    };
+    if (Highcharts.VMLRenderer) {
+      Highcharts.VMLRenderer.prototype.symbols.cross = Highcharts.SVGRenderer.prototype.symbols.cross;
+    }
+
+    Highcharts.setOptions({
+      lang: {
+        contextButtonTitle: "下载",
+        printChart: "打印",
+        downloadPNG: "导出PNG格式",
+        downloadJPEG: "导出JPEG格式",
+        downloadPDF: "导出PDF格式",
+        downloadSVG: "导出SVG格式"
+      }
+    });
+
+
+
+
+
+
+
+
+

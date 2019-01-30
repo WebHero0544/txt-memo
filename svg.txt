@@ -46,6 +46,13 @@ https://www.zhangxinxu.com/wordpress/2014/06/deep-understand-svg-path-bezier-cur
 
 
 
+（8）两个很好的文章
+
+https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform  ------ 关于transform
+
+http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201506182064.html  ------  SVG图像的viewport和viewBox用于设置图像可见区域的大小。
+
+
 
 
 

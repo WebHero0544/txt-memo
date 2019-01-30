@@ -9,3 +9,18 @@ https://www.cnblogs.com/fuckgiser/tag/Cesium/default.html?page=1
 
 在angular中使用cesium的方式：
 https://cesium.com/blog/2018/03/12/cesium-and-angular/
+
+
+
+
+（1）3D地形
+
+https://cesium.com/docs/tutorials/cesium-workshop/#adding-terrain   ------介绍怎么在cesium中添加地形
+
+https://cesium.com/docs/tutorials/terrain/  ------介绍怎么在cesium中添加地形
+
+https://github.com/AnalyticalGraphicsInc/quantized-mesh ------自己开发地形数据的格式
+
+https://cesiumjs.org/Cesium/Build/Documentation/CesiumTerrainProvider.html  ------自己开发地形数据显示时需要用到的类
+
+https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html?src=ArcticDEM.html ------ 一个添加地形的例子
