@@ -150,7 +150,7 @@ http://www.17sucai.com/pins/demo-show?id=12579
 
 
 
-（7）保证图片在父容器中不出现滚动条不变形，前提是父容器的指定高度或者通过定位获取高度，
+（7）保证图片在父容器中不出现滚动条不变形，前提是父容器需指定高度或者通过定位获取高度，
 例如.parent{ position: absolute; top:0;right:0;bottom:0;left:0 }
 
 .img {
