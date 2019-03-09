@@ -1,0 +1,12 @@
+基于vue的实现webApp的方式：
+
+
+（1）cordova + Vue 开发 APP 上手指南
+https://www.jianshu.com/p/2e9bebb73d37
+
+
+（2）uni-app
+
+
+
+（3）weex

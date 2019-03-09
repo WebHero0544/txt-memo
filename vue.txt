@@ -16,11 +16,42 @@ vue2.x
 
 
 
-（4）img标签图片地址的写法
+（4）img标签src和元素background-image属性的绑定方式
 
 <img :src="require('../../../assets/images/' + item.fileName + '.png')">
-
+<div :style="{backgroundImage: 'url(' + require('../../../assets/images/' + item.fileName + '.png') + ')'"></div>
 
 
 （5）在v-if, v-for, v-show的异步渲染中，需要在setTimeout中才能获取到this.$refs,  另外，用this.$nextTick也能获取到this.$refs，
 但是，获取到元素的属性值与实际值不一致
+
+
+
+
+
+（6）在div元素上绑定keyup事件的方式：
+
+首先在该div元素上添加tabindex="0"使该元素可以获取焦点，然后再调用focus()方法自动获取该元素的焦点，最后即可绑定keyup事件，大致代码如下：
+
+
+// 注册一个全局自定义指令 `v-focus`
+Vue.directive("focus", {
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function(el) {
+    // 聚焦元素
+    el.focus();
+  }
+});
+
+
+<div tabindex="0" v-focus @keyup.up.down.left.right="onKeyup"></div>
+
+
+
+
+
+
+
+
+
+

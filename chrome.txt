@@ -4,3 +4,8 @@ fireShot ------  网页截图
 
 JSON Formatter ------  json 格式化
 
+
+
+
+
+(2) 使用 More tools > Remote devices 时需要翻墙
