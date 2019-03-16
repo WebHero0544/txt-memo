@@ -19,7 +19,7 @@ vue2.x
 （4）img标签src和元素background-image属性的绑定方式
 
 <img :src="require('../../../assets/images/' + item.fileName + '.png')">
-<div :style="{backgroundImage: 'url(' + require('../../../assets/images/' + item.fileName + '.png') + ')'"></div>
+<div :style="{backgroundImage: 'url(' + require('../../../assets/images/' + item.fileName + '.png') + ')'}"></div>
 
 
 （5）在v-if, v-for, v-show的异步渲染中，需要在setTimeout中才能获取到this.$refs,  另外，用this.$nextTick也能获取到this.$refs，
