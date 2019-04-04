@@ -161,6 +161,19 @@ http://www.17sucai.com/pins/demo-show?id=12579
 
 
 
+（8）滚动条颜色
+
+::-webkit-scrollbar {
+  width: 5px;  //指垂直滚动条的宽度
+  height: 5px;  //指水平滚动条的高度
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #b3d0ee;
+}
+
 
 
 

@@ -147,6 +147,24 @@ https://blog.csdn.net/zhq426/article/details/5755825
 
 
 
+（10）万能排序（数字，字母， 中文）
+
+const sort = (arr, isUpSort) => {
+        return arr.slice().sort((a, b) => {
+          if (isUpSort) {
+            return b.localeCompare(a);
+          }else {
+            return a.localeCompare(b);
+          }
+        })
+};
+
+
+
+
+
+
+
 
 
 
