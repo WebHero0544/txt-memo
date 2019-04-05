@@ -1,0 +1,43 @@
+https://facebook.github.io/create-react-app/
+
+
+--------------当前纪要版本："react-scripts": "2.1.8"-----------------------
+
+
+（1）创建项目：如果安装不上，尝试清空npm缓存 npm cache clean --force
+
+npx create-react-app my-app
+cd my-app
+npm start 或者 yarn start
+
+
+
+（2）使用css模块 and scss
+
+样式表命名规范： [filename].module.scss 
+
+在项目里安装node-sass: yarn add node-sass
+
+
+(3)两种导入svg的方法：
+
+以文件的方式导入： import logo from './logo.svg';    <img src={logo} className={styles.AppLogo} alt="logo" />
+
+以组件的方式导入：import { ReactComponent as Logo } from './logo.svg';   <Logo />
+
+
+
+
+(4) 用yarn安装node-sass时需要先全局安装：yarn global add node-sass， 然后再本地安装：yarn add node-sass
+
+
+
+
+
+
+
+
+
+
+
+

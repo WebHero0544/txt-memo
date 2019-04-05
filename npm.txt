@@ -55,6 +55,13 @@ npm get [<key>] ==  npm config get [<key>]
 
 
 
+£¨6£©Çå³ýnpm»º´æ£º npm cache clean --force
+
+
+
+
+
+
 
 
 
