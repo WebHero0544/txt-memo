@@ -161,7 +161,9 @@ const sort = (arr, isUpSort) => {
 
 
 
+（11）document.domain 和 window.postMessage 跨域 ：https://www.cnblogs.com/webbest/p/7161174.html
 
+document.domain必须主域相同 而 window.postMessage没有限制
 
 
 

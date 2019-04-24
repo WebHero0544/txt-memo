@@ -241,4 +241,59 @@ https://github.com/angular/angular/issues/21910
 
 
 
+（17）二进制文件下载
+    // 重要天气信息__导出附件
+    exportImportantFile(fileName: string) {
+        return this.http.get('/api/hrwarnapi/warning/important/download', { params: { fileName }, responseType: 'blob' }).pipe(
+            map(blob => {
+                var objectUrl = URL.createObjectURL(blob);
+                var a = document.createElement('a');
+                document.body.appendChild(a);
+                a.setAttribute('style', 'display:none');
+                a.setAttribute('href', objectUrl);
+                a.setAttribute('download', fileName);       //a.setAttribute('download', `审核文件_id_${warningId}.docx`);
+                a.click();
+                URL.revokeObjectURL(objectUrl);
+                return null;
+            })
+        );
+    }
+
+
+
+
+（18）在用*ngFor时一定要加上trackBy, 不然会有较大的性能损失
+
+*ngFor="let data of basicTable1.data; trackBy: trackByDataItem"
+
+trackByDataItem(index: number, item: any): number { return item.id; }
+
+
+
+
+（19）nz-zorro-antd 1.8.1 使用nz-date-picker时不显示秒
+
+<nz-date-picker [(ngModel)]="startDate" [nzShowTime]="{nzFormat: 'hh:mm'}" nzFormat="yyy-MM-dd hh:mm"
+      [nzAllowClear]="false" [nzStyle]="{width: '155px'}"></nz-date-picker>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

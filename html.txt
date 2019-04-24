@@ -3,3 +3,10 @@
 https://www.cnblogs.com/wangfupeng1988/p/3631853.html
 https://www.cnblogs.com/accordion/p/4107409.html
 
+
+
+
+
+（2）去掉iframe页面中的滚动条： scrolling="no"
+<iframe id="terrain3d" src="http://172.18.6.201/webgl" frameborder="0" scrolling="no" width="840" height="400"></iframe>
+
