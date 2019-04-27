@@ -1,7 +1,7 @@
 https://facebook.github.io/create-react-app/
 
 
---------------当前纪要版本："react-scripts": "2.1.8"-----------------------
+--------------当前备忘版本："react-scripts": "2.1.8"-----------------------
 
 
 （1）创建项目：如果安装不上，尝试清空npm缓存 npm cache clean --force
@@ -16,7 +16,7 @@ npm start 或者 yarn start
 
 样式表命名规范： [filename].module.scss 
 
-在项目里安装node-sass: yarn add node-sass
+在项目里安装node-sass: yarn add node-sass    如果本地安装不上，可以现在全局安装一下：yarn global add node-sass,然后在本地安装
 
 
 (3)两种导入svg的方法：
