@@ -49,6 +49,11 @@ Vue.directive("focus", {
 
 
 
+（7）静态页面用iframe引用要放在public目录下，如果放在assets目录下该页面会因为编译而报错
+
+
+
+
 
 
 
