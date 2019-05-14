@@ -1,0 +1,17 @@
+（1）给函数传递实参时有位置参数的话都放在前面，有关键字参数的话都放在后面，且前者和后者都是连续的，前者不能中间夹着关键字参数，后者不能中间夹着位置参数：
+
+def fn(name, age, like, job):
+	print(name, age, like, job)
+
+fn('dong', 28, job='程序员', like='篮球')
+
+
+（2）如果函数的默认参数是引用类型，如果多次调用后都没有传递该引用类型参数，则如果该引用类型参数的默认值在函数内被修改的话，多次调用修改的就是同一个对象：
+
+def fn(name, arr=[]):
+	arr.append(name)
+	print(arr)
+
+fn('dong')   ------ ['dong']
+fn('zhang')  ------ ['dong', 'zhang']
+fn('liu')  ---------- ['dong', 'zhang', 'liu']
