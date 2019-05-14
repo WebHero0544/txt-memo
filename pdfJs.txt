@@ -2,33 +2,19 @@ pdfjs使用方式:
 
 下载已经打包的版本：http://mozilla.github.io/pdf.js/getting_started/#download
 
-直接使用web/viewer.html(在angular4中可使用iframe来引用该页面，因为viewer.html中引用的js已经打包了，在angular4中会报错)
+将web/viewer.html用iframe标签引入到页面中，该页面可添加一个名为fil的参数值为要显示pdf的路径，引用方式如下：
 
-使用时（针对在angular4中使用iframe）更换自己所需的pdf路径，更换方式可参考如下（web/viewer.html）
-。。。
-<script src="../build/pdf.js"></script>
+<iframe src="assets/lib/pdfjs-1.9.426-dist/web/viewer.html?file='xxx.pdf'" height="100%" width="100%"></iframe>
 
 
-//---begin 我添加的代码
-<script>
- 
- 	// hr线上环境和生产环境(多了一级hr目录)的路径不同
-  
-	var hr = '';
-  
-	if (location.href.indexOf('localhost') === -1) hr = '/hr';
- 
-	//将viewer.js中声明的变量DEFAULT_URL 删除，然后在该处声明
- 	var DEFAULT_URL = hr + decodeURIComponent(location.href).match(/='(.*)'/)[1];
-
-  //提取路径中的参数
-</script>
-
-//---end 我添加的代码
-<script src="viewer.js"></script>
-。。。
 
 
-在需要的地方用iframe引入viewer.html,则会更根据路径中的参数，来加载对应的pdf文件
+在angular2+中，pdfjs-2.1.266-dist文件放在assets目录下
 
-<iframe [style.display]="toSwitchSign != 0 ? 'none':'block'" src="assets/lib/pdfjs-1.9.426-dist/web/viewer.html?filename='/assets/pdf/qk/北京市气象灾害预警信号与防御指南.pdf'" height="{{height}}" width="100%"></iframe>
+<iframe src="assets/lib/pdfjs-2.1.266-dist/web/viewer.html?filename='xxx.pdf'" height="100%" width="100%"></iframe>
+
+
+
+在vue2.x中，pdfjs-2.1.266-dist文件放在public目录下(如果放在assets会因编译页面而报错)
+
+<iframe src="./pdfjs-2.1.266-dist/web/viewer.html?filename='xxx.pdf'" height="100%" width="100%"></iframe>
