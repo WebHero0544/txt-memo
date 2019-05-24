@@ -1,2 +1,19 @@
 （1）
 在d3中，对于无效数据可以直接过滤掉
+
+
+
+
+（2）选择器机制
+
+
+var svg = d3.select('svg');
+
+//更新数据（如果有）
+var updateEl = svg.selectAll('path').data([1, 2, 3, 4, 5, 6]);
+
+//添加数据（如果有）
+var addEl = updateEl.enter().append('path);
+
+//删除数据（如果有）
+var renoveEl = updateEl.exit().remove()

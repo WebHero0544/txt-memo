@@ -1,1 +1,5 @@
 （1）arc()函数中表示角的单位是弧度，不是角度。角度与弧度的js表达式: 弧度=(Math.PI/180)*角度。
+
+
+
+（2）ctx.setLineDash([5，5]); 由虚线切换到实线 ctx.setLineDash([]); 
