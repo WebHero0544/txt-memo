@@ -17,3 +17,9 @@ var addEl = updateEl.enter().append('path);
 
 //删除数据（如果有）
 var renoveEl = updateEl.exit().remove()
+
+
+
+（3）一个d3中文教程 
+
+http://pkuwwt.github.io/d3-tutorial-cn/about.html
