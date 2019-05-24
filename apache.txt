@@ -1,0 +1,16 @@
+（1）安装教程： 
+
+https://www.cnblogs.com/wcwnina/p/8044353.html
+
+
+
+
+（2）安装简要概述：
+
+修改Apache安装目录为： Define SRVROOT "D:\httpd-2.4.39-o111b-x64-vc15\Apache24"   在httpd.conf文件里
+
+cd到bin目录后执行 httpd -k install  ------   安装apache服务，名称默认为Apache2.4
+
+net stop/start Apache2.4  ------  启动/停止apache服务
+
+httpd -k uninstall  ------ 如果服务时启动的最好先停

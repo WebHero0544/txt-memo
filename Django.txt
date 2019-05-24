@@ -1,0 +1,91 @@
+（1）在windows上安装Django（依赖于python3而不是python2）:
+
+pip install virtualenvwrapper-win   ------  安装虚拟环境
+
+mkvirtualenv djproject  ------  然后为您的项目创建一个名为djproject虚拟环境
+
+虚拟环境将被自动激活，您将在命令提示符旁边看到“(myproject)”来指定它。如果你启动一个新的命令提示符，你需要再次激活环境使用:
+workon myproject   ------激活名为myproject的虚拟环境
+
+Django可以轻松地在你的虚拟环境中使用``pip``安装，在命令提示符中，确保您的虚拟环境是活动的，并执行以下命令:
+
+pip install django
+
+因为本机之前安装过python2, 又因为Django需要python3 ,所以安装包时使用pip3，不然安装报错
+
+
+以后安装包是都要使用pip3
+
+
+最后在命令行中执行：django-admin --version 表示一切安装完成
+
+
+执行deactivate命令退出虚拟环境
+
+workon djproject   ------激活名为djproject的虚拟环境，在此环境下编写你的django项目
+
+
+
+（2）在一个虚拟环境创建完成后，要用django提供的命令（前提是先在该虚拟环境下安装django: pip3 install django）生成项目
+
+workon djproject
+
+django-admin startproject mysite  ------  在虚拟环境中创建一个名为mysite的项目
+
+py manage.py runserver  ------   在项目的根目录执行以启动服务（py 即 python）
+
+如果上面的命令启动时有如下报错，则表示8000（该命令启动服务时默认用的是8000端口）端口已被其他进程占用：
+
+Error: [WinError 10013] 以一种访问权限不允许的方式做了一个访问套接字的尝试。
+
+此时需要运行如下命令杀死该占用的进程：
+
+netstat -ano|findstr 8000  ------  查找哪个进程占用了8000端口， 如果查找到被占用进程的pid是5516
+
+tasklist |findstr 5516  ------  找出对应pid的进程详细信息，可以看出是该进程的名称等详细信息(执行tasklist会显示所有进程)
+
+taskkill /pid 5516 /F  ------  杀掉该进程
+
+
+如果杀不掉该进程，也不必强求，可以改变当前运行服务的默认端口号，再次运行
+
+py manage.py runserver 0:5000    ------   此时就算成功启动了一个用于开发的简易web服务器（0 === 0.0.0.0）
+
+
+（3）经过上面的两部，一个完整的开发服务已经创建完毕，下面将在该环境下创建一个应用：
+
+py manage.py startapp polls  ------  创建一个名为polls的投票应用， 生成的目录结构包括了投票应用的全部内容。
+
+
+
+（4）在vscode中配置django的教程： https://code.visualstudio.com/docs/python/tutorial-django
+
+
+在vscode中Ctrl+Shift+P，输入python: Select interpreter然后再选择你之前创建的虚拟环境
+
+
+
+
+（3）创建管理员账号：py manage.py createsuperuser，因为django项目默认添加了admin,所以在启动服务后即可访问，比如
+
+172.0.0.1:5000/admin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
