@@ -1,11 +1,13 @@
 （1）在windows上安装Django（依赖于python3而不是python2）:
 
+一个Django项目推荐在推荐在虚拟环境中开发
+
 pip install virtualenvwrapper-win   ------  安装虚拟环境
 
 mkvirtualenv djproject  ------  然后为您的项目创建一个名为djproject虚拟环境
 
-虚拟环境将被自动激活，您将在命令提示符旁边看到“(myproject)”来指定它。如果你启动一个新的命令提示符，你需要再次激活环境使用:
-workon myproject   ------激活名为myproject的虚拟环境
+虚拟环境将被自动激活，您将在命令提示符旁边看到“(djproject)”来指定它。如果你启动一个新的命令提示符，你需要再次激活环境使用:
+workon djproject  ------激活名为myproject的虚拟环境
 
 Django可以轻松地在你的虚拟环境中使用``pip``安装，在命令提示符中，确保您的虚拟环境是活动的，并执行以下命令:
 
@@ -23,6 +25,9 @@ pip install django
 执行deactivate命令退出虚拟环境
 
 workon djproject   ------激活名为djproject的虚拟环境，在此环境下编写你的django项目
+
+
+
 
 
 
@@ -52,16 +57,26 @@ taskkill /pid 5516 /F  ------  杀掉该进程
 py manage.py runserver 0:5000    ------   此时就算成功启动了一个用于开发的简易web服务器（0 === 0.0.0.0）
 
 
+
+
+
+
+
 （3）经过上面的两部，一个完整的开发服务已经创建完毕，下面将在该环境下创建一个应用：
 
 py manage.py startapp polls  ------  创建一个名为polls的投票应用， 生成的目录结构包括了投票应用的全部内容。
 
 
 
+
+
+
+
 （4）在vscode中配置django的教程： https://code.visualstudio.com/docs/python/tutorial-django
 
-
 在vscode中Ctrl+Shift+P，输入python: Select interpreter然后再选择你之前创建的虚拟环境
+
+
 
 
 

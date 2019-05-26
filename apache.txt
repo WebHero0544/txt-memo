@@ -3,14 +3,57 @@
 https://www.cnblogs.com/wcwnina/p/8044353.html
 
 
-
-
 （2）安装简要概述：
 
-修改Apache安装目录为： Define SRVROOT "D:\httpd-2.4.39-o111b-x64-vc15\Apache24"   在httpd.conf文件里
 
-cd到bin目录后执行 httpd -k install  ------   安装apache服务，名称默认为Apache2.4
+下载地址： https://www.apachehaus.com/cgi-bin/download.plx
 
-net stop/start Apache2.4  ------  启动/停止apache服务
+将下载的压缩文件解压后放到合适的地方
 
-httpd -k uninstall  ------ 如果服务时启动的最好先停
+在httpd.conf文件里修改Apache安装目录为（可以安装在任何你想要放置的地方）： Define SRVROOT "D:\httpd-2.4.39-o111b-x64-vc15\Apache24"
+
+cd到bin目录后执行 httpd -k install -n 'apache'  ------   在windows上安装apache服务，设置windows服务名称为apache,默认为Apache2.4，   如果想查看httpd命令的使用方式，可在该目录中执行 httpd help 来查看
+
+httpd -k start/stop  ------ 启动/停止apache服务
+
+或者 net stop/start Apache2.4  ------  启动/停止apache服务
+
+httpd -k uninstall  ------ 写在apache服务（如果服务时启动的最好先停）
+
+
+
+（3）httpd常用命令(没有配置环境变量必须在bin目录下执行)
+
+httpd -k start/stop  ------ 启动/停止apache服务
+
+httpd -k install -n 'apache'  ------ 安装名为apache的apache服务(不指定windows服务名称时默认为Apache2.4)
+
+httpd -k start/stop -n 'apache'  ------ 启动/停止名为apache的apache服务
+
+httpd -k uninstall -n 'apache'  ------ 安装名为apache的apache服务
+
+httpd -t  ------   如果你修改了Apache的配置文件，可以运用httpd –t命令来检查一下配置文件中是否有语法错误
+
+httpd -M  ------   查看当前Apache服务器加载了哪些模块
+
+httpd -k restart  ------  重启Apache服务器
+
+
+
+
+
+（4）mod-wsgi安装
+
+set "MOD_WSGI_APACHE_ROOTDIR=D:\httpd-2.4.39-o111b-x64-vc15\Apache24"
+
+
+
+
+
+
+
+
+
+
+
+
