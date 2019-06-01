@@ -11,10 +11,10 @@ pdfjs使用方式:
 
 在angular2+中，pdfjs-2.1.266-dist文件放在assets目录下
 
-<iframe src="assets/lib/pdfjs-2.1.266-dist/web/viewer.html?filename='xxx.pdf'" height="100%" width="100%"></iframe>
+<iframe src="assets/lib/pdfjs-2.1.266-dist/web/viewer.html?file='xxx.pdf'" height="100%" width="100%"></iframe>
 
 
 
 在vue2.x中，pdfjs-2.1.266-dist文件放在public目录下(如果放在assets会因编译页面而报错)
 
-<iframe src="./pdfjs-2.1.266-dist/web/viewer.html?filename='xxx.pdf'" height="100%" width="100%"></iframe>
+<iframe src="./pdfjs-2.1.266-dist/web/viewer.html?file='xxx.pdf'" height="100%" width="100%"></iframe>

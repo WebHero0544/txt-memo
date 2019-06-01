@@ -20,11 +20,13 @@ https://segmentfault.com/a/1190000007687940
 （3）array reduce
 
 数值型数组的累加
-[1, 2, 3].reduce((sum, el) => sum + el, 0)     或   [1, 2, 3].reduce((sum, el) => sum + el)；
+[1, 2, 3].reduce((sum, el) => sum + el, 0)
+或 （没有默认值时sum的值为数组的第一个元素，所以参与循环的是arr[1:], 比定义默认值时少一个迭代）
+[1, 2, 3].reduce((sum, el) => sum + el)；
 
 对象型数组的累加
 [{num: 1, ind: 2}, {num: 1, ind: 2}, {num: 1, ind: 2}].reduce((sum, el) => {sum.num = sum.num + el.num;sum.ind = sum.ind + el.ind; return sum}, {num: 0, ind: 0})
-或
+或 （没有默认值时sum的值为数组的第一个元素，所以参与循环的是arr[1:], 比定义默认值时少一个迭代）
 [{num: 1, ind: 2}, {num: 1, ind: 2}, {num: 1, ind: 2}].reduce((sum, el) => {sum.num = sum.num + el.num;sum.ind = sum.ind + el.ind; return sum})
 
 
