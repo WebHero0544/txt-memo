@@ -18,10 +18,19 @@ Highcharts
 
 
 （2）在angular2+中怎么引入导出功能
-import * as Highcharts from "highcharts/highcharts.src";
-require("highcharts/highcharts-more.src")(Highcharts);
-require('highcharts/modules/exporting.src')(Highcharts);
-require('highcharts/modules/offline-exporting.src')(Highcharts);
+import Highcharts from "highcharts";
+require("highcharts/highcharts-more")(Highcharts);
+require('highcharts/modules/exporting')(Highcharts);
+require('highcharts/modules/offline-exporting')(Highcharts);
+
+或者
+import Highcharts from "highcharts"
+import HighchartsMore from "highcharts/highcharts-more"
+import HighchartsExporting from 'highcharts/modules/exporting'
+import HighchartsOfflineExporting from 'highcharts/modules/offline-exporting'
+HighchartsMore((Highcharts))
+HighchartsExporting(Highcharts)
+HighchartsOfflineExporting(Highcharts)
 
 
 
