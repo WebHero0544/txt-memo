@@ -1,0 +1,371 @@
+（1）安装信息
+
+在官网下载本地.msi安装程序，对于新手一路默认安装
+
+安装路径： C:\Program Files
+
+windows服务名称：mysql  -------   net stat/stop mysql  启动与关闭mysql
+
+管理员：   用户名：root    密码： 123456
+
+
+
+（2）mysql命令的使用：C:\Program Files\MySQL\MySQL Server 8.0\bin在该目录下打开命令行
+
+mysql -u root -p -P 3306 -h 127.0.0.1 -------  账号登录：-u:用户名，-p:密码（没有跟参数，在回车后输入），-P：mysql服务端口号，-h：mysql服务端主机
+
+exit or quit or \q  ------退出mysql命令
+
+再次用之前的账户登录，下面的命令都要用;结尾，以表示结束，关键字函数名用大写(也可以用小写)，数据库名，表名，字段名用小写
+
+SELECT VERSION();  --------  显示mysql版本
+
+SELECT NOW();  ------  显示当前日期
+
+SELECT USER();  ------  显示当前用户
+
+SHOW DATABASES；------  显示所有数据库
+
+CREATE DATABASE db1;  ------  创建名为db1的数据库
+
+SHOW CREATE DATABASE db1;  ------  显示名为db1的数据库在创建时的信息
+
+CREATE DATABASE IF NOT EXISTS db2 CHARACTER SET gbk;  ------  名为db2的数据库不存在时创建，并设置编码为gbk（默认为utf8）
+
+SHOW CREATE DATABASE db2;  ------  显示名为db2的数据库在创建或修改时的信息
+
+ALTER DATABASE db2 CHARACTER SET utf8;  ------  将名为db2的数据库的编码修改为utf8
+
+SHOW CREATE DATABASE db2;  ------  显示名为db2的数据库在创建或修改时的信息
+
+SHOW WARNINGS;  ------  显示警告信息
+
+DROP DATABASE db1;  ------  删除名为db1的数据库
+
+DROP DATABASE IF NOT EXISTS db1;  ------  名为db1的数据库不存在时删除
+
+
+
+数据类型：
+
+整形：TINYINT, SMALLINT, MEDIUMINT, INT, BIGINT
+
+浮点型： FLOAT, DOUBLE
+
+日期类型： YEAR, TIME, DATE, DATETIME, TIMESTAMP
+
+字符类型： CHAR(M), VARCHAR(M), TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT, ENUM, SET
+
+
+
+创建数据表
+
+CREATE DATABASE db;   ------  创建名为db的数据库
+
+USE db;  ------  使用名为db的数据库
+
+SELECT DATABASE();  ------  显示当前被使用的数据库
+
+CREATE TABLE persion(
+    name VARCHAR(100),
+    age TINYINT UNSIGNED,
+    salary FLOAT(8,2) UNSIGNED
+);  ------  在db的数据库中创建名为persion的数据表
+
+SHOW CREATE TABLE persion;  ------  显示persion数据表在创建时的信息
+
+SHOW TABLES  ------  显示当前数据库所有数据表
+
+SHOW COLUMNS FROM persion;  ------  显示persion数据表的结构
+
+INSERT persion (name,age,salary) VALUES ('dong',28,13000.35);  -------  在persion数据表中添加一条记录
+
+SELECT * FROM persion; -------  显示persion数据表中所有记录
+
+CREATE TABLE persion2(
+    name VARCHAR(100) NOT NULL,  //该字段不能为空
+    age TINYINT(3) UNSIGNED NULL  //该字段可以为空
+);
+
+INSERT persion2 (name, age) VALUES ('liu',NULL);  ------  添加记录是age可以为NULL，而name不能
+
+CREATE TABLE persion3(
+    id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,  ------  定义自增的主键, AUTO_INCREMENT只能在主键中使用
+    name VARCHAR(100) NOT NULL,
+    age TINYINT(3) UNSIGNED NULL
+);
+
+INSERT persion3 (name,age) VALUES ('zhao',32);  ------ id = 1
+INSERT persion3 (name,age) VALUES ('liu',22);  ------ id = 2
+SELECT * FROM persion3; -------  显示persion3数据表中所有记录
+
+CREATE TABLE persion3(
+    id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,  ------  定义自增的主键, AUTO_INCREMENT只能在主键中使用
+    name VARCHAR(100) NOT NULL UNIQUE KEY,  ------  UNIQUE KEY用于定义独一无二的字段值，如果重复就会报错
+    sex ENUM('1', '2', '3') DEFULT '3'  ------  DEFULT用于为字段设置默认值，当sex没有录入时使用默认值‘3’
+);
+
+
+外键：含有外键的表和父表的存储引擎都必须为innoDB
+
+create table provinces (
+    id smallint unsigned auto_increment primary key,
+    province varchar(20) not null，
+    desc varchar(500)，
+);
+
+show create table provinces  ------ 可以查看刚才创建的表使用的引擎是否是innoDB
+
+alter table provinces change province name char;  ------  将provinces表中名为province的列改为name
+
+alter table provinces drop column dc ;   ------  将provinces表中名为province的列删除
+
+alter table provinces add column dc varchar(500);  ------  在名为provinces表中添加名为dc的列（在表的最后）
+
+alter table provinces add column other varchar(300) not null after dc;  ------  在dc列后面追加名为other的列
+
+create table users (
+    id smallint unsigned auto_increment primary key,
+    name varchar(50) not null,
+    pid smallint unsigned,  ------外键列的数据类型要与父表中的参照列保持一致
+    foreign key (pid) references provinces (id)
+);
+
+
+
+向表中插入记录
+
+create table student(
+    id smallint unsigned auto_increment primary key,
+    name varchar(20) not null,
+    age smallint unsigned default 18,
+    school varchar(20)
+);
+
+insert student (name,age,school) values ('dong',28,'hafu');  ------  自增的主键id不需要添加值
+
+insert student (name,age,school) values ('mao',default,'jianqiao');  ------  此处年龄字段使用默认值
+
+insert student values (null,'zhang',27,'daz'); ------ 省略列时必须为每个字段赋值，此时自增的主键可赋值为null or default
+
+insert student values (null,'dong',25,'qinghua'),(null,'chai',28,'fudan');  ------ 一次添加多条记录
+
+insert student set name='guo',age=30,school='henan';  ------ 使用insert set 语句来插入一条记录
+
+
+更新记录（单表更新）
+
+update student set age=age+5;  ------  将age列的值都加5
+
+update student set age=age+5, school=null;  ------  多列更新
+
+update student set age=age+5 where id % 2 = 0;  ------  指定条件更新
+
+
+删除记录
+
+ delete from student where id=6;  ------删除id=6的一条记录
+
+查询记录
+
+select * from student;  ------  查询所有列的记录  
+
+select id, name from student;  ------  只查询id和name列的记录
+
+select id as uid, name as uname from student; ------ 别名
+
+select id, name from student where name='dong';  -------- 查询满足条件的记录
+
+select * from student order by id;  ------ 按id升序排序
+
+select * from student order by id desc;  ------ 按id降序排序
+
+select * from student order by name, age desc; ------  先按name升序，然后在此基础上按age降序排序
+
+select * from student limit 4;  ------  返回数据表中前4条记录
+
+select * from student limit 2,2;  ------  从第3条记录开始返回2条记录
+
+
+
+
+
+create table goods (
+    goods_id smallint(5) unsigned auto_increment primary key,   ------ 商品id
+    goods_name varchar(150) not null,  ------  商品名称
+    goods_cate varchar(49) not null,  ------  商品分类
+    brand_name varchar(49) not null,  ------  商品品牌名称
+    goods_price decimal(15,3) unsigned not null,  ------  商品价格
+    is_show tinyint(1) not null,  ------  是否上架
+    is_saleoff tinyint(1) not null  ------  是否有货
+);
+
+show columns from goods;
+
+
+select round(avg(goods_price), 2) from goods;  ------计算表中所有商品价格的平均值并四舍五入保留两位小数
+
+子查询（sql中含有sql）
+ select goods_id, goods_name, goods_price from goods where goods_price >=(select round(avg(goods_price), 2) from goods);  ------  查询大于等于平均价格的商品
+
+select brand_name from goods group by brand_name;  ------ 按商品品牌分组以得到所有不同的品牌来创建一个名为tbs_brand的品牌数据表
+
+
+create table if not exists tbs_brand(  ------创建一个商品品牌数据表，以存储所有商品品牌
+     id smallint unsigned primary key auto_increment,
+     name varchar(40) not null
+);
+
+
+ insert tbs_brand (name) select brand_name from goods group by brand_name;  ------  将goods表中的商品名称分组后导入到tbs_brand数据表中
+
+
+update goods inner join tbs_brand on brand_name=name set brand_name=id;  ------  将 goods表中的brand_name换成tbs_brand表中的id
+
+
+alter table goods change brand_name brand_id smallint unsigned;  ------ 将goods表中的brand_name字段改为brand_id并设置数据类型以及约束
+
+
+
+//多表查询
+
+//内连接，显示goods 和 tbs_brand表中都有的
+select goods_id, goods_name, name as brand_name from goods inner join tbs_brand on goods.brand_id=tbs_brand.id;------ 在goods和tbs_brand表中查询goods_id, goods_name，brand_name（name的别名， 该字段在tbs_brand表中）字段
+
+//左连接 goods中有的
+select goods_id, goods_name, name as brand_name from goods left join tbs_brand on goods.brand_id=tbs_brand.id;------ 在goods和tbs_brand表中查询goods_id, goods_name，brand_name（name的别名， 该字段在tbs_brand表中）字段
+
+//右连接  tbs_brand有的
+select goods_id, goods_name, name as brand_name from goods right join tbs_brand on goods.brand_id=tbs_brand.id;------ 在goods和tbs_brand表中查询goods_id, goods_name，brand_name（name的别名， 该字段在tbs_brand表中）字段
+
+//三个以及三个以上表的查询就是使用用逗号分隔的多个 in ner/left/right join 语句 
+
+
+//多表删除  -------  自己在网上查  参考视频  https://www.imooc.com/video/2411
+
+//无限极分类表设计  ------  自己在网上查   参考视频  https://www.imooc.com/video/2410
+
+
+
+
+//字符运算符 与 函数
+concat()  ------  连接字符
+concat_ws()  ------  以指定的字符分隔连接的字符
+format()  ------  数字格式化
+lower()  ------  转化为小写
+upper()  ------  转化为大写
+left()  ------ 从字符串的左侧取n个字符
+right()  ------ 从字符串的右侧取n个字符
+length()  ------  求字符串长度
+ltrim()  ------  删除左侧空格
+rtrim()  ------  删除右侧空格
+trim()  ------  删除两侧空格  trim(leading/trailing/both ' ' from '    mysql    ')
+substring()  ------  截取字符
+[not] like  ------  模式匹配  %：匹配任意多个字符, _: 匹配任意一个字符。select * from test where first_name like '%1%%' escape '1'; 匹配first_name字段中包含%的记录；select * from test where first_name like '%q%'  匹配first_name字段中包含q的记录。
+replace()  ------  字符串替换
+...
+
+
+
+数值运算符 与 函数
+ceil() ------  向上取正
+floor  ------ 向下取整
+div  ------  整数除法，相当于向下取整floor()
+mod  ------  取模
+power()  ------  幂运算
+round()  ------  四舍五入
+truncate()  ------数字截取
+...
+
+
+
+比较运算符与函数
+[not] between ... and ...  ------  select 5 between 1 and 10;  5在1到10之间吗
+[not] in()  ------  select 10 in(10, 20, 30);  10,20,30中包含10吗
+is [not] null  ------  select null is null;  null是null吗  select * from text where first_name is not null
+...
+
+
+日期时间函数
+now()  ------  当前日期和时间  select now();  返回 2019-06-08 20:00:00
+curdate()  ------  当前日期  select currdate();  返回 2019-06-08
+curtime()  ------  当前时间  select currtime();  返回 20:00:00
+date_add()  ------  日期变化  select date_add('2019-06-08 20:00:00', interval 1 year/month/day/hour/minute/second);
+datediff()  ------  日期差值  select datediff('2019-06-08','2019-06-09');  返回-1
+date_format()  ------ 日期格式化  select date_format('2019-06-08', '%m/%d/%Y');  返回  06/08/2019；  select date_format(now(), '%Y年%m月%d日 %H时:%i分:%s秒');
+...
+
+
+
+
+mysql信息函数
+
+connection_id()  ------  连接id
+datebase()  ------  当前数据库
+last_insert_id()  ------
+user（）  -----  当前登录用户
+version()  ------  mysql 版本
+
+
+mysql聚合函数
+
+avg()  ------  平均值
+count()  ------  求个数
+max()  ------ 最大值
+min()  ------  最小值
+sum()  ------  求和
+
+
+自定义函数
+
+create function f1() returns varchar(50)
+return date_format(now(), '%Y年%m月%d日 %H时:%i分:%s秒');
+...
+
+
+
+
+
+修改sql语句执行界定符
+
+delimiter //  ------  将sql语句的执行界定符修改为 //  默认为 ；
+
+
+
+创建存储过程
+
+create procedure removeUserById(in p_id int unsigned)
+begin
+delete from users where id = p_id;
+end
+
+删除存储过程
+delete/drop procedure removeUserById;
+
+
+调用存储过程
+call removeUserById;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
