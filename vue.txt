@@ -58,6 +58,19 @@ Vue.directive("focus", {
 
 
 
+（9）在官网有事拷贝的css过渡不生效，此时改一下class名再试试，有可能和别的class名重复了
+
+  <transition name="fade11">
+    <p v-if="show">hello</p>
+  </transition>
+
+.fade11-enter-active, .fade11-leave-active {
+  transition: opacity .3s;
+}
+.fade11-enter, .fade11-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
 
 
 

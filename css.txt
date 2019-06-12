@@ -178,6 +178,7 @@ http://www.17sucai.com/pins/demo-show?id=12579
 
 
 
+（9） background 的 linear-gradient 和 radial-gradient 不支持animation以及transition
 
 
 
