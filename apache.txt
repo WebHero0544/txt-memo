@@ -18,7 +18,7 @@ httpd -k start/stop  ------ 启动/停止apache服务
 
 或者 net stop/start Apache2.4  ------  启动/停止apache服务
 
-httpd -k uninstall  ------ 写在apache服务（如果服务时启动的最好先停）
+httpd -k uninstall  ------ 卸载apache服务（如果服务已启动，最好先停止）
 
 
 

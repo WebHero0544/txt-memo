@@ -1,0 +1,86 @@
+（1）简单的数据库和表操作
+
+show databases;  ------  查看已有的数据库
+
+create database pets;  ------  创建名为pets(宠物)的数据库
+
+show databases;  ------  再次查看已有的数据库，此时pets已被创建
+
+use pets;  ------  使用pets
+
+select database();  ------  显示当前被使用的数据库
+
+
+//创建一个名为cats（猫）的数据表
+CREATE TABLE cats
+(
+  id                INT unsigned NOT NULL AUTO_INCREMENT,  # Unique ID for the record
+  name           VARCHAR(150) NOT NULL,                           # Name of the cat
+  owner         VARCHAR(150) NOT NULL,                          # Owner of the cat
+  birth            DATE NOT NULL,                                            # Birthday of the cat
+  PRIMARY KEY     (id)                                                          # Make the id the primary key
+);
+
+show tables;  ------  显示当前数据库里有哪些数据表
+
+
+describe | desc cats;  ------- 显示cats数据表每列的详细信息
+
+
+//向cats数据表中添加三条记录
+INSERT INTO cats ( name, owner, birth) VALUES 
+  ( 'Sandy', 'Lennon', '2015-01-03' ), 
+  ( 'Cookie', 'Casey', '2013-11-13' ),
+  ( 'Charlie', 'River', '2016-05-21' );
+
+
+select * from cats;  ------  查询cats表中所有数据
+
+
+select name from cats where owner = 'Casey';  ------  查询Casey所拥有猫的名字
+
+
+delete from cats where name='cookie';  ------  删除名为cookie的猫
+
+
+delete from cats;  -------  清空数据表
+
+
+update cats set name='xiaohei' where name='Sandy';  将名为Sandy的记录的name改为xiaohei
+
+
+alter table cats add gender char(1) after name;  -------  在name后新添加一列，名为gender，数据类型为char，字符长度为1
+
+
+alter table cats drop gender;  ------  删除名为gender的数据列
+
+
+show create table cats\g;  ------ 显示创建表时的信息
+
+
+select version(), current_date;  ------  同时查看mysql数据库版本和当前日期
+
+
+select sin(pi()/4), (4+1) * 5;  ------  计算
+
+
+
+（2）在批处理模式下使用mysql
+
+mysql -h host -u user -p < batch-file  ------  在批处理模式下登录mysql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
