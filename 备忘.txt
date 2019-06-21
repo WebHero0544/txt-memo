@@ -588,8 +588,17 @@ console.log(arr);
 
 
 （36）如何在github上搭建网站
-https://www.cnblogs.com/camille666/p/how_to_build_website_at_github.html
+https://www.cnblogs.com/camille666/p/how_to_build_website_at_github.html
 
+
+
+
+
+（37）后台常用软件
+          
+EasyConnect  ------  vpn链接
+WinSCP  ------  远程链接另一台机器
+Postman  ------  接口测试
 
 
 

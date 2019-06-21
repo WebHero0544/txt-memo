@@ -173,5 +173,43 @@ document.domain必须主域相同 而 window.postMessage没有限制
 
 
 
+（12）简单的事件节流 与 防抖
+
+            // 事件节流
+            let isCanRun = true;
+            window.addEventListener('resize', function () {
+                if (!isCanRun) return
+                isCanRun = false
+                setTimeout(function () {
+                    console.log('事件节流')  //你的代码逻辑
+                    isCanRun = true
+                }, 300)
+            })
+
+            // 事件防抖
+            let timer = null;
+            document.getElementById('#input').addEventListener('input', function () {
+                clearTimeout(timer)
+                timer = setTimeout(function () {
+                    console.log('事件防抖')  //你的代码逻辑
+                }, 300)
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
