@@ -77,3 +77,68 @@ var page = {
 
 
 
+
+
+
+
+
+（4）地图分配相关代码： 这里分了两个地图，分别为mapAct， mapFcst（改代码摘自vue项目）
+
+
+
+    <div class="map-box">
+      <div @mouseenter="onMouseenterMap('act', $event)" @mouseleave="onMouseleaveMap('act', $event)">
+        <div id="mapAct"></div>
+      </div>
+      <div @mouseenter="onMouseenterMap('fcst', $event)" @mouseleave="onMouseleaveMap('fcst', $event)">
+        <div id="mapFcst"></div>
+      </div>
+    </div>
+
+
+
+
+
+    actMoveendHandler(e) {
+      const center = this.mapAct.getCenter();
+      const zoom = this.mapAct.getZoom();
+      this.mapFcst.flyTo(center, zoom);
+    },
+    
+    fcstMoveendHandler(e) {
+      const center = this.mapFcst.getCenter();
+      const zoom = this.mapFcst.getZoom();
+      this.mapAct.flyTo(center, zoom);
+    },
+
+    onMouseenterMap(type, event) {
+      if (type === 'act') {
+        this.mapAct.on('moveend', this.actMoveendHandler)
+      } else if (type === 'fcst') {
+        this.mapFcst.on('moveend', this.fcstMoveendHandler)
+      }
+
+    },
+
+    onMouseleaveMap(type, event) {
+      if (type === 'act') {
+        this.mapAct.off('moveend', this.actMoveendHandler)
+      } else if (type === 'fcst') {
+        this.mapFcst.off('moveend', this.fcstMoveendHandler)
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
