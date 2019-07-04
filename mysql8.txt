@@ -8,6 +8,8 @@ windows服务名称：mysql  -------   net start/stop mysql  启动与关闭mysql
 
 mysql服务的端口号为：3306（默认）
 
+安装完成后，mysql默认将数据存储在： C:\ProgramData\MySQL，这个不应该存储在c盘，需要更改到其他指定位置
+
 管理员：   用户名：root    密码： 123456
 
 
