@@ -6,6 +6,8 @@
 
 windows服务名称：mysql  -------   net start/stop mysql  启动与关闭mysql
 
+mysql服务的端口号为：3306（默认）
+
 管理员：   用户名：root    密码： 123456
 
 
