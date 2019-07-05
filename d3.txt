@@ -23,3 +23,35 @@ var renoveEl = updateEl.exit().remove()
 （3）一个d3中文教程 
 
 http://pkuwwt.github.io/d3-tutorial-cn/about.html
+
+
+
+
+
+（4）想旋转图形需要先设置旋转中心
+
+                windg.selectAll('image').data(dataList).enter().append('image')
+                .attr('xlink:href', function (d) {
+                    // 得到风级
+                    var level = profileControl.getWindLevel(d.WindSpeed);
+                    return '../../Images/windshaft/'+ level +'.png';
+                })
+                .attr('x', function (d) { return x(d.PointX) })
+                .attr('y', function (d) { return y(d.PointY) - 16 })
+                .attr('width', '9px')
+                .attr('height', '16px')
+                .attr("transform", function (d) {
+                    // 以图片的左底部为旋转中心
+                    var px = x(d.PointX);
+                    var py = y(d.PointY);
+                    //想旋转图形需要先设置旋转中心
+                    return "rotate(" + d.WindDirection + " " + px + " " + py + ")";
+                });
+
+
+
+
+
+
+
+

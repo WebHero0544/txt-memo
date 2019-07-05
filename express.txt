@@ -1,0 +1,6 @@
+（1）线上环境使用pm2启动服务做负载均衡
+
+
+
+（2）socket.io 集成到express4通过路由访问io 
+https://www.cnblogs.com/xmily/p/7065938.html

@@ -100,6 +100,16 @@ curl ：调试网络请求的工具
 
 
 
+<十>
+node进程
+
+http://blog.fens.me/nodejs-child-process/
+
+https://cnodejs.org/topic/518b679763e9f8a5424406e9
+
+
+
+
 
 
 
