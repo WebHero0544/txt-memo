@@ -94,6 +94,39 @@ py manage.py startapp polls  ------  ´´½¨Ò»¸öÃûÎªpollsµÄÍ¶Æ±Ó¦ÓÃ£¬ Éú³ÉµÄÄ¿Â¼½á¹
 
 
 
+£¨4£©Ä£ĞÍÇ¨ÒÆ£ºµ±ÓĞĞÂÄ£ĞÍ±»Ìí¼Ó»òÒÑÓĞÄ£ĞÍ±»ĞŞ¸ÄÊ±£¬ĞèÒªÖ´ĞĞÒÔÏÂÃüÁî½øĞĞÇ¨ÒÆ
+
+py manage.py makemigrations practice  ------  ÎªÄ£ĞÍµÄ¸Ä±äÉú³ÉÇ¨ÒÆÎÄ¼ş £¬ÆäÖĞpractice±íÊ¾¸öÓ¦ÓÃÃû³Æ
+
+py manage.py migrate ------ Ó¦ÓÃÊı¾İ¿âÇ¨ÒÆ
+
+
+
+
+£¨5£©Èç¹ûÒªÔÚÒ»¸öÓ¦ÓÃÖĞ£¨¼ÙÈçÓ¦ÓÃÃûÎª£ºpolls£©Ê¹ÓÃÄ£°å,ÔòĞèÒª°´djangoµÄ¹æ¶¨´´½¨ÒÔÏÂÎÄ¼ş¼Ğ£º
+
+static>polls   ------  ÔÚ¸ÃÄ¿Â¼ÏÂ·ÅÖÃËùÓĞ¾²Ì¬ÎÄ¼ş£¬±ÈÈçÍ¼Æ¬£¬css, jsµÈ
+templates>polls  -------  ÔÚ¸ÃÄ¿Â¼ÏÂ·ÅÖÃËùÓĞhtmlÄ£°åÎÄ¼ş¹©ÊÓÍ¼µ÷ÓÃ
+
+
+
+
+£¨6£©Ê¹ÓÃpy manage.py shell½øÈëÓµÓĞÏîÄ¿ÉÏÏÂÎÄµÄpython½âÊÍÆ÷£¬ÔÚÆäÖĞ¿ÉÒÔ¶ÔÄ£ĞÍ½øĞĞ²Ù×÷¡£¡£¡£¡£
+
+
+
+
+£¨7£©vscodeÖĞµ÷ÊÔpython´úÂë£º
+
+https://code.visualstudio.com/docs/python/debugging
+
+https://code.visualstudio.com/docs/python/tutorial-django
+
+
+
+
+
+
 
 
 
