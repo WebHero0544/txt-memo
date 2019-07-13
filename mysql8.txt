@@ -44,9 +44,9 @@ SHOW CREATE DATABASE db2;  ------  显示名为db2的数据库在创建或修改时的信息
 
 SHOW WARNINGS;  ------  显示警告信息
 
-DROP DATABASE db1;  ------  删除名为db1的数据库
+DROP DATABASE db1;  ------  删除名为db1的数据库，如果不存在会报错
 
-DROP DATABASE IF NOT EXISTS db1;  ------  名为db1的数据库不存在时删除
+DROP DATABASE IF EXISTS db1;  ------  名为db1的数据库存在时删除
 
 
 
