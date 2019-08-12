@@ -15,3 +15,11 @@ def fn(name, arr=[]):
 fn('dong')   ------ ['dong']
 fn('zhang')  ------ ['dong', 'zhang']
 fn('liu')  ---------- ['dong', 'zhang', 'liu']
+
+
+
+
+
+（3）在win上安装python后，pip不是有效的命令：
+
+不知为何，最后将之前的安装的python下载掉，重新安装时选择自定义一路直接下一步即可，之后pip完全可用

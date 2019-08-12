@@ -22,7 +22,7 @@ pip install django
 
 执行deactivate命令退出当前虚拟环境
 
-workon myproject   ------激活名为myproject的虚拟环境，在此环境下编写你的django项目
+workon myproject   ------激活名为myproject的虚拟环境，在此环境下编写你指定的django项目
 
 
 

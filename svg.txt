@@ -55,6 +55,20 @@ http://www.htmleaf.com/ziliaoku/qianduanjiaocheng/201506182064.html  ------  SVG
 
 
 
+（9）svg动画
+
+animate 普通属性动画；animateTransform变换属性动画；animateMotion路径动画
+
+http://www.webhek.com/post/animated-line-drawing-in-svg.html
+
+https://www.w3cplus.com/svg/svg-animation-guide.html
+
+https://www.zhangxinxu.com/wordpress/2014/08/so-powerful-svg-smil-animation/
+
+
+
+
+
 
 
 
