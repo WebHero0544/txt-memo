@@ -11,6 +11,10 @@ https://www.cnblogs.com/fuckgiser/tag/Cesium/default.html?page=1
 https://cesium.com/blog/2018/03/12/cesium-and-angular/
 
 
+在vue中整合cesium的方式：
+https://www.jianshu.com/p/423a0fe75227  或者直接引用官网提供的已经编译好的版本
+
+
 
 
 （1）3D地形
@@ -24,3 +28,17 @@ https://github.com/AnalyticalGraphicsInc/quantized-mesh ------自己开发的地形数据
 https://cesiumjs.org/Cesium/Build/Documentation/CesiumTerrainProvider.html  ------自己开发地形数据显示时需要用到的类
 
 https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html?src=ArcticDEM.html ------ 一个添加地形的例子
+
+
+
+
+（2）3d风场
+
+
+
+
+
+
+
+
+

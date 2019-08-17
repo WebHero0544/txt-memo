@@ -3,3 +3,9 @@
 
 
 （2）ctx.setLineDash([5，5]); 由虚线切换到实线 ctx.setLineDash([]); 
+
+
+
+（3）canvas的宽高不在css的class里面定义，不然画出来的图形会变形且模糊，应该在程序里定义，比如：canvas.width = 400; canvas.height = 300 (不指定单位即表示像素px)
+
+或者 <canvas width="1000" height="800"></canvas>
