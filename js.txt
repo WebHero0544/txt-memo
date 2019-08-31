@@ -199,7 +199,12 @@ document.domain必须主域相同 而 window.postMessage没有限制
 
 
 
+（13）const reg = /^([1-9]\d*\.\d+|[1-9]\d*|0|0\.\d+)$/   ------  匹配大于等于0的任何数
 
+
+
+
+（14）async函数内await语句必须直接在里面，外面不能嵌套函数，比如在一个forEach循环内，此时将报错
 
 
 
