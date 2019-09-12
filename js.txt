@@ -212,6 +212,19 @@ document.domain必须主域相同 而 window.postMessage没有限制
 
 
 
+（15）下载后台返回的字节数组数据（文件）
+
+                const a = document.createElement('a')
+                var blob = new Blob([new Uint8Array(byteArray)])
+                a.href = window.URL.createObjectURL(blob)
+                a.download = 'xxx.txt'
+                a.click()
+
+
+
+
+
+
 
 
 
