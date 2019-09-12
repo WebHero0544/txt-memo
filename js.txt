@@ -225,6 +225,19 @@ document.domain必须主域相同 而 window.postMessage没有限制
 
 
 
+（16） requestAnimationFrame
+
+https://www.zhangxinxu.com/wordpress/2013/09/css3-animation-requestanimationframe-tween-动画算法/
+
+https://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+
+http://javascript.ruanyifeng.com/htmlapi/requestanimationframe.html
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame
+
+
+
+
 
 
 
