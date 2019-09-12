@@ -1,3 +1,0 @@
-DateTimePicker：jQuery日期和时间插件
-datepicker：jQuery日期和时间插件， 基于jquery-ui
-bootstrap-datetimepicker : jQuery日期和时间插件，基于bootstrap
