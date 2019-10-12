@@ -69,6 +69,44 @@ https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html?src=ArcticDEM.html 
 
 
 
+（4） imagery添加与删除               
+
+添加imagery，imagery对象在addImageryProvider方法中返回而不是Cesium.SingleTileImageryProvider类
+const colorinLayer = this.viewer.imageryLayers.addImageryProvider(new Cesium.SingleTileImageryProvider({
+  url: 'http://10.224.97.148/data/imgs/201910120000.003.png',
+  rectangle: Cesium.Rectangle.fromDegrees(west, south, east, north)  //西，南， 东， 北
+}))
+
+删除imagery
+this.viewer.imageryLayers.remove(colorinLayer)
+
+	        
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
