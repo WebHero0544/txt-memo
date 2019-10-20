@@ -122,7 +122,7 @@ show create table provinces  ------ 可以查看刚才创建的表使用的引擎是否是innoDB
 
 alter table provinces change province name char;  ------  将provinces表中名为province的列改为name
 
-alter table provinces drop column dc ;   ------  将provinces表中名为province的列删除
+alter table provinces drop column desc ;   ------  将provinces表中名为desc的列删除
 
 alter table provinces add column dc varchar(500);  ------  在名为provinces表中添加名为dc的列（在表的最后）
 
@@ -242,7 +242,7 @@ select goods_id, goods_name, name as brand_name from goods left join tbs_brand o
 //右连接  tbs_brand有的
 select goods_id, goods_name, name as brand_name from goods right join tbs_brand on goods.brand_id=tbs_brand.id;------ 在goods和tbs_brand表中查询goods_id, goods_name，brand_name（name的别名， 该字段在tbs_brand表中）字段
 
-//三个以及三个以上表的查询就是使用用逗号分隔的多个 in ner/left/right join 语句 
+//三个以及三个以上表的查询就是使用用逗号分隔的多个 inner/left/right join 语句 
 
 
 //多表删除  -------  自己在网上查  参考视频  https://www.imooc.com/video/2411
