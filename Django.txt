@@ -96,7 +96,7 @@ py manage.py startapp polls  ------  ´´½¨Ò»¸öÃûÎªpollsµÄÍ¶Æ±Ó¦ÓÃ£¬ Éú³ÉµÄÄ¿Â¼½á¹
 
 £¨4£©Ä£ĞÍÇ¨ÒÆ£ºµ±ÓĞĞÂÄ£ĞÍ±»Ìí¼Ó»òÒÑÓĞÄ£ĞÍ±»ĞŞ¸ÄÊ±£¬ĞèÒªÖ´ĞĞÒÔÏÂÃüÁî½øĞĞÇ¨ÒÆ
 
-py manage.py makemigrations practice  ------  ÎªÄ£ĞÍµÄ¸Ä±äÉú³ÉÇ¨ÒÆÎÄ¼ş £¬ÆäÖĞpractice±íÊ¾¸öÓ¦ÓÃÃû³Æ
+py manage.py makemigrations practice  ------  ÎªÄ£ĞÍµÄ¸Ä±äÉú³ÉÇ¨ÒÆÎÄ¼ş £¬ÆäÖĞpractice±íÊ¾Ó¦ÓÃÃû³Æ
 
 py manage.py migrate ------ Ó¦ÓÃÊı¾İ¿âÇ¨ÒÆ
 
@@ -121,6 +121,13 @@ templates>polls  -------  ÔÚ¸ÃÄ¿Â¼ÏÂ·ÅÖÃËùÓĞhtmlÄ£°åÎÄ¼ş¹©ÊÓÍ¼µ÷ÓÃ
 https://code.visualstudio.com/docs/python/debugging
 
 https://code.visualstudio.com/docs/python/tutorial-django
+
+
+
+
+
+
+£¨8£©
 
 
 

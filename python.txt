@@ -15,3 +15,15 @@ def fn(name, arr=[]):
 fn('dong')   ------ ['dong']
 fn('zhang')  ------ ['dong', 'zhang']
 fn('liu')  ---------- ['dong', 'zhang', 'liu']
+
+
+
+（2）python标准库：re 正则表达式  https://docs.python.org/zh-cn/3/library/index.html
+
+
+
+
+
+
+
+
