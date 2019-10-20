@@ -227,6 +227,12 @@ export class DragElementDirective {
         console.log(other);
     }
 
+    @HostListener('document:click', ['$event']) onClick(event) {
+        console.log(event);
+        console.log(other);
+    }
+
+
 }
 
 

@@ -6,3 +6,12 @@
 
 
 （2）loader用于解析非js模块,比如css,txt等等，在打包时会在require 或 import的路径中进行规则匹配，对应解析
+
+
+
+（3）webpack4 全局安装：npm install --g webpack-cli
+
+简单的一个大包过程： webpack --entry ./index.js --output ./polylabel.js --mode production
+
+
+

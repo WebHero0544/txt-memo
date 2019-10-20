@@ -11,6 +11,10 @@ https://www.cnblogs.com/fuckgiser/tag/Cesium/default.html?page=1
 https://cesium.com/blog/2018/03/12/cesium-and-angular/
 
 
+在vue中整合cesium的方式：
+https://www.jianshu.com/p/423a0fe75227  或者直接引用官网提供的已经编译好的版本
+
+
 
 
 （1）3D地形
@@ -24,3 +28,87 @@ https://github.com/AnalyticalGraphicsInc/quantized-mesh ------自己开发的地形数据
 https://cesiumjs.org/Cesium/Build/Documentation/CesiumTerrainProvider.html  ------自己开发地形数据显示时需要用到的类
 
 https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html?src=ArcticDEM.html ------ 一个添加地形的例子
+
+
+
+
+（2）3d风场
+
+
+
+
+（3）一般配置
+
+            Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTcxMzFiYS04NmQ2LTRhOWEtOWU0OS0zNWNlODdiYWYxODYiLCJpZCI6MzEzNywiaWF0IjoxNTM2MTQyNTc3fQ.g5qWOspOnxCNXPUoTzWyxQDjWqicNLOwJ9QaQUWRzAA'
+            
+            this.viewer = new Cesium.Viewer('cesiumContainer', {
+                infoBox: false,  //信息盒(点击某一实体时触发)
+                timeline: false,
+                animation: false,
+                geocoder: false,
+                navigationHelpButton: false,
+                homeButton: false,
+                // vrButton:false,
+                scene3DOnly: true,
+                selectionIndicator: false,
+                baseLayerPicker: false,
+                fullscreenButton: false,
+                terrainProvider: Cesium.createWorldTerrain({
+                    requestWaterMask: true, // required for water effects
+                    requestVertexNormals: true // required for terrain lighting
+                }),
+                //加载google影像图
+                imageryProvider : new Cesium.UrlTemplateImageryProvider({
+                    url:'http://www.google.cn/maps/vt?lyrs=s@800&x={x}&y={y}&z={z}',  
+                    tilingScheme:new Cesium.WebMercatorTilingScheme(),            	
+                    minimumLevel:1,            
+                    maximumLevel:20  
+                }),
+            })
+
+
+
+
+（4） imagery添加与删除               
+
+添加imagery，imagery对象在addImageryProvider方法中返回而不是Cesium.SingleTileImageryProvider类
+const colorinLayer = this.viewer.imageryLayers.addImageryProvider(new Cesium.SingleTileImageryProvider({
+  url: 'http://10.224.97.148/data/imgs/201910120000.003.png',
+  rectangle: Cesium.Rectangle.fromDegrees(west, south, east, north)  //西，南， 东， 北
+}))
+
+删除imagery
+this.viewer.imageryLayers.remove(colorinLayer)
+
+	        
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

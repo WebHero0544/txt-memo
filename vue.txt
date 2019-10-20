@@ -74,6 +74,47 @@ Vue.directive("focus", {
 
 
 
+（10）自定义v-model
+
+    在名为MyDialog组件内部有这样代码用于实现自定义v-model
+    model: {
+        prop: 'isShow',
+        event: 'change'
+    },
+    props: {
+        isShow: Boolean,
+        default: false
+    },
+
+    在组件内部改变isShow属性值的方式：$emit('change', false) 或 $emit('change', true)
+
+
+   在组件外部便可以实现数据的双向绑定和事件监听
+
+   <my-dialog v-model="isShowDialog" @change="onShowChange"></my-dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

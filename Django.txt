@@ -22,7 +22,7 @@ pip install django
 
 Ö´ĞĞdeactivateÃüÁîÍË³öµ±Ç°ĞéÄâ»·¾³
 
-workon myproject   ------¼¤»îÃûÎªmyprojectµÄĞéÄâ»·¾³£¬ÔÚ´Ë»·¾³ÏÂ±àĞ´ÄãµÄdjangoÏîÄ¿
+workon myproject   ------¼¤»îÃûÎªmyprojectµÄĞéÄâ»·¾³£¬ÔÚ´Ë»·¾³ÏÂ±àĞ´ÄãÖ¸¶¨µÄdjangoÏîÄ¿
 
 
 
@@ -94,9 +94,13 @@ py manage.py startapp polls  ------  ´´½¨Ò»¸öÃûÎªpollsµÄÍ¶Æ±Ó¦ÓÃ£¬ Éú³ÉµÄÄ¿Â¼½á¹
 
 
 
-£¨4£©Ä£ĞÍÇ¨ÒÆ£ºµ±ÓĞĞÂÄ£ĞÍ±»Ìí¼Ó»òÒÑÓĞÄ£ĞÍ±»ĞŞ¸ÄÊ±£¬ĞèÒªÖ´ĞĞÒÔÏÂÃüÁî½øĞĞÇ¨ÒÆ
+£¨4£©Ä£ĞÍÇ¨ÒÆ£ºµ±ÓĞĞÂÄ£ĞÍ±»Ìí¼Ó»òÉ¾³ı»òÒÑÓĞÄ£ĞÍ±»ĞŞ¸ÄÊ±£¬ĞèÒªÖ´ĞĞÒÔÏÂÃüÁî½øĞĞÇ¨ÒÆ
 
+<<<<<<< HEAD
 py manage.py makemigrations practice  ------  ÎªÄ£ĞÍµÄ¸Ä±äÉú³ÉÇ¨ÒÆÎÄ¼ş £¬ÆäÖĞpractice±íÊ¾Ó¦ÓÃÃû³Æ
+=======
+py manage.py makemigrations practice  ------  ÎªÄ£ĞÍµÄ¸Ä±äÉú³ÉÇ¨ÒÆÎÄ¼ş £¬ÆäÖĞpractice±íÊ¾Ä³¸öÓ¦ÓÃÃû³Æ
+>>>>>>> 34748fbcfa1e73fff1a71bc73f076d98b8c5d5c6
 
 py manage.py migrate ------ Ó¦ÓÃÊı¾İ¿âÇ¨ÒÆ
 

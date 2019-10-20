@@ -31,3 +31,38 @@ function hintPopup (text, showDuration) {  //string 显示的提示文本|number？ 单位
 		$hintPopup.remove();
 	}, showDuration || 800);
 }
+
+
+
+
+（1）https://github.com/xdan/datetimepicker
+
+    jQuery.datetimepicker.setLocale('zh');
+    jQuery('#dianchangDt').datetimepicker({
+         format:'Y-m-d H:i'
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

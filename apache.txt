@@ -6,31 +6,38 @@ https://www.cnblogs.com/wcwnina/p/8044353.html
 （2）安装简要概述：
 
 
-下载地址： https://www.apachehaus.com/cgi-bin/download.plx
+下载地址： https://www.apachehaus.com/cgi-bin/download.plx（选择第一个按钮下载，指不同的镜像地址）
 
 将下载的压缩文件解压后放到合适的地方
 
-在httpd.conf文件里修改Apache安装目录为（可以安装在任何你想要放置的地方）： Define SRVROOT "D:\httpd-2.4.39-o111b-x64-vc15\Apache24"
+在httpd.conf文件里修改Apache安装目录为（可以安装在任何你想要放置的地方）： Define SRVROOT "D:\httpd-2.4.39-o111b-x64-vc15\Apache24"，Apache24文件夹指的就是你下载解压后的文件夹
 
-cd到bin目录后执行 httpd -k install -n 'apache'  ------   在windows上安装apache服务，设置windows服务名称为apache,默认为Apache2.4，   如果想查看httpd命令的使用方式，可在该目录中执行 httpd help 来查看
+cd到bin目录后执行 httpd -k install -n apache  ------   在windows上安装apache服务，设置windows服务名称为apache,默认为Apache2.4，   如果想查看httpd命令的使用方式，可在该目录中执行 httpd help 来查看
 
-httpd -k start/stop  ------ 启动/停止apache服务
+httpd -k start/stop -n apache  ------ 启动/停止名为apache的apache服务
+httpd -k uninstall -n apache   ------ 卸载名为apache的apache服务（如果服务已启动，最好先停止）
 
-或者 net stop/start Apache2.4  ------  启动/停止apache服务
+或者 
 
-httpd -k uninstall  ------ 卸载apache服务（如果服务已启动，最好先停止）
+net stop/start apache  ------  启动/停止名为apache的apache服务
+
+
 
 
 
 （3）httpd常用命令(没有配置环境变量必须在bin目录下执行)
 
-httpd -k start/stop  ------ 启动/停止apache服务
+httpd -k start/stop  ------ 启动/停止apache服务(不指定windows服务名称时默认为Apache2.4)
 
-httpd -k install -n 'apache'  ------ 安装名为apache的apache服务(不指定windows服务名称时默认为Apache2.4)
+httpd -k install  ------ 安装apache服务(不指定windows服务名称时默认为Apache2.4)
 
-httpd -k start/stop -n 'apache'  ------ 启动/停止名为apache的apache服务
+httpd -k uninstall  ------  卸载apache服务(不指定windows服务名称时默认为Apache2.4)
 
-httpd -k uninstall -n 'apache'  ------ 安装名为apache的apache服务
+httpd -k start/stop -n apache  ------ 启动/停止名为apache的apache服务
+
+httpd -k install -n apache  ------ 安装名为apache的apache服务
+
+httpd -k uninstall -n apache  ------ 卸载名为apache的apache服务
 
 httpd -t  ------   如果你修改了Apache的配置文件，可以运用httpd –t命令来检查一下配置文件中是否有语法错误
 
@@ -42,7 +49,17 @@ httpd -k restart  ------  重启Apache服务器
 
 
 
-（4）mod-wsgi安装
+（4）mod-wsgi模块的安装(为django项目安装)
+
+https://github.com/GrahamDumpleton/mod_wsgi/blob/develop/win32/README.rst ------在windows上安装mod-wsgi
+
+https://pypi.org/project/mod-wsgi/  ------pypi.org中对mod-wsgi安装的说明文档
+
+https://modwsgi.readthedocs.io/en/latest/user-guides/virtual-environments.html ------ 在虚拟环境中的相关配置
+
+
+
+
 
 set "MOD_WSGI_APACHE_ROOTDIR=D:\httpd-2.4.39-o111b-x64-vc15\Apache24"
 

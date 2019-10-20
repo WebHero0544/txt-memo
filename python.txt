@@ -18,6 +18,7 @@ fn('liu')  ---------- ['dong', 'zhang', 'liu']
 
 
 
+<<<<<<< HEAD
 （2）python标准库：re 正则表达式  https://docs.python.org/zh-cn/3/library/index.html
 
 
@@ -27,3 +28,10 @@ fn('liu')  ---------- ['dong', 'zhang', 'liu']
 
 
 
+=======
+
+
+（3）在win上安装python后，pip不是有效的命令：
+
+不知为何，最后将之前的安装的python下载掉，重新安装时选择自定义一路直接下一步即可，之后pip完全可用
+>>>>>>> 34748fbcfa1e73fff1a71bc73f076d98b8c5d5c6
