@@ -1,0 +1,10 @@
+（1）rgb转十六进制
+
+const colors = ["0 0 127","0 0 131","0 0 135","0 0 139","0 0 143","0 0 147"]
+
+colors.map((cl, i) => {
+        return '#' + cl.split(/\s/).map(num => {
+            const s16 = (+num).toString(16)
+            return s16.length === 2 ? s16 : '0' + s16
+        }).join('')
+})
