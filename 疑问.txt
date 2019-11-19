@@ -1,2 +1,6 @@
 （1）shadow DOM  
 在angular中使用了该技术，可以在https://developer.mozilla.org/zh-CN/搜索看看
+
+
+
+（2）SSH工具 ------finalShell
