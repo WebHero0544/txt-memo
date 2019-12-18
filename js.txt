@@ -239,6 +239,31 @@ https://developer.mozilla.org/zh-CN/docs/Web/API/Window/requestAnimationFrame
 
 
 
+（17）不加小括号实例化一个构造函数
+
+var Cmy = function () {}
+Cmy.prototype.show = function() {console.log('show')}
+
+(new Cmy).show()   //打印输出‘show’
+
+
+
+
+（18）向控制台输出样式化文本
+
+    function showAttrs() {
+        if (navigator.userAgent.toLowerCase().indexOf("chrome") > -1) {
+            var args = ["\n %c %c %c 二三维一体化气象WebGIS框架  %c  %c →→→ xxx研究院 ←←← %c? %c? %c?%c \n\n", "background: #ff66a5; padding:5px 0;", "background: #ff66a5; padding:5px 0;", "color: #ff66a5; background: #030307; padding:5px 0;", "background: #ff66a5; padding:5px 0;", "background: #ffc3dc; padding:5px 0;", "background: #ff66a5; padding:5px 0;", "color: #ff2424; background: #fff; padding:5px 0;", "color: #ff2424; background: #fff; padding:5px 0;", "color: #ff2424; background: #fff; padding:5px 0;"];
+            window.console.log.apply(console, args)
+        } else if (window.console) {
+            window.console.log("xxx研究院")
+        }
+    }
+
+
+
+
+
 
 
 

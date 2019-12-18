@@ -1,0 +1,2 @@
+（1）中国瓦片地图服务
+http://map.geoq.cn/arcgis/rest/services

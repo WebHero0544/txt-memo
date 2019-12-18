@@ -4,8 +4,15 @@ fireShot ------  网页截图
 
 JSON Formatter ------  json 格式化
 
+Save All Resources -----  用于保存网站上的所有资源（html, css, js images ...）
+
 
 
 
 
 (2) 使用 More tools > Remote devices 时需要翻墙
+
+
+
+
+
