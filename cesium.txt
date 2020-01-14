@@ -80,6 +80,12 @@ const colorinLayer = this.viewer.imageryLayers.addImageryProvider(new Cesium.Sin
 É¾³ýimagery
 this.viewer.imageryLayers.remove(colorinLayer)
 
+
+
+
+
+£¨5£©https://blog.csdn.net/happyduoduo1/article/details/51868042
+
 	        
 
 
