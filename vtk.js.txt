@@ -17,3 +17,7 @@ module.exports = {
 
 最后yarn serve后即可在vue的开发环境中使用vtk.js
 
+
+
+
+（2）各种坐标转换方法在vtkOpenGLRenderWindow类里
