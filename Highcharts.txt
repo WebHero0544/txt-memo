@@ -116,6 +116,21 @@ Highcharts.setOptions({
 
 
 
+（4）当数据过长时仍让数据正常显示（如果需要关掉性能阈值检查，可以将此参数设置为 0，默认是：1000）
+
+      plotOptions: {
+        spline: {
+          turboThreshold: 0
+        },
+        column: {
+          turboThreshold: 0
+        }
+      }
+
+
+
+
+
 
 
 
