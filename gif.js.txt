@@ -1,5 +1,5 @@
             
-（1）使用gif.js将多个图片生成pdf
+（1）使用gif.js将多个图片生成gif
             
             const currExportImageList = [canvasElement, ...]  //canvas元素列表（可以由html2canvas生成）
 
