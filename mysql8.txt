@@ -8,7 +8,10 @@ windows服务名称：mysql  -------   net start/stop mysql  启动与关闭mysql
 
 mysql服务的端口号为：3306（默认）
 
-安装完成后，mysql默认将数据存储在： C:\ProgramData\MySQL\MySQL Server 8.0\Data，这个不应该存储在c盘，需要更改到其他指定位置
+安装完成后，mysql默认将数据存储在： C:\ProgramData\MySQL\MySQL Server 8.0\Data(ProgramData目录有可能默认隐藏了，点击查看勾选隐藏的项目即可)，这个不应该存储在c盘，需要更改到其他指定位置
+使用 SHOW VARIABLES LIKE '%DATADIR%';可以查看当前数据库的存储位置
+
+如果默认安装，my.ini文件在C:\ProgramData\MySQL\MySQL Server 8.0中，和数据库存储在一个目录
 
 管理员：   用户名：root    密码： 123456
 
