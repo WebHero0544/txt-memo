@@ -39,6 +39,32 @@
 
 
 
+（2）在vue.config.js里将productionSourceMap设为false，不然打包后线上能看见源码
+
+  productionSourceMap: false,  //禁止生产环境的 source map
+
+
+
+
+（3）vue.config.js一般配置
+
+module.exports = {
+  publicPath: './',
+  productionSourceMap: false,  //禁止生产环境的 source map
+  devServer: {
+    host: "0.0.0.0",
+    port: 8080,
+    proxy: {
+      '/proxy/127.0.0.1:8080/': {
+        target: 'http://127.0.0.1:8080',
+        pathRewrite: { '^/proxy/127.0.0.1:8080/': '' }
+      },
+    }
+  }
+};
+
+
+
 
 
 
