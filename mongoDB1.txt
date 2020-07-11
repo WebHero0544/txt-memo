@@ -65,6 +65,16 @@ db.users.find( { status: "A", $or: [ { age: { $lt: 30 } }, { type: 1 } ] } )  --
 
 
 
+<四> MongoDB权威指南 第三版 学习摘要：
+
+
+
+
+
+
+
+
+
 
 
 
