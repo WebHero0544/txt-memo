@@ -322,6 +322,15 @@ function downloadExportFile(blob, tagFileName, fileType) {
 
 
 
+（20）计算字符串中中文字符的长度
+
+const text = 'm中文字符2.6'
+const len = text.match(/[\u4e00-\u9fa5]/g).length
+
+
+
+
+
 
 
 
