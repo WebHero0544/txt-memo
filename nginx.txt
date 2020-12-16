@@ -1,0 +1,9 @@
+帮助命令：nginx -h
+启动Nginx服务器 ：sudo nginx
+查看进程： ps aux | grep nginx
+配置文件路径：/usr/local/nginx/conf/nginx.conf
+检查配置文件：sudo nginx -t
+指定启动配置文件：sudo nginx -c /usr/local/nginx/conf/nginx.conf
+暴力停止服务：sudo nginx -s stop
+优雅停止服务：sudo nginx -s quit
+重新加载配置文件：sudo nginx -s reload
