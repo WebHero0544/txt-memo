@@ -332,6 +332,13 @@ const len = text.match(/[\u4e00-\u9fa5]/g).length
 
 
 
+（21）使用a标签的download属性下载的文件不能跨域，否则会直接跳转页面
+
+
+
+
+
+
 
 
 

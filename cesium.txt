@@ -86,6 +86,22 @@ this.viewer.imageryLayers.remove(colorinLayer)
 
 （5）https://blog.csdn.net/happyduoduo1/article/details/51868042
 
+
+
+
+
+
+
+（6）在vue中使用cesium
+        1.  yarn add cesium
+        2.  将node_modules/cesium/Build/Cesium目录拷贝到public/static目录下 以托管里面的静态资源文件
+        3. 在使用cesium之前需要设置CESIUM_BASE_URL值来指定静态资源文件的位置
+           window.CESIUM_BASE_URL = '/static/Cesium';
+           import * as Cesium from 'cesium';
+           import "cesium/Build/Cesium/Widgets/widgets.css";
+
+        4.   https://cesium.com/docs/tutorials/quick-start/#step-2-set-up-the-cesiumjs-client
+
 	        
 
 
