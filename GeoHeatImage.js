@@ -127,19 +127,19 @@ export default class GeoHeatImage {
         } else if (lonf === 0) {
             const currValue = values[lonSize * lati + loni]
             const nextValue = values[lonSize * (lati + 1) + loni]
-            value = currValue + (nextValue - currValue) * (latf / latGap)
+            value = currValue + (nextValue - currValue) * latf
         } else if (latf === 0) {
             const currValue = values[lonSize * lati + loni]
             const nextValue = values[lonSize * lati + (loni + 1)]
-            value = currValue + (nextValue - currValue) * (lonf / lonGap)
+            value = currValue + (nextValue - currValue) * lonf
         } else {
             const bottomLeftValue = values[lonSize * lati + loni]
             const topLeftValue = values[lonSize * (lati + 1) + loni]
             const bottomRightValue = values[lonSize * lati + (loni + 1)]
             const topRight = values[lonSize * (lati + 1) + (loni + 1)]
-            const leftCenterValue = bottomLeftValue + (topLeftValue - bottomLeftValue) * (latf / latGap)
-            const rightCenterValue = bottomRightValue + (topRight - bottomRightValue) * (latf / latGap)
-            value = leftCenterValue + (rightCenterValue - leftCenterValue) * (lonf / lonGap)
+            const leftCenterValue = bottomLeftValue + (topLeftValue - bottomLeftValue) * latf
+            const rightCenterValue = bottomRightValue + (topRight - bottomRightValue) * latf
+            value = leftCenterValue + (rightCenterValue - leftCenterValue) * lonf
         }
         return value
     }

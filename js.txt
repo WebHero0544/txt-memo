@@ -337,6 +337,11 @@ const len = text.match(/[\u4e00-\u9fa5]/g).length
 
 
 
+（22）直接在scroll上阻止事件冒泡和默认事件不管用，这时可以在mousewheel上做相同操作以满足需求
+
+
+
+
 
 
 

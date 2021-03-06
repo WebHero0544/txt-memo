@@ -102,6 +102,14 @@ this.viewer.imageryLayers.remove(colorinLayer)
 
         4.   https://cesium.com/docs/tutorials/quick-start/#step-2-set-up-the-cesiumjs-client
 
+
+
+（7）cesium将笛卡尔坐标转成经纬度坐标
+	const position = new Cesium.Cartesian3()
+	const cartographic = Cesium.Cartographic.fromCartesian(position)
+	const lng = Cesium.Math.toDegrees(cartographic.longitude)
+	const lat = Cesium.Math.toDegrees(cartographic.latitude)
+	console.log('[', lng, ',', lat, ']')
 	        
 
 

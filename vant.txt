@@ -1,0 +1,50 @@
+轻量、可靠的移动端 Vue 组件库
+
+
+
+（1）vant在vue cli 环境下的推荐使用方式:
+	1. yarn add vant
+
+	2.   自动按需引入vant组件:  yarn add babel-plugin-import -D
+	    在babel.config.js中添加配置：
+	    module.exports = {
+                      plugins: [
+                        ['import', {
+                          libraryName: 'vant',
+                          libraryDirectory: 'es',
+                          style: true
+                        }, 'vant']
+                      ]
+                    };
+
+	    最后再main.js中引入所需的组件，例如：
+	    import { Button } from 'vant';
+                    Vue.use(Button );
+	
+	3.  Vant 中的样式默认使用 px 作为单位，如果需要使用 rem 单位，推荐使用这个工具：yarn add postcss-pxtorem -D
+	然后在postcss.config.js中添加对应配置：
+	module.exports = {
+    	  plugins: {
+        	    'autoprefixer': {
+            	       overrideBrowserslist: [
+                          "Android 4.1",
+                          "iOS 7.1",
+                           "Chrome > 31",
+                           "ff > 31",
+                           "ie >= 8"
+            	       ]
+        	     },
+        	     'postcss-pxtorem': {
+            	        rootValue: 37.5,
+            	        propList: ['*']
+        	      }
+   	  },
+	};
+
+
+	4.  ui设计稿尺寸参照iphone6（宽的css像素为375px），设计稿宽度为750px，在开发是将量取得像素除以2得到css像素（单位：px），开发中由于postcss插件postcss-pxtorem
+	的存在会将px转换为rem，要想尺寸正确，还需将html的font-size设置为calc(100vw / 10), 从而与该插件中的配置(rootValue: 37.5)保持一致
+
+	5.  配置viewport: <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+	     其中viewport-fit=cover是为了安全区适配
+	   
