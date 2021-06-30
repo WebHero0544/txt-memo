@@ -33,6 +33,18 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
 
+（6）ping 地址
+
+
+
+（7） ps -ef | grep python
+
+
+（8）kill 18923 20920 20921 20922 20923 20924
+
+
+
+
 
 
 
