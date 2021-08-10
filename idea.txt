@@ -1,0 +1,10 @@
+（1）启动调试报错：
+
+Unexpected error (103) returned by AddToSystemClassLoaderSearch
+Unable to add C:\Users\�������\AppData\Local\JetBrains\IdeaIC2020.2\captureAgent\debugger-agent.jar to system class path - the system class loader does not define the appendToClassPathForInstrumentation method or the method failed
+FATAL ERROR in native method: processing of -javaagent failed, appending to system class path failed
+Disconnected from the target VM, address: '127.0.0.1:55583', transport: 'socket'
+
+应该是中文目录的问题：
+
+解决方式: Settings >  Build, Execution, Deployment > Debugger > Async Stack Traces > 取消勾选 Instrumenting agent
