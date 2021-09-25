@@ -16,11 +16,11 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 	vi 路径 ------ 进去编辑器
 	按i ------  进入编辑状态
 	按esc ------ 退出编辑状态
-	按（shift + :）组合键 再输入wq! ------ 退出vi并保存
+	按（shift + :）组合键 再输入wq ------ 退出vi并保存
 	按（shift + :）组合键 再输入q!   ------ 退出vi不保存
 
 
-（4）学习使用cp命令来拷贝文件
+（4）学习使用cp命令来拷贝文件或目录
 
 	cp xxxx.conf xxxx_20200119.conf   ------ 将当前目录中的xxxx.conf复制到xxxx_20200119.conf(没有该文件会自动创建)
 

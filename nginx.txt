@@ -7,3 +7,9 @@
 暴力停止服务：sudo nginx -s stop
 优雅停止服务：sudo nginx -s quit
 重新加载配置文件：sudo nginx -s reload
+
+
+
+sudo systemctl restart nginx
+sudo systemctl reload nginx
+
