@@ -48,6 +48,12 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
 
+（9）rm -rf 文件或目录名称    ------ 删除文件或目录
+
+
+
+
+
 
 
 
