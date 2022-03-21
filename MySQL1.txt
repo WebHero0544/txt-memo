@@ -1,0 +1,269 @@
+idea 数据库管理工具 Database Navigator
+在plugins中安装该插件，配置使采用自定义的即可，选MySQL来链接会报错（听说navicat比较好用，但他是一个独立的软件，不像这个直接用插件集成到了idea中了）
+jdbc:mysql://localhost:3306/db?serverTimezone=UTC
+
+
+一，操作数据库
+1.show databases;   ------   查看所有数据库
+2.show create database db1;  ------  查看某一数据库(db1)的创建信息
+3.create database db1;  ------  创建数据库(db1)
+4.create database if not exists db1;  ------  如果某一数据库(db1)不存在再去创建这个数据库
+5.create database db2 character set gbk;  ------   创建数据库(bd2)并指定字符编码
+6.create database if not exists db3 character set gbk;  ------  如果某一数据库(db3)不存在再去创建这个数据库，并指定字符编码
+7.alter database db3 character set utf8mb4;  ------  将某一数据库(db3)的字符编码修改为utf8mb4
+8.drop database if exists db3;  ------  删除某一数据库(db3),如果存在
+9.select database();  ------  查看当前正在使用的数据库
+10.use db1； ------  使用数据库(db1)
+
+
+二，操作表
+1.show tables;  ------  查看当前数据库里所有表
+2.show create table student;  ------   查看表(student)的创建信息
+4.desc t1；  ------   查看表(t1)结构
+5.create table student(
+      id int,  -- 整型
+      name varchar(100), -- 字符型 最多100个字符
+      age int, -- 整型
+      score double(4,1), -- double类形，整个小数最多4位，小数点后保留一位
+      birthday date,  -- date类型 yyyy-MM-dd
+      insert_time timestamp -- timestamp类型，缺省时将会使用当前系统时间戳
+  );  ------  创建表(student)
+6.create table student1 like student;  ------  复制表，将一个已有的表(student)内容复制到要新建的表(student1)
+7.drop table if exists student1;  ------   删除表(student1), 如果存在
+8.alter table student rename to stu;  ------   修改表名，将表student重命名为stu
+9.alter table stu character set utf8mb4;  ------  修改表(stu)的字符编码
+10.alter table stu add gender varchar(10);  ------  给表添加列
+11.alter table stu change gender sex varchar(30);  ------  修改表列名并重新设置数据类型, 将列名gender改为sex，并将数据类型设置为varchar(30)
+12.alter table stu modify sex varchar(10);  ------  修改表中某一列的数据类型
+13.alter table stu drop sex;  ------  删除表中的某一列
+
+
+
+三，增删改表中的数据：添加数据
+1.insert into stu(id, name, age, score, birthday) values (4, 'mao huaiyu', 27, 80, '2022-02-21');
+
+
+四，增删改表中的数据：删除数据
+1.delete from stu;  ------  删除表中所有数据(在绝大多数情况下都不建议这样操作，因为逐条删除，效率低，推荐操作如下一条)
+2.truncate table stu;  ------  删除表，在创建一个一模一样的空表
+3.delete from stu where id = 1;  ------ 按条件删除记录
+
+
+五，增删改表中的数据：修改数据
+1.update stu set age = 20 name = 'dong' where id = 1;  如果不加条件会修改表中的所有记录
+
+
+
+
+
+
+六, 查询表中的数据
+
+select
+    字段列表
+from
+    表名列表
+where
+    条件列表：>, >=, <, <=, =, !=, bwtween ... and ..., and, or, in (...), is null, is not null，like(_匹配任意一个字符，%匹配任意多个字符)
+group by
+    分组字段
+having
+    分组之后的条件
+order by
+    排序
+limit
+    分页限定
+
+create table student(
+id int,
+name varchar(200),
+age int,
+sex varchar(10),
+address varchar(200),
+math double(4,1),
+english double(4,1)
+);
+
+insert into student(id, name, age, sex, address, math, english) values 
+(1,'马化腾',40,'男','深圳',90.0 ,70.0),
+(2,'马云',45,'男','杭州',99.0,90.0), 
+(3,'刘强东',35,'男','北京',80.0,92.0),
+(4,'刘翔',30,'男','济南',70.0,86.0),
+(5,'李连杰',50,'男','香港',85.0,87.0),
+(6,'李思思',20,'女','香港',70.0,98.0),
+(7,'成龙',55,'男','北京',75.0,73.0),
+(8,'周润发',54,'男','香港',78.0,85.0),
+(9,'周星驰',53,'男','香港',99.0,99.0),
+(10,'周杰伦',32,'男','台北',100.0,100.0), 
+(11,'柳岩',18,'女','苏州',80.0,99.0);
+
+
+//基本查询
+1.select * from student;  ------   查询表(student)中所有记录
+2.select id, name from student;  ------  查询指定字段
+3.select distinct address from student;  ------  去重复，查询的每条记录中相等的会去掉
+4.select name, math + english as sum  from student;  ------  计算多列数据的和， 并起别名
+5.select name, ifnull(math, 0) + ifnull(english, 0) as sum from student;  ------  计算多列数据的和，如果值为null用0代替， 并起别名
+6.select * from student where age != 18;
+7.select * from student where age >= 40 and age <= 60;
+8.select * from student where age between 40 and 60;
+9.select * from student where age in(18, 20);
+10.select * from student where age is null;  ------  查询null值
+11.select * from student where age is not null;  ------  查询非null值
+12.select * from student where name like '周__';  ------  模糊查询：查询以周开头并且有三个字的名称(name)
+13.select * from student where name like '马%';  ------  模糊查询：查询以马开头的名称(name)
+
+// 排序查询
+14.select * from student order by math;  ------  按math排序，默认升序(asc),降序是desc
+15.select * from student order by math desc;
+16.select * from student order by math desc, english desc;  ------  先降序math，再降序english（math值相同时发生）
+
+//聚合查询; count, max, min, sum, avg, 所有聚合函数的计算会排除null值
+17.select count(name) from student;  ------计算个数, name中有null时不会计算，一般会选择不会包含null值的列来计算个数，比如主键
+18.select count(ifnull(name, 0)) from student; ------计算个数, 让null参与计算
+19.select max(math) from student;
+20.select min(math) from student;
+21.select sum(math) from student;
+22.select avg(math) from student;
+
+// 分组查询:  分组之后查询的字段需要时分组字段或者聚合函数
+23.select sex,avg(math), count(id) from student group by sex;  ------  同级男和女的平均数学成绩和人数
+24.select sex,avg(math), count(id) from student where math >= 80 group by sex;  ------  分组前先过滤
+25.select sex,avg(math), count(id) as num from student where math >= 80 group by sex having num > 1; ------  分组前先过滤，分组后再过滤
+
+// 分页查询
+26.select * from student limit 0,3;  ------  从第一条开始往后查三条数据
+
+// 约束：
+not null(非空约束)
+unique(唯一约束)
+primary key(主键约束， 特点：非空且唯一)
+foreign key(外键约束)
+alter table student modify name varchar(200) not null;  ------  在已有表上添加非空约束
+alter table student modify name varchar(200) unique;  ------  在已有表上添加唯一约束
+alter table student drop index name;  ------  删除唯一约束
+alter table student drop primary key;  ------  删除主键约束
+alter table student modify id int primary key auto_increment;    ------  在已有表上添加主键约束并自增
+alter table student modify id int；  ------  这样可以删除自动增长
+
+create table student(
+id int auto_increment primary key,
+name varchar(100),
+fid int,
+constraint 外键约束的名称 foreign key (外键列名称) references 主表名称（主表列名称）
+);
+
+
+alter table student drop foreign key 外键约束的名称;   ------   删除外键约束
+alter table student add constraint 外键约束的名称 foreign key (外键列名称) references 主表名称（主表列名称）;  ------  在已有表上添加外键约束
+alter table employee add constraint emp_dep_fk foreign key (depid) references department(id);
+alter table employee add constraint emp_dep_fk foreign key (depid) references department(id) on update cascade on delete cascade;  ------  在已有表上添加外键约束,并设置级联更新和级联删除，级联操作要谨慎使用
+
+
+//多表关系
+一对多（多对一）：在多的一方建立外键，指向一的一方的主键
+多对多： 多对多关系实现需要借助第三张中间表，中间表至少包含两个字段，这两个字段作为第三张表的外键，分别指向两张表的主键
+中间表
+create table zj(
+rid int,
+uid int,
+date datetime,
+
+-- 创建符合主键
+primary key (rid, uid),
+foreign key (rid）references dt1(id),
+foreign key (uid）references dt2(rid)
+);
+
+
+
+
+// 多表查询：隐式内连接（查询交集）
+27. select * from employee as e, department as d where e.depid = d.id;
+
+//多表查询：显式内连接（查询交集）
+28. select * from employee as e inner join department as d on e.depid = d.id;
+
+//多表查询：左外连接（查询左表所有数据及其交集）
+29. select * from employee as e left outer join department as d on e.depid = d.id;
+
+//多表查询：右外连接（查询左表所有数据及其交集）
+30. select * from employee as e right outer join department as d on e.depid = d.id;
+
+//多表查询：子查询（子查询结果为单行单列的情况）
+31. select * from employee as e where e.age = (select max(age) from employee);  ------  查询员工年龄最大的员工信息
+32. 31. select * from employee as e where e.age < (select avg(age) from employee);  ------  查询员工年龄小于平均的员工信息
+
+//多表查询：子查询（子查询结果为多行单列的情况）
+33. select * from employee as e where e.depid in (select id from department as d where d.name in ('财务部', '销售部'));  ------  查询财务部和销售部的所有员工信息
+
+//多表查询：子查询（子查询结果为多行多列的情况）
+33. select * from department as d, (select * from employee where age >= 30) as e where d.id = e.depid;
+
+
+
+七，数据库备份与还原
+
+备份：
+mysqldump -u用户名 -p密码 数据库名称 > 备份路径(d://xxxx.sql)
+
+还原：
+1.登录数据库（mysql -u用户名 -p密码）；
+2.创建数据库(create database db)；
+3.使用数据库(use db);
+4.执行文件（source 文件路径）
+
+
+
+八，事务
+
+
+九，用户管理
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,1 +1,27 @@
 （1）安装教程：https://blog.csdn.net/weixin_43811057/article/details/108235117
+
+
+
+（2）官网：https://maven.apache.org/
+
+
+
+（3）windows下载：https://maven.apache.org/download.cgi，选择二进制压缩包：apache-maven-3.8.5-bin.zip
+
+
+（4）环境变量配置：MAVEN_HOME  maven目录         %MAVEN_HOME%/bin
+
+
+（5）修改本地仓库地址和远程仓库地址(settings.xml)
+
+  <!-- 自己添加的配置：指定本地仓库地址 -->
+  <localRepository>D:\software\apache-maven-3.6.3-bin\apache-maven-3.6.3\repository</localRepository>
+
+
+  <!-- 自己添加的配置：指定远程镜像地址 --> 
+  <mirror>
+	<id>nexus-aliyun</id>
+	<mirrorOf>*</mirrorOf>
+	<name>Nexus aliyun</name>
+	<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+  </mirror>

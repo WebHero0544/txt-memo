@@ -33,6 +33,36 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
 
+（6）ps -ef | grep java    ----查看含有java的进程
+
+
+（7）kill 45555  ------ 杀死进程
+
+（8）kill -9 4555  ------ 强制杀死进程
+
+
+  文件权限管理：
+       d              rwx           r-x               r--
+文件类型    属主权限   属组权限  其他用户权限
+d：目录         r： 可读       4
+-：文件         w：可写       2
+l：链接          x： 可执行   1
+
+
+（9）chmod u=rwx, g=r aa.txt   ------ 修改文件权限：使当前用户拥有rwx的权限 当前用户所在组的其他用户拥有r的权限
+
+（10）chmod 755 aa.txt   ------  等价于 chmod u=rwx,g=rx,o=rx aa.txt
+
+
+
+
+
+
+
+（11）getconf LONG_BIT  ------  查看linux系统是多少位的
+
+
+
 
 
 
