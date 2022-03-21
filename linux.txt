@@ -35,7 +35,6 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
 
-<<<<<<< HEAD
 （6）ps -ef | grep java    ----查看含有java的进程
 
 
@@ -57,7 +56,7 @@ l：链接          x： 可执行   1
 （10）chmod 755 aa.txt   ------  等价于 chmod u=rwx,g=rx,o=rx aa.txt
 
 
-=======
+
 （6）ping 地址
 
 
@@ -72,19 +71,13 @@ l：链接          x： 可执行   1
 
 
 （9）rm -rf 文件或目录名称    ------ 删除文件或目录
->>>>>>> 6e04cdfa8fc00abf6c3bfcc649b2d62ae4e31c99
 
 
 
-
-<<<<<<< HEAD
 
 （11）getconf LONG_BIT  ------  查看linux系统是多少位的
 
 
-
-=======
->>>>>>> 6e04cdfa8fc00abf6c3bfcc649b2d62ae4e31c99
 
 
 

@@ -378,6 +378,27 @@ git pull
 
 
 
+<11>查看git日志
+git log    -------   使用git log --help查看日志命令的帮助文档
+
+git log --pretty=oneline --abbrev-commit --all --graph
+
+
+
+
+
+<12> 版本回退
+git reset --hart comitId（版本号）
+
+git reflog   ------  可以查看已经删除的提交记录
+
+
+
+
+
+
+
+
 
 
 
