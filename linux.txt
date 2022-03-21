@@ -16,13 +16,15 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 	vi 路径 ------ 进去编辑器
 	按i ------  进入编辑状态
 	按esc ------ 退出编辑状态
-	按（shift + :）组合键 再输入wq! ------ 退出vi并保存
+	按（shift + :）组合键 再输入wq ------ 退出vi并保存
 	按（shift + :）组合键 再输入q!   ------ 退出vi不保存
 
 
-（4）学习使用cp命令来拷贝文件
+（4）学习使用cp命令来拷贝文件或目录
 
 	cp xxxx.conf xxxx_20200119.conf   ------ 将当前目录中的xxxx.conf复制到xxxx_20200119.conf(没有该文件会自动创建)
+
+	cp -r dest dest_20210715
 
 
 
@@ -33,6 +35,7 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
 
+<<<<<<< HEAD
 （6）ps -ef | grep java    ----查看含有java的进程
 
 
@@ -54,15 +57,34 @@ l：链接          x： 可执行   1
 （10）chmod 755 aa.txt   ------  等价于 chmod u=rwx,g=rx,o=rx aa.txt
 
 
+=======
+（6）ping 地址
+
+
+
+（7） ps -ef | grep python
+
+
+（8）kill 18923 20920 20921 20922 20923 20924
 
 
 
 
+
+（9）rm -rf 文件或目录名称    ------ 删除文件或目录
+>>>>>>> 6e04cdfa8fc00abf6c3bfcc649b2d62ae4e31c99
+
+
+
+
+<<<<<<< HEAD
 
 （11）getconf LONG_BIT  ------  查看linux系统是多少位的
 
 
 
+=======
+>>>>>>> 6e04cdfa8fc00abf6c3bfcc649b2d62ae4e31c99
 
 
 

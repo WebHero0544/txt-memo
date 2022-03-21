@@ -1,0 +1,8 @@
+
+（1）这个例子可以实现色斑图（根据每个顶点传入不同的颜色）
+https://threejs.org/examples/#webgl_buffergeometry_indexed
+
+const material = new THREE.MeshPhongMaterial( {
+    side: THREE.DoubleSide,
+    vertexColors: true
+} );
