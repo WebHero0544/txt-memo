@@ -6,3 +6,18 @@ const material = new THREE.MeshPhongMaterial( {
     side: THREE.DoubleSide,
     vertexColors: true
 } );
+
+
+
+
+（2）加载gltf后部分是黑色问题
+const loader = new GLTFLoader();
+      loader.load(`/modulFilePath/${this.moduleurl}`, gltf => {
+        gltf.scene.traverse(child => {
+          if (child.isMesh) {
+            child.material.emissive = child.material.color;
+            child.material.emissiveMap = child.material.map;
+          }
+        });
+        scene.add(gltf.scene);
+      });
