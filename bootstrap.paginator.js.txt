@@ -1,8 +1,0 @@
-
-
-参考网站：
-
-cnblogs.com/moretry/p/4441728.html
-
-
-bootstrap分页插件，一般涉及到table表格的应使用bootstrap.table.js

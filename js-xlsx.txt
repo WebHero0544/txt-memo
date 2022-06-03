@@ -1,6 +1,0 @@
-官网： https://sheetjs.com/
-
-文档：https://docs.sheetjs.com/
-
-
-（1） https://www.jianshu.com/p/c41730e48c31  ------  教程（来自与一个博客）
