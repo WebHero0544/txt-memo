@@ -82,7 +82,7 @@ var toTop = document.documentElement.scrollHeight;
 var timer = setInterval(function (){
 	if(toTop<0) {clearInterval(timer)}
 	document.documentElement.scrollTo(0, toTop-=10);
-},5);
+},16);
 
 
 
@@ -338,6 +338,16 @@ const len = text.match(/[\u4e00-\u9fa5]/g).length
 
 
 （22）直接在scroll上阻止事件冒泡和默认事件不管用，这时可以在mousewheel上做相同操作以满足需求
+
+
+
+（23）设置对象参数的函数默认值
+
+function fn({arg1 = 1, arg2 = 'str'} = {}) {
+	console.log(arg1, arg2)
+} 
+
+fn()  // 输出：1 str
 
 
 

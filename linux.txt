@@ -45,14 +45,14 @@ https://www.10besty.com/best-linux-distros/   ------linux·¢ĞĞ°æÅÅĞĞ
 
 
   ÎÄ¼şÈ¨ÏŞ¹ÜÀí£º
-       d              rwx           r-x               r--
-ÎÄ¼şÀàĞÍ    ÊôÖ÷È¨ÏŞ   Êô×éÈ¨ÏŞ  ÆäËûÓÃ»§È¨ÏŞ
+       d              rwx             r-x                   r--
+ÎÄ¼şÀàĞÍ    ÊôÖ÷È¨ÏŞ(u)   Êô×éÈ¨ÏŞ(g)  ÆäËûÓÃ»§È¨ÏŞ(o)
 d£ºÄ¿Â¼         r£º ¿É¶Á       4
 -£ºÎÄ¼ş         w£º¿ÉĞ´       2
 l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
-£¨9£©chmod u=rwx, g=r aa.txt   ------ ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ£ºÊ¹µ±Ç°ÓÃ»§ÓµÓĞrwxµÄÈ¨ÏŞ µ±Ç°ÓÃ»§ËùÔÚ×éµÄÆäËûÓÃ»§ÓµÓĞrµÄÈ¨ÏŞ
+£¨9£©chmod u=rwx, g=r aa.txt   ------ ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ£ºÊ¹µ±Ç°ÓÃ»§ÓµÓĞrwxµÄÈ¨ÏŞ µ±Ç°ÓÃ»§ËùÔÚ×éµÄÆäËûÓÃ»§ÓµÓĞrµÄÈ¨ÏŞ¡£u:µ±Ç°ÓÃ»§£¬g: Êô×é£¬o: ÆäËûÓÃ»§, +Ìí¼ÓÈ¨ÏŞ£¬-É¾³ıÈ¨ÏŞ, =Ìæ»»È¨ÏŞ, r¶Á, wĞ´£¬x¿ÉÖ´ĞĞ
 
 
 
@@ -130,7 +130,7 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 
-£¨21£©mkdir -p Ä¿Â¼Ãû/×ÓÄ¿Â¼Ãû ------ ´´½¨¶à¼¶Ä¿Â¼
+£¨21£©mkdir -p Ä¿Â¼Ãû/×ÓÄ¿Â¼Ãû[ Ä¿Â¼Ãû/×ÓÄ¿Â¼Ãû ...] ------ ´´½¨¶à¼¶Ä¿Â¼
 
 
 
@@ -175,6 +175,11 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 £¨31£©mv a.txt ml/b.txt  ------  ½«Ö¸¶¨ÎÄ¼ş¼ôÇĞµ½Ö¸¶¨Ä¿Â¼²¢ÖØÃüÃû
+
+
+
+
+£¨32£©mv a.txt a1.txt  ------   ½«µ±Ç°Ä¿Â¼ÏÂµÄa.txtÖØÃüÃûÎªa1.txt
 
 
 
@@ -243,15 +248,36 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 
+£¨44£©lsb_release -a   ------   ²é¿´ÏµÍ³ĞÅÏ¢
+
+
+
+
 
 
 linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀµ£©£»Ô´Âë±àÒë°²×°
 
+
+
+£¨0£©rpm -ivh °üÂ·¾¶   ------   °²×°rpm°ü
+
+
 £¨1£©rpm -qa | grep java  ------  ²é¿´Ö®Ç°ÓĞÃ»ÓĞ°²×°¹ıjava
 
-£¨2£©rpm -e --nodeps  rpm°üÃû³Æ  ------  É¾³ıÖ¸¶¨rpm°ü
 
-£¨3£©javajdk°²×°
+£¨2£©rpm -e --nodeps  rpm°üÃû³Æ  ------  É¾³ıÖ¸¶¨rpm°ü£¨--nodeps: ²»ÒªÑéÖ¤°üÒÀÀµ¹ØÏµ£©
+
+
+£¨3£©yum install | update | remove °üÃû   ------  °²×°¸üĞÂĞ¶ÔØ°ü£¨yumÊ¹ÓÃ½Ì³Ì£ºhttps://blog.csdn.net/MssGuo/article/details/114283074£©
+
+
+£¨4£©yum list | grep mysql   ------   ²é¿´ÓĞÃ»ÓĞ°²×°mysql
+
+
+£¨5£©yum history   ------   ²é¿´ÀúÊ·
+
+
+£¨6£©javajdk°²×°
 	1.¹ÙÍøÏÂÔØtar°ü£ºhttps://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.tar.gz
 	2.tar -zxvf jdk-17_linux-x64_bin.tar.gz  ------  ½«jdk½âÑ¹µ½µ±Ç°Ä¿Â¼
 	3.ÅäÖÃ»·¾³±äÁ¿
@@ -265,10 +291,61 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
 	4.java -version  ------  ²é¿´ÏÂ°æ±¾ºÅ¿´ÊÇ·ñ°²×°³É¹¦
 
 
+£¨7£©°²×°mysql8.0 £ºhttps://blog.csdn.net/qq_32332469/article/details/115461639
+        1.rpm -qa | grep mysql   ------   ²é¿´mysqlÊÇ·ñÒÑ°²×°£¬Èç¹ûÒÑ°²×°£¬Ö´ĞĞÏÂÃæµÄÃüÁîÉ¾³ı
+        2.rpm -e --nodeps  rpm°üÃû³Æ  ------  É¾³ıÖ¸¶¨rpm°ü£¨--nodeps: ²»ÒªÑéÖ¤°üÒÀÀµ¹ØÏµ£©
+        3.mysql8.0ÉçÇø°æÏÂÔØµØÖ·(centos7, rpm-bundle.tar), ²½ÖèÈçÏÂ£º
+          >> https://dev.mysql.com/downloads/mysql/  
+          >> Red Hat Enterprise Linux / Oracle Linux
+          >> Red Hat Enterprise Linux 7 / Oracle Linux 7 (x86, 64-bit)
+          >> RPM Bundle(mysql-8.0.29-1.el7.x86_64.rpm-bundle.tar)£¬ ÕâÀïÏÂÔØÁËËùÓĞ¹¦ÄÜ
+        4.½«ÏÂÔØºÃµÄtarÎÄ¼şÉÏ´«µ½/software/mysql8Ä¿Â¼ÏÂ£º
+           /software/mysql8/mysql-8.0.29-1.el7.x86_64.rpm-bundle.tar
+        5.½âÑ¹tarÎÄ¼şµ½µ±Ç°Ä¿Â¼£ºtar -xvf mysql-8.0.29-1.el7.x86_64.rpm-bundle.tar
+	 ½âÑ¹ºóµÄrpmÎÄ¼şÓĞ£º
+           mysql-community-client-8.0.29-1.el7.x86_64.rpm
+           mysql-community-client-plugins-8.0.29-1.el7.x86_64.rpm
+           mysql-community-common-8.0.29-1.el7.x86_64.rpm
+           mysql-community-debuginfo-8.0.29-1.el7.x86_64.rpm
+           mysql-community-devel-8.0.29-1.el7.x86_64.rpm
+           mysql-community-embedded-compat-8.0.29-1.el7.x86_64.rpm
+           mysql-community-icu-data-files-8.0.29-1.el7.x86_64.rpm
+           mysql-community-libs-8.0.29-1.el7.x86_64.rpm
+           mysql-community-libs-compat-8.0.29-1.el7.x86_64.rpm
+           mysql-community-server-8.0.29-1.el7.x86_64.rpm
+           mysql-community-server-debug-8.0.29-1.el7.x86_64.rpm
+           mysql-community-test-8.0.29-1.el7.x86_64.rpm
+         6.°²×°Ç°ÏÈĞ¶ÔØmariadb£º
+	  rpm -qa | grep mariadb
+            rpm -e --nodeps mariadb-libs-5.5.68-1.el7.x86_64
+            Èç¹ûÖ®Ç°°²×°¹ımysqlĞèÒªÏÈĞ¶ÔØ£¬¼Ç×Å±¸·İÊı¾İ
+         7.ÔÙ°²×°½â°üºóµÄrpmÎÄ¼ş£º
+            ¿ÉÒÔÏÈ°²×°mysql·şÎñ£¨mysql-community-server-8.0.29-1.el7.x86_64.rpm£©£¬»áÓĞÒÀÀµÈ±Ê§µÄ±¨´í¶øµ¼ÖÂ°²×°Ê§°Ü£¬¸ù¾İ±¨´íÌáÊ¾°²×°¶ÔÓ¦µÄÒÀÀµ¾ÍĞĞ£¬ÏÂÃæ»¹ĞèÒª°²×°Ò»¸öÃûÎªlibaioµÄ°ü:
+            yum install libaio
+            ×îºóÔÙ´Î°²×°ysql·şÎñ£º
+            rpm -ivh mysql-community-server-8.0.29-1.el7.x86_64.rpm
+            mysql·şÎñ°²×°³É¹¦
+         8.ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ±ÜÃâ·şÎñÆô¶¯Ê§°Ü£ºsudo chown -R mysql.mysql /var/lib/mysql
+         9.Æô¶¯·şÎñ£ºsystemctl start mysqld.service
+         10.²é¿´·şÎñ×´Ì¬£ºsystemctl status mysqld.service
+         11.Ïà¹ØÎÄ¼şÎ»ÖÃ:
+              /var/lib/mysql   ------   Êı¾İÎÄ¼şÎ»ÖÃ£¨°üº¬binlogÈÕÖ¾£©
+              /etc/my.cnf   ------   ÅäÖÃÎÄ¼şÎ»ÖÃ
+              /var/lib/mysql/mysql.sock   ------   sockÎÄ¼şÎ»ÖÃ£¨ÓÃÓÚclientÁ¬½Ó£©
+              /var/log/mysqld.log   ------   ÈÕÖ¾ÎÄ¼şÎ»ÖÃ
+              /var/run/mysqld/mysqld.pid   ------    ½ø³ÌÎÄ¼şÎ»ÖÃ
+              /usr/bin/mysql   ------   ¿Í»§¶Ë·ÃÎÊ¶ş½øÖÆÎÄ¼şÎ»ÖÃ
+              /usr/sbin/mysqld   ------   ·şÎñ¶ËÆô¶¯¶ş½øÖÆÎÄ¼şÎ»ÖÃ
+          12.Ê¹ÓÃ¿Í»§¶ËµÇÂ¼mysql
+              mysql -uroot -p   ------   ¶ÔÓÚ³õ´ÎµÇÂ¼ĞèÒªÓÃµ½ÈÕÖ¾ÎÄ¼ş£¨/var/log/mysqld.log£©ÖĞµÄÁÙÊ±ÃÜÂë£¬ÕÒµ½ºóµÇÂ¼ÔÙĞŞ¸ÄÃÜÂë
+	    > alter user root@'localhost' identified by '123456';   ------   ĞŞ¸ÄÃÜÂë
+          13.´´½¨Ò»¸öÄÜ¹»Ô¶³ÌµÇÂ¼µÄÓÃ»§
+          14.ÖØÆômysql·şÎñ£ºsystemctl restart mysqld.service
+          15.¿ª»ú×ÔÆô¶¯£ºsystemctl enable mysqld
+           
+            
+           
 
-
-
-£¨4£©°²×°mysql8.0 £ºhttps://blog.csdn.net/qq_38591756/article/details/82958333
 	
 
 
