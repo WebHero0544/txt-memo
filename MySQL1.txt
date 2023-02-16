@@ -64,7 +64,7 @@ select
 from
     表名列表
 where
-    条件列表：>, >=, <, <=, =, !=, bwtween ... and ..., and, or, in (...), is null, is not null，like(_匹配任意一个字符，%匹配任意多个字符)
+    条件列表：>, >=, <, <=, =, !=, bwtween ... and ..., and, or, in (...), is null, is not null，like(_匹配任意一个字符，%匹配任意多个字符，_匹配任意一个字符)
 group by
     分组字段
 having
@@ -126,7 +126,7 @@ insert into student(id, name, age, sex, address, math, english) values
 21.select sum(math) from student;
 22.select avg(math) from student;
 
-// 分组查询:  分组之后查询的字段需要时分组字段或者聚合函数
+// 分组查询:  分组之后查询的字段需要是分组字段或者聚合函数
 23.select sex,avg(math), count(id) from student group by sex;  ------  同级男和女的平均数学成绩和人数
 24.select sex,avg(math), count(id) from student where math >= 80 group by sex;  ------  分组前先过滤
 25.select sex,avg(math), count(id) as num from student where math >= 80 group by sex having num > 1; ------  分组前先过滤，分组后再过滤
@@ -137,6 +137,7 @@ insert into student(id, name, age, sex, address, math, english) values
 // 约束：
 not null(非空约束)
 unique(唯一约束)
+default(默认约束)
 primary key(主键约束， 特点：非空且唯一)
 foreign key(外键约束)
 alter table student modify name varchar(200) not null;  ------  在已有表上添加非空约束
@@ -147,10 +148,11 @@ alter table student modify id int primary key auto_increment;    ------  在已�
 alter table student modify id int；  ------  这样可以删除自动增长
 
 create table student(
-id int auto_increment primary key,
-name varchar(100),
-fid int,
-constraint 外键约束的名称 foreign key (外键列名称) references 主表名称（主表列名称）
+	id int auto_increment primary key,
+	name varchar(100) not null,
+	jxj int not null default 0,
+	fid int,
+	constraint 外键约束的名称 foreign key (外键列名称) references 主表名称（主表列名称）
 );
 
 

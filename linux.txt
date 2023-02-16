@@ -3,7 +3,7 @@ https://www.10besty.com/best-linux-distros/   ------linux·¢ĞĞ°æÅÅĞĞ
 
 
 
-£¨1£©ÒÔºóÓĞÊ±¼ä´Óubuntu¿ªÊ¼Ñ§Æğ
+£¨1£©------
 
 
 
@@ -73,10 +73,11 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 
-
 £¨8.1£©kill -9 18923  ------  Ç¿ÖÆÉ±ËÀ½ø³Ì
 
 
+
+£¨8.2£©ll /proc/20920   ------   ²é¿´pidÎª20920µÄÏêÏ¸ĞÅÏ¢£¬procÀï´æ·ÅµÄÊÇµ±Ç°ËùÓĞÔËĞĞ½ø³ÌµÄÏêÏ¸ĞÅÏ¢
 
 
 
@@ -325,7 +326,7 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
             ×îºóÔÙ´Î°²×°ysql·şÎñ£º
             rpm -ivh mysql-community-server-8.0.29-1.el7.x86_64.rpm
             mysql·şÎñ°²×°³É¹¦
-         8.ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ±ÜÃâ·şÎñÆô¶¯Ê§°Ü£ºsudo chown -R mysql.mysql /var/lib/mysql
+         8.ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ±ÜÃâ·şÎñÆô¶¯Ê§°Ü£ºsudo chown -R mysql.mysql /var/lib/mysql  £¨showÓÃ·¨£ºhttps://www.runoob.com/linux/linux-comm-chown.html£©
          9.Æô¶¯·şÎñ£ºsystemctl start mysqld.service
          10.²é¿´·şÎñ×´Ì¬£ºsystemctl status mysqld.service
          11.Ïà¹ØÎÄ¼şÎ»ÖÃ:
@@ -337,12 +338,172 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
               /usr/bin/mysql   ------   ¿Í»§¶Ë·ÃÎÊ¶ş½øÖÆÎÄ¼şÎ»ÖÃ
               /usr/sbin/mysqld   ------   ·şÎñ¶ËÆô¶¯¶ş½øÖÆÎÄ¼şÎ»ÖÃ
           12.Ê¹ÓÃ¿Í»§¶ËµÇÂ¼mysql
-              mysql -uroot -p   ------   ¶ÔÓÚ³õ´ÎµÇÂ¼ĞèÒªÓÃµ½ÈÕÖ¾ÎÄ¼ş£¨/var/log/mysqld.log£©ÖĞµÄÁÙÊ±ÃÜÂë£¬ÕÒµ½ºóµÇÂ¼ÔÙĞŞ¸ÄÃÜÂë
-	    > alter user root@'localhost' identified by '123456';   ------   ĞŞ¸ÄÃÜÂë
-          13.´´½¨Ò»¸öÄÜ¹»Ô¶³ÌµÇÂ¼µÄÓÃ»§
+               mysql -uroot -p   ------   ¶ÔÓÚ³õ´ÎµÇÂ¼ĞèÒªÓÃµ½ÈÕÖ¾ÎÄ¼ş£¨/var/log/mysqld.log£©ÖĞµÄÁÙÊ±ÃÜÂë£¬ÕÒµ½ºóµÇÂ¼ÔÙĞŞ¸ÄÃÜÂë
+	     > alter user root@'localhost' identified by 'abcdEF;123456';   ------   ĞŞ¸ÄÃÜÂë
+          13.´´½¨Ò»¸öÄÜ¹»Ô¶³ÌµÇÂ¼µÄÓÃ»§(https://blog.csdn.net/weixin_42782150/article/details/124330167)
+               mysql -uroot -p
+	     > use mysql;
+	     > update user set host='%' where user='root';
+               > alter user root identified with mysql_native_password by 'abcdEF;123456';
+               > GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'WITH GRANT OPTION;   # ÊÚÈ¨
+               > FLUSH PRIVILEGES;      # Ë¢ĞÂ, Á½²½Íê³ÉºóÊ¹ÓÃnavicatÔ¶³ÌipµÇÂ¼ÊÔÊÔ
           14.ÖØÆômysql·şÎñ£ºsystemctl restart mysqld.service
           15.¿ª»ú×ÔÆô¶¯£ºsystemctl enable mysqld
            
+
+£¨8£©systemctl³£ÓÃÃüÁî(Ö÷ÒªÓë·şÎñÏà¹ØµÄÃüÁî)
+        1¡¢Æô¶¯·şÎñ systemctl start ·şÎñÃû
+
+        2¡¢Í£Ö¹·şÎñ systemctl stop ·şÎñÃû
+
+        3¡¢ÖØÆô·şÎñ systemctl restart ·şÎñÃû
+
+        4¡¢²é¿´·şÎñÊÇ·ñÒÑÆô¶¯ systemctl is-active ·şÎñÃû
+
+        5¡¢²é¿´·şÎñµÄ×´Ì¬ systemctl status ·şÎñÃû
+
+        6¡¢ÆôÓÃ¿ª»ú×ÔÆô¶¯·şÎñ systemctl enable ·şÎñÃû
+
+        7¡¢Í£ÓÃ¿ª»ú×ÔÆô¶¯·şÎñ systemctl disable ·şÎñÃû
+
+        8¡¢²é¿´·şÎñÊÇ·ñÎª¿ª»ú×ÔÆô¶¯ systemctl is-enabled ·şÎñÃû
+
+        9¡¢Ö»ÖØÆôÕıÔÚÔËĞĞÖĞµÄ·şÎñ systemctl try-restart ·şÎñÃû
+
+        10¡¢ÏÔÊ¾ËùÓĞµÄ·şÎñ×´Ì¬---¿Õ¸ñ·­Ò³ qÍÆ³ö systemctl list-units --type service --all
+
+        11¡¢²é¿´Æô¶¯³É¹¦µÄ·şÎñÁĞ±í systemctl list-unit-files|grep enabled
+
+        12¡¢²é¿´Æô¶¯Ê§°ÜµÄ·şÎñÁĞ±í systemctl --failed
+
+        13¡¢²é¿´ËùÓĞ·şÎñµÄ×´Ì¬---¿Õ¸ñ·­Ò³ qÍÆ³ö systemctl list-unit-files --type service
+        
+        14¡¢²é¿´·À»ğÇ½ÊÇ·ñ¿ªÆô£ºsystemctl status firewalld
+         
+        15¡¢¿ªÆô·À»ğÇ½£ºsystemctl start firewalld
+
+
+£¨9£©°²×°tomcat: https://blog.csdn.net/qq_30797051/article/details/116267935
+        1¡¢https://tomcat.apache.org/   >>>  download  >>>  Tomcat10  >>>  Binary Distributions  >>>  Core  >>>  tar.gz   >>>  apache-tomcat-10.0.22.tar.gz
+        2¡¢½«ÏÂÔØºÃµÄÑ¹Ëõ°ü·Åµ½/software/tomcatÄ¿Â¼ÏÂ£¬²¢½âÑ¹µ½µ±Ç°Ä¿Â¼£ºtar -zxvf apache-tomcat-10.0.22.tar.gz
+        3¡¢½øÈëbinÄ¿Â¼£ºcd apache-tomcat-10.0.22
+        4¡¢ÔÚbinÄ¿Â¼ÏÂÖ´ĞĞ£º./startup.sh À´Æô¶¯tomcat
+        5¡¢°¢ÀïÔÆÅäÖÃtomcat·şÎñËùÊ¹ÓÃµÄ¶Ë¿Ú8080£ºhttps://jingyan.baidu.com/article/3c343ff7109c8d4c377963c6.html
+        6¡¢½«tomcatÌí¼Óµ½·şÎñ£¨systemctl£©:
+              
+
+             ĞŞ¸ÄbinÄ¿Â¼ÏÂµÄcatalina.shÎÄ¼ş£º
+             #¼ÓÈëµ½CATALINA_BASE¶¨ÒåºóÃæ£¨Ìí¼ÓÔÚÕâÒ»ĞĞ´úÂëµÄÏÂÃæ£º[ -z "$CATALINA_BASE" ] && CATALINA_BASE="$CATALINA_HOME"£©
+             CATALINA_PID="$CATALINA_BASE/tomcat.pid"
+
+
+	   ±à¼­²¢´´½¨ÎÄ¼ş: vim /usr/lib/systemd/system/tomcat.service
+
+	   [Unit]
+            Description=Tomcat
+            After=network.target
+ 
+            [Service]
+            Type=forking
+            Environment="CATALINA_HOME=/software/tomcat/apache-tomcat-10.0.22"
+            Environment="JAVA_HOME=/software/javajdk/jdk-17.0.2"
+             
+            #PATH²»¿ÉÓÃ±äÁ¿
+            PIDFile=/software/tomcat/apache-tomcat-10.0.22/tomcat.pid
+            ExecStart=/software/tomcat/apache-tomcat-10.0.22/bin/catalina.sh start
+            ExecReload=/software/tomcat/apache-tomcat-10.0.22/bin/catalina.sh restart
+            ExecStop=/software/tomcat/apache-tomcat-10.0.22/bin/catalina.sh stop
+ 
+            [Install]
+            WantedBy=multi-user.target
+
+
+            #ÖØÔØsystemctlÅäÖÃ
+            systemctl daemon-reload
+            #Ìí¼Ó¿ª»ú×ÔÆô
+            systemctl enable tomcat.service
+            #¹Ø±Õ¿ª»ú×ÔÆô
+            systemctl disable tomcat.service
+            #Æô¶¯tomcat·şÎñ
+            systemctl start tomcat.service
+            #¹Ø±Õtomcat·şÎñ
+            systemctl stop tomcat.service
+            #ÖØÔØtomcat·şÎñ
+            systemctl restart tomcat.service
+
+
+
+£¨10£©radis°²×°
+	1¡¢ÏÂÔØradis£ºhttps://redis.io/download/ >>> Download 7.0.2 >>> redis-7.0.2.tar.gz
+	2¡¢ÉÏ´«µ½·şÎñÆ÷£º/software/radis£¬²¢½âÑ¹µ½µ±Ç°Ä¿Â¼£ºtar -zxvf redis-7.0.2.tar.gz
+	3¡¢°²×°radisÇ°ÏÈ°²×°gcc-c++: yum install gcc-c++
+	4¡¢cdµ½redis-7.0.2Ä¿Â¼Àï
+	5¡¢±àÒë£ºmake
+	6¡¢°²×°µ½/usr/local/redis£ºmake PREFIX=/usr/local/redis install
+	7¡¢Ç°Ì¨Æô¶¯£ºcd /usr/local/redis/bin  ./redis-server
+	8¡¢ºóÌ¨Æô¶¯£º
+		ÔÚ/software/radis/redis-7.0.2Ä¿Â¼ÏÂ½«redis.confÎÄ¼ş¿½±´µ½/usr/local/redis/bin£¬ cp redis.conf /usr/local/redis/bin
+		ĞŞ¸Ä/usr/local/redis/bin/redis.conf
+		½« daemonize no ¸ÄÎª daemonize yes£¬¼´¿ªÆôºóÌ¨Æô¶¯
+		ºóÌ¨Æô¶¯·şÎñ£º./redis-server redis.conf
+	9¡¢¿Í»§¶ËÁ¬½Ó£º ./redis-cli      ------  ½øÈë½»»¥Ä£Ê½ºóÈç¹ûÇ°µ¼·ûºÅÀïÃ»ÓĞip£ºport£¨127.0.0.1:6379£©µÄ»°£¬¿ÉÒÔ¶Ï¿ªsshÖØĞÂÁ¬½Ó
+	10¡¢·şÎñÅäÖÃ£ºvim /usr/lib/systemd/system/redis.service
+	       
+                [Unit]
+                Description=Redis server
+                After=network.target
+
+                [Service]
+                Type=forking
+                ExecStart=/usr/local/redis/bin/redis-server /usr/local/redis/bin/redis.conf
+                ExecStop=/usr/local/redis/bin/redis-cli shutdown
+                Restart=always
+                PrivateTmp=true
+
+                [Install]
+                WantedBy=multi-user.target
+
+	       #ÖØÔØsystemctlÅäÖÃ
+                systemctl daemon-reload
+                #Æô¶¯redis·şÎñ
+	      systemctl start redis.service
+                #Ìí¼Ó¿ª»ú×ÔÆô
+                systemctl enable redis.service
+	11¡¢ÅäÖÃÎÄ¼ş£º¶ÔÓÚÔ¶³Ì·ÃÎÊ£¬ÉèÖÃÃÜÂëµÈ¶¼¿ÉÒÔÔÚÅäÖÃÎÄ¼şÀïÅäÖÃ£¬ÅäÖÃÍê³ÉºóÖØĞÂÆô¶¯·şÎñ
+
+
+
+
+£¨11£©Ğ¶ÔØnginx
+	1¡¢Ê¹ÓÃyumĞ¶ÔØ£ºyum remove nginx
+	     Ê¹ÓÃrpmĞ¶ÔØ£ºrpm -e nginx
+	2¡¢É¾³ı²ĞÓàÎÄ¼ş£º
+		ÏÈ°´ÎÄ¼şÃû³ÆÑ°ÕÒµ½ÃûÎªnginxµÄÎÄ¼ş»òÄ¿Â¼ find / -name nginx   É¾³ıÑ°ÕÒµ½µÄÎÄ¼ş»òÄ¿Â¼ rm -rf   ÎÄ¼ş»òÄ¿Â¼
+		ÔÚÊ¹ÓÃ*Í¨Åä·û²éÕÒÎÄ¼şÈ·±£ÍêÈ«É¾³ıÉ¾³ı find / -name nginx*
+
+
+
+£¨12£©Ê¹ÓÃyumÏßÉÏ°²×°nginx
+	1¡¢yum install nginx
+	2¡¢°²×°Íê³Éºónginx»á×Ô¶¯Ìí¼Óµ½·şÎñ
+	3¡¢Ê¹ÓÃsystemctl start nginxÆô¶¯·şÎñ
+	4¡¢Ê¹ÓÃsystemctl enable nginx Ìí¼Óµ½¿ª»ú×ÔÆô¶¯
+
+
+
+£¨13£©Ê¹ÓÃrpm±¾µØ°²×°nginx
+	0¡¢Ö®Ç°×°1.22.0£¨nginx-1.22.0-1.el7.ngx.x86_64.rpm£©°æ±¾Ã»ÓĞ°²×°ÉÏ£¬±¨´íÈçÏÂ£¨ºóÃæ¾ßÌåÔÙ¿´ÏÂÔ­Òò£©
+		error: Failed dependencies:
+			libpcre2-8.so.0()(64bit) is needed by nginx-1:1.22.0-1.el7.ngx.x86_64
+	     ºóÀ´³É¹¦°²×°1.20.2°æ±¾£¬²½ÖèÈçÏÂ£º
+
+	1¡¢ÔÚnginx¹ÙÍøÏÂÔØËùĞèÒªµÄµÄrpm°ü£¬µØÖ·Îª£ºhttp://nginx.org/packages/£¬
+               centos7ËùĞèµÄrpm°üÏÂÔØµØÖ·£ºhttp://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.20.2-1.el7.ngx.x86_64.rpm		
+	2¡¢ÏÂÔØºóÉÏ´«ÖÁ·şÎñÆ÷/software/nginxÄ¿Â¼ÏÂ
+	3¡¢ÔÚ/software/nginxÄ¿Â¼ÏÂ°²×°rpm°ü£ºrpm -ivh nginx-1.20.2-1.el7.ngx.x86_64.rpm
+	4¡¢Ê¹ÓÃsystemctl start nginx Æô¶¯·şÎñ
+	5¡¢Ê¹ÓÃsystem enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
+
             
            
 
