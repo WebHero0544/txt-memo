@@ -1,0 +1,8 @@
+https://github.com/coreybutler/nvm-windows
+
+nvm use 14.0.0
+npm install -g yarn
+nvm use 12.0.1
+npm install -g yarn
+
+切换版本后如果没有yarn，可以使用npm安装：npm i -g yarn

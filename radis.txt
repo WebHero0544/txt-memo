@@ -1,0 +1,12 @@
+官网：https://redis.io
+
+
+（1）安装(windows) 
+        下载地址：https://github.com/tporadowski/redis/releases
+        选择msi文件进行安装
+        安装时候选添加环境变量方便操作，如果不勾选可以到安装目录里启用命令行
+        命令行：redis-cli（客户端）    redis-server（服务端）
+        启动服务：双击redis-server.exe启动服务
+        
+        
+        

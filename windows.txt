@@ -1,1 +1,18 @@
 （1）windows service(服务)
+
+
+（2）windowsd端口被占用
+         查询所有端口
+         netstat -ano
+         
+         查询指定端口
+         netstat -ano | findstr "端口号"
+
+         根据进程PID查询进程名称
+         tasklist | findstr "进程PID号"
+
+         根据PID杀死任务
+         taskkill -f -pid "进程PID号"
+
+
+（3）清屏：cls

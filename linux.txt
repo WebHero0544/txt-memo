@@ -35,7 +35,7 @@ https://www.10besty.com/best-linux-distros/   ------linux·¢ĞĞ°æÅÅĞĞ
 
 
 
-£¨6£©ps -ef | grep java    ----²é¿´º¬ÓĞjavaµÄ½ø³Ì
+£¨6£©ps -ef | grep java    ----²é¿´º¬ÓĞjavaµÄ½ø³Ì  (ps -ef | grep "java -jar"    ------ ²éÑ¯ËùÓĞµ±Ç°ÔËĞĞµÄjava³ÌĞò)
 
 
 £¨7£©kill 45555  ------ É±ËÀ½ø³Ì
@@ -90,11 +90,11 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 
-£¨12£©ls ------  ²é¿´µ±Ç°Ä¿Â¼ÏÂµÄËùÓĞ°ÉÎÄ¼şÒÔ¼°Ä¿Â¼
+£¨12£©ls ------  ²é¿´µ±Ç°Ä¿Â¼ÏÂµÄËùÓĞÎÄ¼şÒÔ¼°Ä¿Â¼
 
 
 
-£¨13£©ls -s  ------  ²é¿´µ±Ç°Ä¿Â¼ÏÂµÄËùÓĞ°ÉÎÄ¼şÒÔ¼°Ä¿Â¼£¨°üº¬Òş²ØÎÄ¼ş£©
+£¨13£©ls -s  ------  ²é¿´µ±Ç°Ä¿Â¼ÏÂµÄËùÓĞÎÄ¼şÒÔ¼°Ä¿Â¼£¨°üº¬Òş²ØÎÄ¼ş£©
 
 
 £¨14£©ls -l ------  ²é¿´ÎÄ¼ş»òÄ¿Â¼µÄÏêÏ¸ĞÅÏ¢
@@ -323,7 +323,7 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
          7.ÔÙ°²×°½â°üºóµÄrpmÎÄ¼ş£º
             ¿ÉÒÔÏÈ°²×°mysql·şÎñ£¨mysql-community-server-8.0.29-1.el7.x86_64.rpm£©£¬»áÓĞÒÀÀµÈ±Ê§µÄ±¨´í¶øµ¼ÖÂ°²×°Ê§°Ü£¬¸ù¾İ±¨´íÌáÊ¾°²×°¶ÔÓ¦µÄÒÀÀµ¾ÍĞĞ£¬ÏÂÃæ»¹ĞèÒª°²×°Ò»¸öÃûÎªlibaioµÄ°ü:
             yum install libaio
-            ×îºóÔÙ´Î°²×°ysql·şÎñ£º
+            ×îºóÔÙ´Î°²×°mysql·şÎñ£º
             rpm -ivh mysql-community-server-8.0.29-1.el7.x86_64.rpm
             mysql·şÎñ°²×°³É¹¦
          8.ĞŞ¸ÄÎÄ¼şÈ¨ÏŞ±ÜÃâ·şÎñÆô¶¯Ê§°Ü£ºsudo chown -R mysql.mysql /var/lib/mysql  £¨showÓÃ·¨£ºhttps://www.runoob.com/linux/linux-comm-chown.html£©
@@ -349,6 +349,7 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
                > FLUSH PRIVILEGES;      # Ë¢ĞÂ, Á½²½Íê³ÉºóÊ¹ÓÃnavicatÔ¶³ÌipµÇÂ¼ÊÔÊÔ
           14.ÖØÆômysql·şÎñ£ºsystemctl restart mysqld.service
           15.¿ª»ú×ÔÆô¶¯£ºsystemctl enable mysqld
+	16.ĞŞ¸ÄrootÃÜÂë£ºALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'qwER_1234';
            
 
 £¨8£©systemctl³£ÓÃÃüÁî(Ö÷ÒªÓë·şÎñÏà¹ØµÄÃüÁî)
@@ -503,6 +504,15 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
 	3¡¢ÔÚ/software/nginxÄ¿Â¼ÏÂ°²×°rpm°ü£ºrpm -ivh nginx-1.20.2-1.el7.ngx.x86_64.rpm
 	4¡¢Ê¹ÓÃsystemctl start nginx Æô¶¯·şÎñ
 	5¡¢Ê¹ÓÃsystem enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
+
+
+
+
+
+
+lsb_release -a
+
+https://blog.csdn.net/sinat_35861727/article/details/123508145      yum °²×° nodejs
 
             
            

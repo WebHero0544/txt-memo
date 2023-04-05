@@ -1,0 +1,12 @@
+（1）windows安装
+         1.rabbitmq依赖erlang，先安装它，下载地址：https://www.erlang.org/downloads，配置ERLANG_HOME(安装路径)和PATH（到bin目录）环境变量，配置好后重启电脑
+         2.安装rabbitmq，下载地址：https://www.rabbitmq.com/install-windows.html >>>> 	rabbitmq-server-3.11.10.exe，安装完成后以管理员权限到sbin启动服务，执行rabbitmq-server.bat start 启动服务, 执行rabbitmq-server.bat stop 停止服务，服务默认端口号是5672
+
+         3.启动时遇到了一个问题：https://tengqingshan.blog.csdn.net/article/details/122772777?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122772777-blog-127320351.pc_relevant_3mothn_strategy_recovery&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2%7Edefault%7ECTRLIST%7ERate-1-122772777-blog-127320351.pc_relevant_3mothn_strategy_recovery&utm_relevant_index=1
+         
+          4.启动后台管理服务：rabbitmq-plugins.bat enable rabbitmq_management    页面地址：http://localhost:15672, 访客账号密码：guest/guest
+
+
+
+
+

@@ -1,0 +1,11 @@
+https://www.elastic.co/cn/elasticsearch/
+
+
+（1）下载地址：https://www.elastic.co/cn/downloads/elasticsearch
+
+
+（2）安装：解压后到bin目录elasticsearch.bat文件以管理员权限启动服务，用浏览器访问http://localhost:9200/如果返回json数据证明服务启动成功，但8版本需安全登录认证，默认用户名是elastic，密码不知道可以在启动服务的前提下在bin目录下执行：elasticsearch-reset-password -u elastic 命令来重置密码，我重置后的密码是：TLqpqqKGRAe8KCxoni6N
+
+
+
+（5）下载分词器插件：https://github.com/medcl/elasticsearch-analysis-ik，插件版本必须与es保持一致
