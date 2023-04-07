@@ -1,0 +1,6 @@
+（3）verdaccio    http://localhost:4873/     admin/admin    
+	https://www.cnblogs.com/chenxinblogs/p/15265194.html
+	https://blog.csdn.net/weixin_43487782/article/details/120802310
+
+	pm2 start verdaccio
+	pm2 stop verdaccio
