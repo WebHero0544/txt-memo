@@ -62,6 +62,32 @@ npm get [<key>] ==  npm config get [<key>]
 
 
 
+（7）npm publish
+	带命名空间的npm包安装
+	1.在官网注册账号
+	2.在用户界面添加一个组织（Organizations）名称，比如叫test
+      3.配置package.json,主要包含：
+
+	{
+		"name": "@test/xxx",  // @组织名称/包名
+		"version": "1.0.0",  // 版本号
+		"main": "dist/index.js",  // 包入口
+		"files": [  // 发布的文件夹以及文件列表
+    			"dist"
+  		],
+		"publishConfig": {
+    			"access": "public",  // 发布到共有仓库
+    			"registry": "https://registry.npmjs.org"  // 仓库地址
+  		}
+	}
+
+	4.发布包：npm publish
+
+
+
+
+
+
 
 
 
