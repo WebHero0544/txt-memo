@@ -514,6 +514,10 @@ lsb_release -a
 
 https://blog.csdn.net/sinat_35861727/article/details/123508145      yum °²×° nodejs
 
+netstat -antup
+
+netstat -antup | grep 4873
+
             
            
 
