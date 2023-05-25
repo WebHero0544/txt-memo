@@ -6,3 +6,8 @@ https://www.jianshu.com/p/23634e54487e     // https://www.npmjs.com/package/font
 
 // style可视化编辑机器
 http://10.40.132.159/mapstyle/?layer=673427622%7E0#0.78/0/0
+
+
+加载倾斜摄影（3dtiles格式）
+https://blog.csdn.net/qq_37750030/article/details/124680036
+https://deck.gl/docs/api-reference/geo-layers/tile-3d-layer
