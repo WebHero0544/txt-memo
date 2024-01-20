@@ -19,6 +19,8 @@ https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 	按（shift + :）组合键 再输入wq ------ 退出vi并保存
 	按（shift + :）组合键 再输入q!   ------ 退出vi不保存
 
+	查找：在命令模式下输入/，按enter查找到第一个结果，按n查找下一个，按N查找上一个
+
 
 （4）学习使用cp命令来拷贝文件或目录
 
