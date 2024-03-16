@@ -59,7 +59,7 @@ l：链接          x： 可执行   1
 
 
 
-（10）chmod 755 aa.txt   ------  等价于 chmod u=rwx,g=rx,o=rx aa.txt
+（10）chmod 755 aa.txt   ------  等价于 chmod u=rwx,g=rx,o=rx aa.txt    7 = 4(r) + 2(w) + 1(x)      5 = 4(r) + 1(x)
 
 
 
@@ -201,7 +201,7 @@ l：链接          x： 可执行   1
 
 
 
-（35）tar -zxvf a.tar.gz -C ml ------  将当前目录下的a.tar.gz解压到当期ml目录里
+（35）tar -zxvf a.tar.gz -C ml ------  将当前目录下的a.tar.gz解压到当前ml目录里
 
 
 
@@ -236,7 +236,7 @@ l：链接          x： 可执行   1
 
 
 
-（41）cat a.txt > b.txt  ------  将输出重定向到文件（追加）
+（41）cat a.txt >> b.txt  ------  将输出重定向到文件（追加）
 
 
 
