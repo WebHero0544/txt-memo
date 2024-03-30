@@ -1,3 +1,13 @@
+https://mvnrepository.com/    ------ java包
+
+https://www.npmjs.com/ ------ js包
+
+https://crates.io/   ------ rust包
+
+https://pypi.org/   ------ python包
+
+
+
 
 
 https://www.windy.com  ------  map about this weather
