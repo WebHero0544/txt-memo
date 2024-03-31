@@ -258,11 +258,31 @@ l£ºÁ´½Ó          x£º ¿ÉÖ´ĞĞ   1
 
 
 
+£¨45£©·À»ğÇ½
+           systemctl status firewalld   ------ ²é¿´·À»ğÇ½×´Ì¬
+           systemctl start firewalld   ------   ¿ªÆô·À»ğÇ½ 
+           systemctl stop firewalld   ------   ¹Ø±Õ·À»ğÇ½
+
+           sudo firewall-cmd --permanent --add-port=8080/tcp    ------   ·ÅĞĞÖ¸¶¨¶Ë¿Ú
+           sudo firewall-cmd --reload     ------   ÖØĞÂ¼ÓÔØÊ¹·ÅĞĞµÄ¶Ë¿ÚÉúĞ§
+	
+           sudo firewall-cmd --list-ports   ------   ²é¿´±»·ÅĞĞµÄ¶Ë¿Ú
+
+           È·±£ÆôÓÃÁË·À»ğÇ½
+	   sudo systemctl start firewalld
+           sudo systemctl enable firewalld
+           sudo firewall-cmd --list-all    ------   ²é¿´ËùÓĞ·ÅĞĞ
+
+
+
+
 
 
 linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀµ£©£»Ô´Âë±àÒë°²×°
 
+£¨-2£©rpm -qpR °üÂ·¾¶   ------   Î´±»°²×°Ê±²é¿´rpm°üµÄÒÀÀµ
 
+£¨-1£©rpm -qR °üÃû³Æ   ------   ÒÑ°²×°Ê±²é¿´Ö¸¶¨°üµÄÒÀÀµ
 
 £¨0£©rpm -ivh °üÂ·¾¶   ------   °²×°rpm°ü
 
@@ -503,14 +523,36 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
 	     ºóÀ´³É¹¦°²×°1.20.2°æ±¾£¬²½ÖèÈçÏÂ£º
 
 	1¡¢ÔÚnginx¹ÙÍøÏÂÔØËùĞèÒªµÄµÄrpm°ü£¬µØÖ·Îª£ºhttp://nginx.org/packages/£¬
-               centos7ËùĞèµÄrpm°üÏÂÔØµØÖ·£ºhttp://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.20.2-1.el7.ngx.x86_64.rpm		
+               centos7ËùĞèµÄrpm°üÏÂÔØµØÖ·£ºhttp://nginx.org/packages/centos/7/x86_64/RPMS/nginx-1.24.0-1.el7.ngx.x86_64.rpm		
 	2¡¢ÏÂÔØºóÉÏ´«ÖÁ·şÎñÆ÷/software/nginxÄ¿Â¼ÏÂ
 	3¡¢ÔÚ/software/nginxÄ¿Â¼ÏÂ°²×°rpm°ü£ºrpm -ivh nginx-1.20.2-1.el7.ngx.x86_64.rpm
-	4¡¢Ê¹ÓÃsystemctl start nginx Æô¶¯·şÎñ
-	5¡¢Ê¹ÓÃsystem enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
+        4¡¢°²×°Ê±¿ÉÄÜ»á±¨´í£º£¨²Î¿¼µØÖ·£ºhttps://blog.csdn.net/X_yufei/article/details/131480737£©
+              error: Failed dependencies:
+	          libpcre2-8.so.0()(64bit) is needed by nginx-1:1.24.0-1.el7.ngx.x86_64
+              ÏÂÔØ¶ÔÓ¦ÒÀÀµ£¬ÏÂÔØµØÖ·£ºhttp://mirror.centos.org/centos/7/os/x86_64/Packages/pcre2-10.23-2.el7.x86_64.rpm
+               °²×°ÒÀÀµ£ºrpm -ivh pcre2-10.23-2.el7.x86_64.rpm
+	5¡¢Ê¹ÓÃsystemctl start nginx Æô¶¯·şÎñ
+              Ê¹ÓÃps -ef | grep nginx ÃüÁî²é¿´nginxÊÇ·ñÆô¶¯£¬»á¿´µ½ÓĞÒ»¸önginxÖ÷½ø³ÌºÍÈô¸É×Ó½ø³Ì
+	6¡¢Ê¹ÓÃsystem enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
+        7¡¢ÊµÊ±²é¿´ÈÕÖ¾£ºtail -f /var/log/nginx/access.log     tail -f /var/log/nginx/error.log
 
 
 
+£¨14£©°²×°nvm(ÔÚÏß°²×°)
+         1¡¢Ö´ĞĞÃüÁî£ºcurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+         2¡¢Ê¹»·¾³±äÁ¿ÉúĞ§£ºsource ~/.bashrc        ------  Ö´ĞĞ¼ÒÄ¿Â¼£¨~£©ÏÂµÄ.bashrcÎÄ¼ş
+         3¡¢²é¿´ÊÇ·ñ°²×°³É¹¦£ºnvm --version
+         4¡¢¾­²âÊÔ·¢ÏÖ±¾»ú°²×°node18¼°ÒÔÉÏ°æ±¾»á³öÏÖÒÀÀµ¹ıµÍµÄÌáÊ¾£¬ÔÚ²»Éı¼¶ÒÀÀµµÄÇ°ÌáÏÂ£¬ĞèÊ¹ÓÃ18ÒÔÏÂ°æ±¾
+
+
+
+
+
+
+
+
+
+https://pkgs.org  ¿ÉÒÔËÑË÷¸÷ÖÖrpm°ü
 
 
 
@@ -521,6 +563,9 @@ https://blog.csdn.net/sinat_35861727/article/details/123508145      yum °²×° nod
 netstat -antup
 
 netstat -antup | grep 4873
+
+
+curl  ÓÃ·¨
 
             
            
