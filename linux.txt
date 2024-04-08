@@ -310,12 +310,22 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
 	3.ÅäÖÃ»·¾³±äÁ¿
 		vim /etc/profile
 
-			# ÉèÖÃjava»·¾³±äÁ¿
+			# ÉèÖÃjava»·¾³±äÁ¿£¨ÎÄ¼şÄ©Î²£©
 			export JAVA_HOME=/software/javajdk/jdk-17.0.2
 			export PATH=$PATH:$JAVA_HOME/bin
 
 		source /etc/profile   ------  ÖØĞÂ¼ÓÔØÅäÖÃ
 	4.java -version  ------  ²é¿´ÏÂ°æ±¾ºÅ¿´ÊÇ·ñ°²×°³É¹¦
+
+        5.rpm°²×°£ºhttps://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.rpm
+           sudo rpm -ivh jdk-17_linux-x64_bin.rpm
+
+        6.yum°²×°
+          sudo yum update
+	  sudo yum install java-17-openjdk
+
+        7.Ê¹ÓÃrpmºÍyum»á×Ô¶¯ÅäÖÃ»·¾³±äÁ¿
+
 
 
 £¨7£©°²×°mysql8.0 £ºhttps://blog.csdn.net/qq_32332469/article/details/115461639
@@ -547,12 +557,80 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
          4¡¢¾­²âÊÔ·¢ÏÖ±¾»ú°²×°node18¼°ÒÔÉÏ°æ±¾»á³öÏÖÒÀÀµ¹ıµÍµÄÌáÊ¾£¬ÔÚ²»Éı¼¶ÒÀÀµµÄÇ°ÌáÏÂ£¬ĞèÊ¹ÓÃ18ÒÔÏÂ°æ±¾
 
 
-£¨15£©°²×°python3
+£¨15£©ÔÚÏß°²×°python3£¬ÕâÑù°²×°°æ±¾±È½Ï¾É
 	sudo yum update
 	sudo yum install python3
 	python3 --version
 	sudo yum install python3-pip
 	pip3 --version
+
+£¨16£©ÀëÏß°²×°python3£ºhttps://blog.csdn.net/Happy_Sunshine_Boy/article/details/123180678
+      1. ÔÚÍâÍø·şÎñÆ÷ÉÏ£¬ÏÂÔØÒÀÀµ°ü£¬±£´æÔÚ µ±Ç°Â·¾¶µÄ python3.12.2 Ä¿Â¼ÏÂ
+          yum install --downloadonly --downloaddir=./python3.12.2 zlib-devel bzip2-devel openssl-devel ncurses-devel  epel-release gcc gcc-c++ xz-devel readline-devel gdbm-devel sqlite-devel tk-devel db4-devel libpcap-devel libffi-devel
+     
+      2. °Ñ´ÓÍâÍøÏÂÔØµÄÒÀÀµ°ü£¬¿½±´µ½ÄÚÍø£¬½øĞĞ°²×°
+          rpm -Uvh ./*.rpm --nodeps --force        ------   -U£º±íÊ¾¸üĞÂ°ü -v: Ìá¹©¸üÏêÏ¸µÄÊä³ö -h:ÔÚ°²×°°üÊ±´òÓ¡É¢ÁĞ±ê¼Ç(¿ÉÒÔÊ¹ÓÃ-v)  --nodeps£º²»ÑéÖ¤°üÒÀÀµ  --force£ººöÂÔ°üÖ®¼äµÄÎÄ¼ş³åÍ»
+      
+      3. ÏÂÔØpythonºóÉÏ´«µ½ÄÚÍø·şÎñÆ÷£¬Ò²¿ÉÒÔÈ¥¹ÙÍøÏÂÔØ
+          wget --no-check-certificate https://www.python.org/ftp/python/3.12.2/Python-3.12.2.tgz
+
+      4. °²×°
+          # ½âÑ¹µ½Ö¸¶¨Ä¿Â¼
+          tar -zxvf Python-3.12.2.tgz -C /opt/
+          cd /opt/Python-3.12.2
+          # ½«Python3°²×°µ½´ËÄ¿Â¼ÏÂ
+          ./configure --prefix=/usr/local/bin/python3
+          # ±àÒëºÍ°²×°
+          make && make install
+
+      5. ´´½¨ÈíÁ¬½Ó
+          # ´´½¨python3ÈíÁ¬½Ó
+          ln -s /usr/local/bin/python3/bin/python3 /usr/bin/python3
+          # ´´½¨pip3µÄÈíÁ¬½Ó
+          ln -s /usr/local/bin/python3/bin/pip3 /usr/bin/pip3
+
+      6. ¼ì²é
+          python3 --version
+          pip3 --version
+          python --version
+          pip --version
+
+       7. ÀëÏß°²×°µÚÈı·½Ä£¿é
+          # ÔÚÓĞÍø·şÎñÆ÷ÉÏÏÂÔØ£¨ÒÔparamiko2.4.2ÎªÀı£©
+          pip3 download paramiko==2.4.2  -d /tmp/packages/
+
+          # ÔÚÎŞÍø·şÎñÆ÷ÉÏ°²×°£¨ÒÔparamiko2.4.2ÎªÀı£©
+          pip3 install --no-index --find-links=/tmp/packages paramiko==2.4.2
+
+
+       8. ÏÂÔØÄ£¿é
+           # Èç¹ûĞÂ°²×°Ä³Ò»¸öÄ£¿é£¬¿ÉÒÔÖ±½ÓÏÂÔØÏÂÀ´£¬²¢ÇÒÒÀÀµ°üÒ²»áÏÂÔØÏÂÀ´
+           pip3 download -d /tmp/packages/  xxx
+           # »òÕß
+           pip3 download xxx  -d /tmp/packages/
+
+           # Ä¬ÈÏÇé¿ödownloadÊÇ×îĞÂ°æ±¾Ä£¿é£¬µ«ÓĞÊ±ºòÎÒÃÇĞèÒªÏÂÔØÖ¸¶¨Ä£¿é°æ±¾£¬±ÈÈçÏÂÃæÎÒÃÇÏÂÔØparamikoµÄ2.4.2°æ±¾¡£
+           pip3 download -d /tmp/packages/ paramiko==2.4.2
+           # »òÕß
+           pip3 download paramiko==2.4.2  -d /tmp/packages/
+
+
+           # »òÕß ½«pip3 listµÄĞÅÏ¢Éú³ÉÎÄµµ
+           pip3 freeze >requirements.txt
+
+           # ½«requirement.txtÎÄµµÖĞÁĞ³öµÄÄ£¿éĞÅÏ¢ÏÂÔØµ½Ö¸¶¨Ä¿Â¼
+           pip3 download -r requirements.txt -d /tmp/packages/  #ÍÆ¼öÊ¹ÓÃ
+           # »òÕß
+           pip3 install --download /tmp/packages -r requirements.txt
+
+
+       9. ÀëÏß°²×°Ä£¿é
+          # ÅúÁ¿ÀëÏß°²×°requirments.txtÖĞµÄÄ£¿é£¬ĞèÒª½«ÏÂÔØºÃµÄÄ£¿éºÍrequirments.txt¶¼copyµ½Ò»¸öÄ¿Â¼£¬È»ºóÖ´ĞĞÏÂÃæµÄÃüÁî
+          pip3 install --no-index --find-links=/tmp/packages xxx
+          # ÀıÈç£º
+          pip3 install --no-index --find-links=/tmp/packages paramiko==2.4.2
+          # »òÕß
+          pip3 install --no-index --find-links=/tmp/packages  -r requirments.txt 
 
 
 
