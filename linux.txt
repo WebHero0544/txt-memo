@@ -358,7 +358,7 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
             Èç¹ûÖ®Ç°°²×°¹ımysqlĞèÒªÏÈĞ¶ÔØ£¬¼Ç×Å±¸·İÊı¾İ
          7.ÔÙ°²×°½â°üºóµÄrpmÎÄ¼ş£º
             ¿ÉÒÔÏÈ°²×°mysql·şÎñ£¨mysql-community-server-8.0.29-1.el7.x86_64.rpm£©£¬»áÓĞÒÀÀµÈ±Ê§µÄ±¨´í¶øµ¼ÖÂ°²×°Ê§°Ü£¬¸ù¾İ±¨´íÌáÊ¾°²×°¶ÔÓ¦µÄÒÀÀµ¾ÍĞĞ£¬ÏÂÃæ»¹ĞèÒª°²×°Ò»¸öÃûÎªlibaioµÄ°ü:
-            yum install libaio
+            yum install libaio  £¨Èç¹ûÃ»ÓĞÍøÂç£¬¿ÉÒÔÔÚÒ»¸öÓĞÍøµÄ·şÎñÆ÷ÉÏÓÃyumÏÂÔØ£ºyum install --downloadonly --downloaddir=./ libaio£©
             ×îºóÔÙ´Î°²×°mysql·şÎñ£º
             rpm -ivh mysql-community-server-8.0.29-1.el7.x86_64.rpm
             mysql·şÎñ°²×°³É¹¦
@@ -525,6 +525,7 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
 	2¡¢°²×°Íê³Éºónginx»á×Ô¶¯Ìí¼Óµ½·şÎñ
 	3¡¢Ê¹ÓÃsystemctl start nginxÆô¶¯·şÎñ
 	4¡¢Ê¹ÓÃsystemctl enable nginx Ìí¼Óµ½¿ª»ú×ÔÆô¶¯
+        5¡¢Ê¹ÓÃsystemctl is-enabled nginx ²é¿´ÊÇ·ñ¿ª»ú×ÔÆô¶¯¹¦ÄÜÉúĞ§ÁË
 
 
 
@@ -545,8 +546,9 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
                °²×°ÒÀÀµ£ºrpm -ivh pcre2-10.23-2.el7.x86_64.rpm
 	5¡¢Ê¹ÓÃsystemctl start nginx Æô¶¯·şÎñ
               Ê¹ÓÃps -ef | grep nginx ÃüÁî²é¿´nginxÊÇ·ñÆô¶¯£¬»á¿´µ½ÓĞÒ»¸önginxÖ÷½ø³ÌºÍÈô¸É×Ó½ø³Ì
-	6¡¢Ê¹ÓÃsystem enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
-        7¡¢ÊµÊ±²é¿´ÈÕÖ¾£ºtail -f /var/log/nginx/access.log     tail -f /var/log/nginx/error.log
+	6¡¢Ê¹ÓÃsystemctl enable nginxÉèÖÃÎª¿ª»ú×ÔÆô¶¯
+        7¡¢Ê¹ÓÃsystemctl is-enabled nginx ²é¿´ÊÇ·ñ¿ª»ú×ÔÆô¶¯¹¦ÄÜÉúĞ§ÁË
+        8¡¢ÊµÊ±²é¿´ÈÕÖ¾£ºtail -f /var/log/nginx/access.log     tail -f /var/log/nginx/error.log
 
 
 
