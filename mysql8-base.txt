@@ -55,7 +55,7 @@ alter table cats add gender char(1) after name;  -------  在name后新添加一列，名
 alter table cats drop gender;  ------  删除名为gender的数据列
 
 
-show create table cats\g;  ------ 显示创建表时的信息
+show create table cats;  ------ 显示创建表时的信息
 
 
 select version(), current_date;  ------  同时查看mysql数据库版本和当前日期
