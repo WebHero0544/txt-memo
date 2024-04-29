@@ -13,3 +13,8 @@
 sudo systemctl restart nginx
 sudo systemctl reload nginx
 
+
+
+
+接口代理
+https://blog.csdn.net/qq_24950043/article/details/135119687
