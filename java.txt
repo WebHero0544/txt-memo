@@ -1,4 +1,9 @@
 （1）安装完成后配置环境变量
+        JAVA_HOME
+        D:\Program Files\Java\jdk-17.0.2
+
+	Path
+	%JAVA_HOME%\bin
 
 
 
