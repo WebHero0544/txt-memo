@@ -1,10 +1,94 @@
 （1）启动调试报错：
 
 Unexpected error (103) returned by AddToSystemClassLoaderSearch
-Unable to add C:\Users\�������\AppData\Local\JetBrains\IdeaIC2020.2\captureAgent\debugger-agent.jar to system class path - the system class loader does not define the appendToClassPathForInstrumentation method or the method failed
+Unable to add C:\Users\       \AppData\Local\JetBrains\IdeaIC2020.2\captureAgent\debugger-agent.jar to system class path - the system class loader does not define the appendToClassPathForInstrumentation method or the method failed
 FATAL ERROR in native method: processing of -javaagent failed, appending to system class path failed
 Disconnected from the target VM, address: '127.0.0.1:55583', transport: 'socket'
 
 应该是中文目录的问题：
 
 解决方式: Settings >  Build, Execution, Deployment > Debugger > Async Stack Traces > 取消勾选 Instrumenting agent
+
+
+
+
+（2）快捷键
+
+alt + enter
+alt + insert   
+
+ctrl + shift + l    格式化代码
+ctrl + shift + alt + l    代码格式化设置
+
+ctrl + shift + space    再次显示补全提示
+ctrl + shift + enter    完成语句
+
+
+ctrl + w    选择文本，重复按会扩大选择范围
+
+ctrl + d    向下复制一行
+
+ctrl + y    删除当前行
+
+shift + 上箭头    向上复制
+alt + shift + 上箭头    向上移动当前行
+
+ctrl + -    折叠方法
+ctrl + =   展开方法
+ctrl + shift + -    折叠全部方法
+ctrl + shift + =  展开全部方法
+
+ctrl + alt + t    添加语句包裹
+ctrl + shift + delete    删除语句包裹
+
+ctrl + shift + enter    完善语句
+
+
+
+shift + f6      统一从命名field,会给相关的getter和setter都改了， 修改完成后按enter确认，
+
+
+
+右键Local History  可以恢复代码
+
+
+
+f2    快速定位到有警告或报错的地方
+
+
+ctrl + shift + f7    高亮当前光标所在的代码，再次按键取消高亮
+
+
+ctrl + shift + f   搜索
+双击shift    搜索
+
+ctrl + shift + r    替换
+
+
+ctrl + f12    查看文件结构，在打开的面板中可以直接键输入查询，也可按alt + 7 在左侧面板打开
+
+
+ctrl + b    光标定位到方法，按该键可以定位到方法的声明位置
+alt + f7    光标定位到方法，查看在哪都用了该方法
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
