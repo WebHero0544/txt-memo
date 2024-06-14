@@ -656,6 +656,12 @@ curl  用法   https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 
 wget
 
+
+
+
+解压zip，如果系统unzip命令可用yum安装
+sudo yum install unzip
+
             
            
 
