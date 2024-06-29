@@ -20,13 +20,13 @@ jdbc:mysql://localhost:3306/db?serverTimezone=UTC
 1.show tables;  ------  查看当前数据库里所有表
 2.show create table student;  ------   查看表(student)的创建信息
 4.desc t1；  ------   查看表(t1)结构
-5.create table student(
+5.create table student (  -- 这里左括号前需要有空格
       id int,  -- 整型
       name varchar(100), -- 字符型 最多100个字符
       age int, -- 整型
       score double(4,1), -- double类形，整个小数最多4位，小数点后保留一位
       birthday date,  -- date类型 yyyy-MM-dd
-      insert_time timestamp -- timestamp类型，缺省时将会使用当前系统时间戳
+      insert_time timestamp -- timestamp类型
   );  ------  创建表(student)
 6.create table student1 like student;  ------  复制表，将一个已有的表(student)内容复制到要新建的表(student1)
 7.drop table if exists student1;  ------   删除表(student1), 如果存在
@@ -41,6 +41,7 @@ jdbc:mysql://localhost:3306/db?serverTimezone=UTC
 
 三，增删改表中的数据：添加数据
 1.insert into stu(id, name, age, score, birthday) values (4, 'mao huaiyu', 27, 80, '2022-02-21');
+2.insert into stu(id, name, age, score, birthday, insert_time) values (1, 'dong', 33, 90, '2024-06-28', '2024-06-28 08:00');
 
 
 四，增删改表中的数据：删除数据
@@ -64,7 +65,7 @@ select
 from
     表名列表
 where
-    条件列表：>, >=, <, <=, =, !=, bwtween ... and ..., and, or, in (...), is null, is not null，like(_匹配任意一个字符，%匹配任意多个字符，_匹配任意一个字符)
+    条件列表：>, >=, <, <=, =, !=, between ... and ..., and, or, in (...), is null, is not null，like(_匹配任意一个字符，%匹配任意多个字符，_匹配任意一个字符)
 group by
     分组字段
 having
