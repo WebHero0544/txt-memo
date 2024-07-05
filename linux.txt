@@ -662,6 +662,8 @@ wget
 解压zip，如果系统unzip命令可用yum安装
 sudo yum install unzip
 
+unzip xxx.zip    将xxx.zip解压到当前目录
+
             
            
 
