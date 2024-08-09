@@ -40,10 +40,104 @@ fn('liu')  ---------- ['dong', 'zhang', 'liu']
 
 （5）pip list  查看所有已安装包
 
+（6）pip install openpyxl==3.1.5  安装指定版本的包
+
+（7）pip install --upgrade package_name  更新包
+
+
+（8）https://zhuanlan.zhihu.com/p/689194937
+	
+查看pip版本
+pip --version
+
+pip --V
+
+升级pip版本
+pip install --upgrade pip
+
+pip install -U pip
+
+查看pip帮助信息
+pip --help
+
+pip -h
+
+
+
+# 查看已安装包列表
+pip list
+
+# 查看已安装包列表中，可进行升级的包
+pip list --outdated
+pip list -o
+
+# 查看已安装包列表中，已更新到最新版本的包
+pip list --uptodate
+pip list -u
+
+
+# 安装最新版本的包
+pip install [包名]
+# 安装最新版本的numpy包
+pip install numpy
+
+
+事实上，还可以指定版本要求，允许使用的有:
+
+== ：等于指定版本
+> ：大于指定版本
+>= ：大于等于指定版本
+< ：小于指定版本
+<= ：小于等于指定版本
+
+# 安装指定版本的包
+pip install "[包名]=[<版本]"
+# 安装1.25.1版本的numpy包
+pip install "numpy==1.25.1"
+
+# 安装版本大于指定版本的包
+pip install "[包名]>[版本]"
+# 安装版本大于1.25.1版本的numpy包
+pip install "numpy>1.25.1"
+
+
+
+# 升级指定包到最新版本
+pip install --upgrade [包名]
+pip install -U [包名]
+
+# 升级指定numpy包到最新版本
+pip install -U numpy
+
+
+同理，升级包时也可以使用==、>、>=、<、<=来指定版本要求。例如
+# 将numpy包升级到 小于等于 1.24.2版本
+pip install "numpy<=1.24.2"
 
 
 
 
+
+# 查看指定已安装包的详息
+pip show [包名]
+
+# 查看指定已安装包的详细信息，包含包中每个文件的安装路径信息
+pip show -f [包名]
+
+# 查看aliyun-python-sdk-core的信息
+pip show aliyun-python-sdk-core
+
+# 查看aliyun-python-sdk-core的详细信息
+pip show -f aliyun-python-sdk-core
+
+
+
+
+# 卸载指定包
+pip uninstall [包名]
+
+# 卸载numpy包
+pip uninstall numpy
 
 
 
