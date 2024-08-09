@@ -1,4 +1,9 @@
-vue3 react react-native flutter 
+vue3 
+react 
+react-native 
+flutter
+WebAssembly
+WebGPU 
 
 
 
