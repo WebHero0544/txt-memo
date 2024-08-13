@@ -1,6 +1,9 @@
 https://www.10besty.com/best-linux-distros/   ------linux发行版排行
 
 
+// 根据md5值比对是否内容一致
+md5sum 1_Slope.png 
+md5sum wuzhong.png
 
 
 （1）------

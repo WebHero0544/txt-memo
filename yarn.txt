@@ -8,3 +8,14 @@ https://registry.npm.taobao.org
 https://registry.npmjs.org
 
 yarn config set registry https://registry.npmjs.org
+
+
+
+
+
+修改缓存路径和下载路径（时间久了会大量占用C盘空间，一般在C盘子目录AppData里）
+yarn config set cache-folder D:\yarn-cache
+yarn config set global-folder D:\yarn-global
+
+查看缓存路径:   yarn config get cache-folder
+查看下载路径：yarn global bin
