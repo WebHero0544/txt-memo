@@ -6,6 +6,10 @@ md5sum 1_Slope.png
 md5sum wuzhong.png
 
 
+rz -E  // 上传文件
+sz  // 下载文件
+
+
 （1）------
 
 
@@ -658,6 +662,9 @@ netstat -antup | grep 4873
 curl  用法   https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 
 wget
+
+
+学习使用ssh命令
 
 
 

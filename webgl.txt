@@ -1,1 +1,71 @@
 （1）转置矩阵（matrix transpose）和逆矩阵（matrix inverse）
+
+
+
+（2）https://www.shadertoy.com/
+
+	搜索关键字
+
+	fluid：流体
+	相符链接：
+	https://www.shadertoy.com/view/7tSSDD
+	https://www.shadertoy.com/view/csc3RS
+	https://www.shadertoy.com/view/4td3Ws
+	https://www.shadertoy.com/view/WlBBRw
+
+
+Web3D | 在Cesium中做流体网格模拟分析 
+https://mp.weixin.qq.com/s/WBpnKNs4VEAJT4InlDd1Mw
+https://gitee.com/m3d/gis-shadertoy-fluid
+
+
+噪音
+https://zhuanlan.zhihu.com/p/346844820
+
+
+
+
+
+（3）webgpu
+
+
+
+
+
+（4）https://iquilezles.org/
+
+
+
+
+
+（5）体渲染
+	https://www.shadertoy.com/
+	搜索关键字：cloud volume
+	
+	云
+	https://www.shadertoy.com/view/WslGWl
+
+
+	https://www.bilibili.com/read/cv33969559/
+
+
+	hitBox
+	https://blog.csdn.net/yue1241630499/article/details/121870817
+	https://github.com/YHLpuyu/three-volume/blob/master/webgl2_volume_fire.html
+	
+
+	three 体积云
+	https://threejs.org/examples/?q=cloud#webgl_volume_cloud
+	https://threejs.org/examples/?q=cloud#webgpu_volume_cloud
+	
+	// 体中撞击盒含义
+	intersect_box
+	https://www.willusher.io/webgl/2019/01/13/volume-rendering-with-webgl/
+
+
+
+
+
+
+
+
