@@ -108,6 +108,10 @@ https://blog.csdn.net/shebao3333/article/details/118932420
                 child.material.shadowSide = THREE.BackSide
             }
         })
+
+
+
+（9）加载的gltf里调整环境光（AmbientLight）不起作用，这里是因为gltf里材质material.metalness都为1了，1表示金属不会产生漫反射，而环境光是由漫反射形成的，所以不起作用，可以设置为0表示木质或石头，但效果就变了，不做修改就行
 	
 
 
