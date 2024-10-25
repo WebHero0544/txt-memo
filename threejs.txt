@@ -21,3 +21,97 @@ const loader = new GLTFLoader();
         });
         scene.add(gltf.scene);
       });
+
+
+
+（3）加载纹理后颜色变淡解决办法
+          const texture = new THREE.TextureLoader().load('./data/img/txtbg_normal.png', tex => {
+              tex.colorSpace = 'srgb'
+          })
+
+
+
+
+
+（4）记载ttf字体
+        import { TTFLoader } from 'three/examples/jsm/loaders/TTFLoader'
+
+        const ttfLoader = new TTFLoader()
+        const fontJsonObj = await ttfLoader.loadAsync(
+            './data/fonts/MicrosoftYaHeiBold.ttf',
+            xhr => {
+                // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+            }
+        )
+        this.font = new FontLoader().parse(fontJsonObj)   // helvetiker_regular fontJsonObj
+
+
+
+（5）加载dem数据
+https://blog.csdn.net/shebao3333/article/details/118932420
+
+
+
+（6）开启阴影
+          renderer.shadowMap.enabled = true
+		
+	  // 可选
+          renderer.shadowMap.type = THREE.PCFSoftShadowMap // 更好的阴影质量
+
+          dirLight.castShadow = true
+
+	// 可选（根据实际情况调整）
+        dirLight.shadow.mapSize.width = 1024  // 默认512
+        dirLight.shadow.mapSize.height = 1024
+        const cam = dirLight.shadow.camera
+        cam.near = 0.1
+        cam.far = 1000
+        cam.left = -500
+        cam.right = 500
+        cam.top = 500
+        cam.bottom = -500
+        const cameraHelper = new THREE.CameraHelper(cam)
+        scene.add(cameraHelper)
+
+	// 投射阴影
+        cubeMesh.castShadow = true
+        //接收阴影
+        planeMesh.receiveShadow = true
+
+
+
+（7）解决gltf不显示阴影的问题
+
+        const gltfLoader = new GLTFLoader()
+        const gltf = await gltfLoader.loadAsync(
+            './data/model/nanjiao7.gltf',
+            xhr => {
+                // console.log((xhr.loaded / xhr.total * 100) + '% loaded')
+            }
+        )
+        gltf.scene.traverse((child) => {
+            if (child.isMesh) {
+                child.castShadow = true
+                child.receiveShadow = true
+                child.geometry.computeVertexNormals()  // FIX 问题所在
+            }
+        })
+        const models = gltf.scene
+        scene.add(models)
+
+
+（8）避免条纹阴影（伪阴影，加载gltf时遇到了该问题）
+         dirLight.shadow.bias = -0.0008
+	或者
+        gltf.scene.traverse((child) => {
+            if (child.isMesh) {
+                child.material.shadowSide = THREE.BackSide
+            }
+        })
+	
+
+
+
+
+
+

@@ -72,7 +72,7 @@ l：链接          x： 可执行   1
 
 
 
-（6）ping 地址  ------ ping www.baidu.com
+（6）ping 地址  ------ ping www.baidu.com         学习使用curl命令
 
 
 
@@ -663,6 +663,12 @@ curl  用法
 https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 https://blog.csdn.net/zcs2312852665/article/details/134931379
 
+curl [options...] url
+
+curl -X POST -H "Content-Type:application/json"  -d '{"queryValue":"","queryType":"1","order":"desc","topNum":20,"statype":"011,11,012,12,013,13","qcodee":"2024-10-16 13:00:00","element":"PRE_1h"}' http://10.1.64.154/art/api/topApi/TopByTime
+
+//测试不行
+curl -H 'Content-Type:application/json' http://10.1.64.154/art/api/verObsApi/queryUparWprStationIdsByTimeRainge?startTime=20241016040400&endTime=20241016060400
 
 
 wget
