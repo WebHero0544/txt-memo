@@ -112,6 +112,56 @@ https://blog.csdn.net/shebao3333/article/details/118932420
 
 
 （9）加载的gltf里调整环境光（AmbientLight）不起作用，这里是因为gltf里材质material.metalness都为1了，1表示金属不会产生漫反射，而环境光是由漫反射形成的，所以不起作用，可以设置为0表示木质或石头，但效果就变了，不做修改就行
+
+
+
+
+
+
+
+（10）鼠标点击拾取
+    _interactive() {
+        const container = this.options.container
+        const scene = this.scene
+        const camera = this.camera
+        const controls = this.controls
+        const raycaster = new THREE.Raycaster()
+        const pointer = new THREE.Vector2()
+
+        container.addEventListener('click', e => {
+            console.log('camera.position: ', camera.position.toArray())
+            console.log('controls.target: ', controls.target.toArray())
+
+            pointer.x = e.offsetX / this.width * 2 - 1
+            pointer.y = -e.offsetY / this.height * 2 + 1
+
+            // let bcr = container.getBoundingClientRect()
+            // pointer.x = ((e.clientX - bcr.left) / container.offsetWidth) * 2 - 1
+            // pointer.y = -((e.clientY - bcr.top) / container.offsetHeight) * 2 + 1
+
+            raycaster.setFromCamera(pointer, camera)
+            const intersects = raycaster.intersectObjects(scene.children)
+            console.log(intersects.map(el => el.object.name))
+            console.log(intersects.map(el => el.object))
+        })
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 
