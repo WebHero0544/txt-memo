@@ -25,3 +25,22 @@ https://blog.csdn.net/qq_24950043/article/details/135119687
 
 匹配规则
 https://blog.csdn.net/2301_76352247/article/details/134933219
+
+
+
+路径别名
+    location /ningxia {
+        alias   /data/www/ningxia;
+    }
+
+    location /anhui {
+        root   /data/www;
+    }
+
+
+
+
+
+
+
+
