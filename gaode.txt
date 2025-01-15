@@ -1,0 +1,76 @@
+（1）MapboxVectorTileLayer 图层可显示在矢量底图标注后面，但Polygon不行
+
+
+
+
+
+（2）高德自定义图层需使用map.customCoords.lngLatsToCoords方法进行转换，改方法必须在自定义图层实例化前转换一次，其原因是代码内部会以第一次转换的点为原点（0,0），返回的结果均是当前墨卡托坐标减去原点的墨卡托坐标（这个原点对应的经纬度坐标会存在customCoords.cB下，墨卡托坐标会存在customCoords.dB），下面是墨卡托和经纬度互转的源码：
+
+
+
+var Projection = function () {
+    function Projection(id, project, unproject, getResolution) {
+        this.project = project;
+        this.unproject = unproject;
+        this.getResolution = getResolution;
+    }
+    Projection.prototype.moveWithPixel = function (lnglat, offsetPixel, zoom) {
+        var resolution = this.getResolution(zoom);
+        var offsetX = offsetPixel[0] * resolution;
+        var offsetY = offsetPixel[1] * resolution;
+        var pos = this.project(lnglat[0], lnglat[1]);
+        return this.unproject(pos[0] + offsetX, pos[1] + offsetY)
+    }
+    Projection.prototype.moveWithPos = function (lnglat, offsetPos) {
+        var originPos = this.project(lnglat[0], lnglat[1]);
+        var newPos = [originPos[0] + offsetPos[0], originPos[1] + offsetPos[1]];
+        return this.unproject(newPos[0], newPos[1])
+    }
+    return Projection
+}()
+
+
+export const SphericalMercator = function () {
+    var d1 = Math.PI / 180; var d2 = 180 / Math.PI;
+    var r = 6378137;
+    var MAX_LATITUDE = 85.0511287798;
+    var project = function (lng, lat) {
+        var maxs = MAX_LATITUDE;
+        lat = Math.max(Math.min(maxs, lat), -maxs);
+        var x = lng * d1;
+        var y = lat * d1;
+        y = Math.log(Math.tan(Math.PI / 4 + y / 2));
+        return [x * r, y * r]
+    };
+    var unproject = function (x, y) {
+        var lng = x / r * d2;
+        var lat = (2 * Math.atan(Math.exp(y / r)) - Math.PI / 2) * d2;
+        return [lng, lat]
+    };
+    var getResolution = function (zoom) {
+        return 20037508.342789244 * 2 / 256 / Math.pow(2, zoom)
+    };
+    return new Projection("EPSG:3857", project, unproject, getResolution)
+}()
+
+
+
+
+根据上述，lngLatsToCoords的逆向方法可以这样实现：
+
+const coords = this.customCoords.lngLatsToCoords([102.965, 37.095])
+const mcoords = coords.map(([x, y]) => [x + map.customCoords.dB[0], y + map.customCoords.dB[1]])
+
+const lnglats = mcoords.map(([x, y]) => {
+     return SphericalMercator.unproject(x, y)
+})
+
+
+
+
+
+
+
+
+
+

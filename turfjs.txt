@@ -1,0 +1,1 @@
+（1）isobands传入的数据必须是有宽高的网格点（格点数据），input points - must be square or rectangular
