@@ -110,6 +110,12 @@ https://cnodejs.org/topic/518b679763e9f8a5424406e9
 
 
 
+（11）设置node运行内存（单位：KB）
+set NODE_OPTIONS=--max_old_space_size=4096
+
+
+
+
 
 
 

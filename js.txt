@@ -368,6 +368,17 @@ Math.log(8) / Math.log(2)  // 3  8以2为基数的幂是3
 
 
 
+（25）多边形过点平滑（使用turf.bezierSpline贝塞尔曲线平滑两个点相近会打结，通过调整控制点应该是可以解决的，但有没有根本就不会产生打结的算法，需要研究寻找）
+
+
+需确认有没有过点平滑算法
+https://pro.arcgis.com/en/pro-app/latest/tool-reference/cartography/smooth-polygon.htm
+https://github.com/philipschall/shapelysmooth
+
+
+
+
+
 
 
 
