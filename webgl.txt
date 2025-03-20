@@ -61,8 +61,26 @@ https://zhuanlan.zhihu.com/p/346844820
 	// 体中撞击盒含义
 	intersect_box
 	https://www.willusher.io/webgl/2019/01/13/volume-rendering-with-webgl/
+	
 
 
+
+
+（6）如何使用texImage2D
+
+https://developer.mozilla.org/zh-CN/docs/Web/API/WebGLRenderingContext/texImage2D
+
+其中format参数解释里有张非常有用的对照表，链接是：https://registry.khronos.org/webgl/specs/latest/2.0/#TEXTURE_TYPES_FORMATS_FROM_DOM_ELEMENTS_TABLE
+
+比如向纹理中传入浮点类型的数据
+
+const data = new Float32Array([...])
+const width = 200
+const height = 200
+gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, data)
+
+// 片段着色器内取值
+float currValue = texelFetch(u_currImage, texcoord, 0).r;
 
 
 

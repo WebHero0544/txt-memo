@@ -1,0 +1,13 @@
+（1）在vscode中编写c++程序
+https://code.visualstudio.com/docs/cpp/config-mingw
+
+
+安装编译器，下面地址下载程序后安装：
+https://github.com/msys2/msys2-installer/releases/
+安装好后，将安装目录下的ucrt64\bin目录配置到环境变量，检查在cmd中检查是否安装成功：
+gcc --version
+gcc --version
+gdb --version
+
+在vscode中安装插件：C/C++
+

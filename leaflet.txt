@@ -73,13 +73,6 @@ var page = {
 
 
 
-（3）写leaflet插件的方式： http://0x0803.top/2018/06/05/gis-leaflet-tutorials-extends/
-
-
-
-
-
-
 
 
 （4）地图分配相关代码： 这里分了两个地图，分别为mapAct， mapFcst（改代码摘自vue项目）
@@ -132,9 +125,8 @@ var page = {
 
 
 
-
-
-
+（5）基于webgl实现特定图层
+https://github.com/robertleeplummerjr/Leaflet.glify
 
 
 
