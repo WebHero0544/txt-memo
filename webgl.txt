@@ -79,7 +79,7 @@ const width = 200
 const height = 200
 gl.texImage2D(gl.TEXTURE_2D, 0, gl.R32F, width, height, 0, gl.RED, gl.FLOAT, data)
 
-// 片段着色器内取值
+// 片段着色器内取值，currValue就是data里的浮点类型值
 float currValue = texelFetch(u_currImage, texcoord, 0).r;
 
 
