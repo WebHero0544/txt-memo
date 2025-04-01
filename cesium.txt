@@ -33,7 +33,7 @@ https://cesiumjs.org/Cesium/Build/Apps/Sandcastle/index.html?src=ArcticDEM.html 
 
 
 （2）3d风场
-
+https://juejin.cn/post/7454025464094261274
 
 
 
@@ -110,7 +110,31 @@ this.viewer.imageryLayers.remove(colorinLayer)
 	const lng = Cesium.Math.toDegrees(cartographic.longitude)
 	const lat = Cesium.Math.toDegrees(cartographic.latitude)
 	console.log('[', lng, ',', lat, ']')
-	        
+
+
+
+
+
+（8）使用BillboardCollection和LabelCollection时传入scene参数才能使用heightReference参数贴地，否则报错：Height reference is not supported without a scene.
+const billboardCollection = new Cesium.BillboardCollection({ scene: viewer.scene});
+const labelCollection = new Cesium.LabelCollection({ scene: viewer.scene});
+
+
+
+
+
+
+（9）根据相机高度计算近似缩放级别
+
+function heightToZoom(height) {
+    const C = 40075016.68; // 地球赤道周长（米）
+    const tileSize = 256;  // 标准瓦片尺寸
+    const fov = Math.PI / 3; // 60度视场角（弧度）
+
+    // 计算理论最大缩放级别
+    const z = Math.log2(C / (height * 2 * Math.tan(fov/2)));
+    return Math.floor(z);
+}	        
 
 
 	
