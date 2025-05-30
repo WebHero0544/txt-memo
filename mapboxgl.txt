@@ -11,3 +11,8 @@ http://10.40.132.159/mapstyle/?layer=673427622%7E0#0.78/0/0
 加载倾斜摄影（3dtiles格式）
 https://blog.csdn.net/qq_37750030/article/details/124680036
 https://deck.gl/docs/api-reference/geo-layers/tile-3d-layer
+
+
+地形高程切图gdal2tiles
+https://gdal.org/en/stable/programs/gdal2tiles.html
+dem2terrain（依赖node和GDAL）https://github.com/FreeGIS/dem2terrain
