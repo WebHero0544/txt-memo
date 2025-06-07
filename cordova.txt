@@ -1,0 +1,23 @@
+https://cordova.apache.org
+
+
+npm install -g cordova 
+cordova create MyApp
+cd MyApp
+cordova platform add android
+cordova run android
+
+
+报错
+D:\25project\beijing_zhgc_ssmp\cdvapp>cordova run android
+Checking Java JDK and Android SDK versions
+ANDROID_HOME=undefined (recommended setting)
+ANDROID_SDK_ROOT=undefined (DEPRECATED)
+Failed to find 'ANDROID_HOME' environment variable. Try setting it manually.
+Failed to find 'android' command in your 'PATH'. Try update your 'PATH' to include path to valid SDK directory.
+
+需安装 Java JDK and Android SDK
+
+
+安装教程
+https://blog.csdn.net/qq_22964783/article/details/145097403

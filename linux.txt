@@ -11,7 +11,6 @@ sz  // ÏÂÔØÎÄ¼ş
 
 
 
-
 £¨1£©------
 
 
@@ -295,7 +294,7 @@ scp dist.zip bmic@10.20.30.50:/data/data/webData   ------  ´«ÈëÎÄ¼şÂ·¾¶£¬ÓÃ»§ÕËº
 
 
 
-
+--------------------------start-------------------------------------
 
 linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀµ£©£»Ô´Âë±àÒë°²×°
 
@@ -654,24 +653,28 @@ linux°²×°Èí¼şµÄ·½Ê½£º¶ş½øÖÆ·¢²¼°ü£»rpm£¨²»»á°²×°ÒÀÀµ£©£»yum£¨ÔÚÏß°²×°£¬»á°²×°ÒÀÀ
           pip3 install --no-index --find-links=/tmp/packages  -r requirments.txt 
 
 
-
-
-
-
 https://pkgs.org  ¿ÉÒÔËÑË÷¸÷ÖÖrpm°ü
-
-
 
 lsb_release -a
 
 https://blog.csdn.net/sinat_35861727/article/details/123508145      yum °²×° nodejs
+
+
+
+-------------------------------end----------------------------------
+
+
+
+
+
+£¨1£©netstatÃüÁî
 
 netstat -antup
 
 netstat -antup | grep 4873
 
 
-curl  ÓÃ·¨   
+£¨2£©curl  ÓÃ·¨   
 https://www.ruanyifeng.com/blog/2019/09/curl-reference.html
 https://blog.csdn.net/zcs2312852665/article/details/134931379
 
@@ -683,18 +686,24 @@ curl -X POST -H "Content-Type:application/json"  -d '{"queryValue":"","queryType
 curl -H 'Content-Type:application/json' http://10.1.64.154/art/api/verObsApi/queryUparWprStationIdsByTimeRainge?startTime=20241016040400&endTime=20241016060400
 
 
-wget
+£¨3£©wget
 
 
-Ñ§Ï°Ê¹ÓÃsshÃüÁî
+£¨4£©Ñ§Ï°Ê¹ÓÃsshÃüÁî
 
 
 
-
+£¨5£©°²×°Ê¹ÓÃunzip£¨ÏÈ¿´ÏµÍ³ÓĞÃ»ÓĞ¸ÃÃüÁî£©
 ½âÑ¹zip£¬Èç¹ûÏµÍ³unzipÃüÁî¿ÉÓÃyum°²×°
 sudo yum install unzip
 
 unzip xxx.zip    ½«xxx.zip½âÑ¹µ½µ±Ç°Ä¿Â¼
+
+
+
+£¨6£©ÓÃ»§¹ÜÀíÃüÁî
+
+useradd
 
             
            
