@@ -1,5 +1,84 @@
-https://cordova.apache.org
+阿里开源镜像：https://mirrors.aliyun.com/macports/distfiles/
 
+
+
+
+（1）安装java jdk17
+https://www.oracle.com/cn/java/technologies/downloads/archive/
+
+配置环境变量
+
+JAVA_HOME
+D:\yxcx\java
+
+%JAVA_HOME%\bin
+
+
+（2）安装android studio 
+下载地址：https://developer.android.google.cn/studio?hl=zh-cn
+参考教程：https://blog.csdn.net/Wang_sweet/article/details/145896563
+
+遇到报错：Unable to access Android SDK add-on list   提示是因为没安装android sdk，取消弹窗就行，后面会安装android sdk
+按上面教程安装
+
+gradle替换腾讯源：
+切换为project试图，找到“ gradle-wrapper.properties ”文件。
+替换 https\://services.gradle.org/distributions为https\://mirrors.cloud.tencent.com/gradle
+
+配置环境变量
+ANDROID_HOME
+D:\software\AndroidSDK
+
+ANDROID_SDK_ROOT
+D:\software\AndroidSDK
+
+%ANDROID_HOME%\cmdline-tools\latest\bin
+%ANDROID_HOME%\platform-tools
+%ANDROID_HOME%\emulator
+
+
+
+
+
+（3）安装gradle
+GRADLE_HOME
+D:\software\gradle-8.9-bin
+
+%GRADLE_HOME%\bin
+
+https://blog.csdn.net/m0_72248235/article/details/130496340
+
+需要在init.d目录下配置一个初始文件，这里我们需要新建一个init.gradle文件。
+鼠标右键新建并打开init.txt文件，将下面的内容粘贴到文件中，然后点击保存
+
+
+allprojects {
+    repositories { 
+        mavenLocal() 
+        maven { name "Alibaba" ; url "https://maven.aliyun.com/repository/public" } 
+        maven { name "Bstek" ; url "https://nexus.bsdn.org/content/groups/public/" } 
+        mavenCentral()
+    }
+    buildscript {
+        repositories { 
+            maven { name "Alibaba" ; url 'https://maven.aliyun.com/repository/public' } 
+            maven { name "Bstek" ; url 'https://nexus.bsdn.org/content/groups/public/' } 
+            maven { name "M2" ; url 'https://plugins.gradle.org/m2/' }
+        }
+    }
+}
+文件命名为init.gradle，对下面弹窗提示点击确定。至此，Gradle下载源配置成功：
+
+gradle -v
+
+CORDOVA_ANDROID_GRADLE_DISTRIBUTION_URL
+D:\software\gradle-8.9-bin.zip
+
+
+
+（4）安装编译打包cordova
+
+https://cordova.apache.org
 
 npm install -g cordova 
 cordova create MyApp
@@ -7,17 +86,9 @@ cd MyApp
 cordova platform add android
 cordova run android
 
-
-报错
-D:\25project\beijing_zhgc_ssmp\cdvapp>cordova run android
-Checking Java JDK and Android SDK versions
-ANDROID_HOME=undefined (recommended setting)
-ANDROID_SDK_ROOT=undefined (DEPRECATED)
-Failed to find 'ANDROID_HOME' environment variable. Try setting it manually.
-Failed to find 'android' command in your 'PATH'. Try update your 'PATH' to include path to valid SDK directory.
-
-需安装 Java JDK and Android SDK
+cordova requirements
+cordova clean android
+cordova build android
+cordova emulate android
 
 
-安装教程
-https://blog.csdn.net/qq_22964783/article/details/145097403
